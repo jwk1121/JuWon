@@ -55,5 +55,17 @@
   },
   "docs/DL/posts/DCGAN.ipynb": {
     "DCGAN.html": "d5dcba08"
+  },
+  "docs/DL/posts/DL_RNN(1).ipynb": {
+    "DL_RNN(1).html": "b2489857"
+  },
+  "docs/DL/posts/DL_RNN(2).ipynb": {
+    "DL_RNN(2).html": "2b82eed7"
+  },
+  "docs/DL/posts/DL_RNN(3).ipynb": {
+    "DL_RNN(3).html": "f5d847f4"
+  },
+  "docs/DL/posts/DL_logistic_regression.ipynb": {
+    "DL_logistic_regression.html": "0926626a"
   }
 }
