@@ -1,0 +1,15 @@
+---
+title: "JuWon Kwon"
+image: img/minions.jpg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: github
+      href: https://github.com/jwk1121
+    # (additional links excluded for brevity)
+---
+
+About me
+
+This is the contents of the about page for my blog.

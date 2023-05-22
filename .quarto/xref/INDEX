@@ -1,0 +1,47 @@
+{
+  "index.qmd": {
+    "index.html": "475f840f"
+  },
+  "about.qmd": {
+    "about.html": "4be37255"
+  },
+  "contact.qmd": {
+    "contact.html": "43232aa5"
+  },
+  "rstat101.qmd": {
+    "rstat101.html": "9030ead7"
+  },
+  "tutorial_1.qmd": {
+    "tutorial_1.html": "1fea19e2"
+  },
+  "docs/rstat/rstat101.qmd": {
+    "rstat101.html": "9cef2219"
+  },
+  "docs/rstat/rstat_lecture.qmd": {
+    "rstat_lecture.html": "b8dd2d87"
+  },
+  "docs/rstat/index.qmd": {
+    "index.html": "12990220"
+  },
+  "docs/rstat/posts/rstat101.qmd": {
+    "rstat101.html": "ddc8e11a"
+  },
+  "docs/rstat/posts/rstat_lecture.qmd": {
+    "rstat_lecture.html": "f211fe5d"
+  },
+  "docs/rstat/posts/DL_CNN.ipynb": {
+    "DL_CNN.html": "029203ed"
+  },
+  "docs/DL/index.qmd": {
+    "index.html": "84b3e9ab"
+  },
+  "docs/DL/posts/DL_CNN.ipynb": {
+    "DL_CNN.html": "1fb4c27f"
+  },
+  "docs/DL/posts/rstat101.qmd": {
+    "rstat101.html": "84774c9a"
+  },
+  "docs/DL/rstat_lecture.qmd": {
+    "rstat_lecture.html": "236c6385"
+  }
+}

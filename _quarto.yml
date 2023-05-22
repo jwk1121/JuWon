@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  title: "BME JuWon's summary"
+  navbar:
+    search: true
+    logo: ./img/minions.jpg
+    background: dark
+    left:
+      - href: index.qmd
+        text: Home
+        
+      - text: "DL summary"
+        file: docs/DL/index.qmd
+      
+    right:
+      - icon: github
+        href: https://github.com/jwk1121
+        aria-label: JuWon's github
+    sidebar:
+      - title: "Blog"
+        style: "floating"
+        collapse-level: 2
+        align: left
+        contents:
+          - docs/DL/index.qmd
+          - docs/DL/posts/DL_CNN.ipynb
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

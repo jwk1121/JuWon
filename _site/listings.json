@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "/docs/rstat/index.html",
+    "items": [
+      "/docs/rstat/posts/DL_CNN.html",
+      "/docs/rstat/posts/rstat101.html"
+    ]
+  },
+  {
+    "listing": "/docs/DL/index.html",
+    "items": [
+      "/docs/DL/posts/DL_CNN.html",
+      "/docs/DL/posts/rstat101.html"
+    ]
+  }
+]
