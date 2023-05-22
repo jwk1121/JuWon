@@ -43,5 +43,8 @@
   },
   "docs/DL/rstat_lecture.qmd": {
     "rstat_lecture.html": "236c6385"
+  },
+  "docs/DL/posts/DL_CNN_2(XAI_정리).ipynb": {
+    "DL_CNN_2(XAI_정리).html": "d02f5fe5"
   }
 }

@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="JuWon">
+<meta name="dcterms.date" content="2022-02-15">
+
+<title>BME JuWon’s summary - CNN</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #EDF3F9;
+      }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../.././img/minions.jpg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">BME JuWon’s summary</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="false"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/DL/index.html" rel="" target="">
+ <span class="menu-text">DL summary</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jwk1121" rel="" target=""><i class="bi bi-github" role="img" aria-label="JuWon's github">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">CNN</h1>
+            <p class="subtitle lead">CNN part2</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">DL</div>
+                <div class="quarto-category">CNN</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>JuWon </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 15, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#transfer-learning-explainable-artificial-inteligencecam" id="toc-transfer-learning-explainable-artificial-inteligencecam" class="nav-link active" data-scroll-target="#transfer-learning-explainable-artificial-inteligencecam">transfer learning + explainable artificial inteligence(CAM)</a>
+  <ul class="collapse">
+  <li><a href="#transfer-learning" id="toc-transfer-learning" class="nav-link" data-scroll-target="#transfer-learning">transfer learning</a>
+  <ul class="collapse">
+  <li><a href="#데이터-준비" id="toc-데이터-준비" class="nav-link" data-scroll-target="#데이터-준비">데이터 준비</a></li>
+  <li><a href="#모델-만들기" id="toc-모델-만들기" class="nav-link" data-scroll-target="#모델-만들기">모델 만들기</a></li>
+  </ul></li>
+  <li><a href="#데이터-확인" id="toc-데이터-확인" class="nav-link" data-scroll-target="#데이터-확인">데이터 확인</a>
+  <ul class="collapse">
+  <li><a href="#이미지-차원의-순서-변경torch.einsum" id="toc-이미지-차원의-순서-변경torch.einsum" class="nav-link" data-scroll-target="#이미지-차원의-순서-변경torch.einsum">이미지 차원의 순서 변경(torch.einsum)</a></li>
+  </ul></li>
+  <li><a href="#cam-구현" id="toc-cam-구현" class="nav-link" data-scroll-target="#cam-구현">CAM 구현</a>
+  <ul class="collapse">
+  <li><a href="#네트워크-선택" id="toc-네트워크-선택" class="nav-link" data-scroll-target="#네트워크-선택">네트워크 선택</a></li>
+  <li><a href="#네트워크-살짝-변형" id="toc-네트워크-살짝-변형" class="nav-link" data-scroll-target="#네트워크-살짝-변형">네트워크 살짝 변형</a></li>
+  <li><a href="#average-pooling과-선형변환층-순서-변경" id="toc-average-pooling과-선형변환층-순서-변경" class="nav-link" data-scroll-target="#average-pooling과-선형변환층-순서-변경">average pooling과 선형변환층 순서 변경</a></li>
+  <li><a href="#근거를-바탕으로-시각화" id="toc-근거를-바탕으로-시각화" class="nav-link" data-scroll-target="#근거를-바탕으로-시각화">근거를 바탕으로 시각화</a></li>
+  <li><a href="#cam-시각화" id="toc-cam-시각화" class="nav-link" data-scroll-target="#cam-시각화">CAM 시각화</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="transfer-learning-explainable-artificial-inteligencecam" class="level1">
+<h1>transfer learning + explainable artificial inteligence(CAM)</h1>
+<ul>
+<li>toc:true</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torchvision</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="transfer-learning" class="level2">
+<h2 class="anchored" data-anchor-id="transfer-learning">transfer learning</h2>
+<ul>
+<li>누군가가 만들어 놓은 모델의 구조를 사용하는 것</li>
+<li>fine_tune을 사용하면 전이학습이 되어 학습시간이 줄어들음</li>
+<li>lrnr.fit을 사용하면 그냥 학습을 시키는 것</li>
+</ul>
+<section id="데이터-준비" class="level3">
+<h3 class="anchored" data-anchor-id="데이터-준비">데이터 준비</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> untar_data(URLs.CIFAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="b230ec34-b2d2-4b59-98ce-7a92e6d7a9bf">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>path.ls() <span class="co"># path에는 labels라는 텍스트 파일과 test,train이라는 폴더가 있음</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>(#3) [Path('/root/.fastai/data/cifar10/labels.txt'),Path('/root/.fastai/data/cifar10/test'),Path('/root/.fastai/data/cifar10/train')]</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="b93c462b-eeb1-4daa-fe6f-4ecbe882451b">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>ls <span class="op">/</span>root<span class="op">/</span>.fastai<span class="op">/</span>data<span class="op">/</span>cifar10<span class="op">/</span>train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>airplane  automobile  bird  cat  deer  dog  frog  horse  ship  truck</code></pre>
+</div>
+</div>
+<ul>
+<li><p>train 폴더 안에는 위위와 같은 폴더들이 있음</p></li>
+<li><p>각 폴더에는 이름과 맞는 이미지 파일이 있음</p></li>
+<li><p>10개의 클래스</p></li>
+<li><p>앞 장에서 만든 CNN Architecture를 사용하면 정확도가 매우 떨어짐</p>
+<ul>
+<li>학습과정은 패스했음</li>
+</ul></li>
+<li><p>더 복잡하고 정교한 모델을 만들어야 함 <span class="math inline">\(\to\)</span> transfer learning 사용</p></li>
+</ul>
+</section>
+<section id="모델-만들기" class="level3">
+<h3 class="anchored" data-anchor-id="모델-만들기">모델 만들기</h3>
+<ul>
+<li>ResNet의 weights를 그대로 가져와 학습에 사용</li>
+</ul>
+<section id="모델-가져오는-방법-1" class="level4">
+<h4 class="anchored" data-anchor-id="모델-가져오는-방법-1">모델 가져오는 방법 1</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> ImageDataLoaders.from_folder(path,train<span class="op">=</span><span class="st">'train'</span>,valid<span class="op">=</span><span class="st">'test'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="773719f8-0960-4151-b45a-83d878ef8d4d">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>_x, _y <span class="op">=</span> dls.one_batch()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>_x.shape, _y.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>(torch.Size([64, 3, 32, 32]), torch.Size([64]))</code></pre>
+</div>
+</div>
+<ul>
+<li>x의 배치크기는 64(= 하나의 배치에 64개의 데이터(이미지)가 있음을 의미), 채널은 3(컬러 이미지), size는 32 x 32이다.</li>
+<li>y는 x의 레이블로 64개의 이미지가 있으므로 64개의 값이 y에 저장됨</li>
+</ul>
+<div class="cell" data-outputid="42688696-64ce-4ed8-a3bc-74beb1f83be7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>_y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>TensorCategory([5, 2, 8, 6, 8, 5, 1, 2, 1, 0, 4, 8, 7, 7, 0, 4, 2, 6, 8, 6, 6,
+                2, 0, 7, 1, 9, 5, 4, 3, 6, 4, 9, 6, 4, 3, 7, 3, 9, 3, 6, 5, 3,
+                6, 6, 6, 8, 6, 3, 5, 3, 5, 9, 5, 3, 9, 0, 7, 3, 6, 6, 7, 7, 8,
+                9], device='cuda:0')</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#collapse_output</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>net <span class="op">=</span> torchvision.models.resnet18(weights<span class="op">=</span>torchvision.models.resnet.ResNet18_Weights.IMAGENET1K_V1)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>net</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>마지막 출력층을 확인해보면 1000개를 출력함</li>
+<li>하지만 우리는 10개의 클래스를 구분하는 모델을 만들 것이므로 1000을 10으로 바꿔야 함</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>net.fc <span class="op">=</span> torch.nn.Linear(in_features<span class="op">=</span><span class="dv">512</span>, out_features<span class="op">=</span><span class="dv">10</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>loss_fn <span class="op">=</span> torch.nn.CrossEntropyLoss()</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>lrnr <span class="op">=</span> Learner(dls, net, loss_fn, metrics <span class="op">=</span> accuracy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="f9ed94d9-55f9-4aaa-f9a6-d6491440124c">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lrnr.fit(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">accuracy</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.804860</td>
+<td>0.821773</td>
+<td>0.724900</td>
+<td>01:15</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.640089</td>
+<td>0.679617</td>
+<td>0.773700</td>
+<td>01:09</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.519974</td>
+<td>0.647182</td>
+<td>0.783100</td>
+<td>01:05</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.405207</td>
+<td>0.564490</td>
+<td>0.811400</td>
+<td>01:14</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.344672</td>
+<td>0.683868</td>
+<td>0.783300</td>
+<td>01:05</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.269288</td>
+<td>0.737170</td>
+<td>0.785200</td>
+<td>01:12</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.272949</td>
+<td>0.788109</td>
+<td>0.769800</td>
+<td>01:12</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>0.188042</td>
+<td>0.690548</td>
+<td>0.808600</td>
+<td>01:10</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>0.175680</td>
+<td>0.736700</td>
+<td>0.800500</td>
+<td>01:09</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>0.151409</td>
+<td>0.821169</td>
+<td>0.795500</td>
+<td>01:06</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="모델-가져오는-방법-2" class="level4">
+<h4 class="anchored" data-anchor-id="모델-가져오는-방법-2">모델 가져오는 방법 2</h4>
+<ul>
+<li>overview에서 fastai를 사용한 방법 (fastai로만 모델을 구현)</li>
+</ul>
+<div class="cell" data-outputid="09c3d094-caed-42fa-ab6c-8302f7360e5a">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> untar_data(URLs.PETS)<span class="op">/</span><span class="st">'images'</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>files<span class="op">=</span> get_image_files(path)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> label_func(fname):</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> fname[<span class="dv">0</span>].isupper():</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'cat'</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'dog'</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> ImageDataLoaders.from_name_func(path,files,label_func,item_tfms<span class="op">=</span>Resize(<span class="dv">512</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+
+    <div>
+      <progress value="811712512" class="" max="811706944" style="width:300px; height:20px; vertical-align: middle;"></progress>
+      100.00% [811712512/811706944 00:08&lt;00:00]
+    </div>
+    
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lrnr <span class="op">=</span> vision_learner(dls,resnet34,metrics<span class="op">=</span>accuracy) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="39fbd5a3-6fd6-4b86-a026-16be941a1ca2">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lrnr.fine_tune(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">accuracy</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.175012</td>
+<td>0.026964</td>
+<td>0.989851</td>
+<td>01:54</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">accuracy</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.047284</td>
+<td>0.022501</td>
+<td>0.994587</td>
+<td>02:29</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li>아래의 코드를 사용하면 network의 구조를 볼 수 있음</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>lrnr.model()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="데이터-확인" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-확인">데이터 확인</h2>
+<div class="cell" data-outputid="cfeafd2e-884a-427e-da47-e44c04341ba1">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 위의 코드(fastai로 transfer learning) 똑같음</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> untar_data(URLs.PETS)<span class="op">/</span><span class="st">'images'</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>files<span class="op">=</span> get_image_files(path)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> label_func(fname):</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> fname[<span class="dv">0</span>].isupper():</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'cat'</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'dog'</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> ImageDataLoaders.from_name_func(path,files,label_func,item_tfms<span class="op">=</span>Resize(<span class="dv">512</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+
+    <div>
+      <progress value="811712512" class="" max="811706944" style="width:300px; height:20px; vertical-align: middle;"></progress>
+      100.00% [811712512/811706944 01:04&lt;00:00]
+    </div>
+    
+</div>
+</div>
+<div class="cell" data-outputid="4c283bd9-1707-498e-db35-8fde130feeab">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>path.ls()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>(#7393) [Path('/root/.fastai/data/oxford-iiit-pet/images/havanese_36.jpg'),Path('/root/.fastai/data/oxford-iiit-pet/images/Egyptian_Mau_7.jpg'),Path('/root/.fastai/data/oxford-iiit-pet/images/Abyssinian_97.jpg'),Path('/root/.fastai/data/oxford-iiit-pet/images/chihuahua_135.jpg'),Path('/root/.fastai/data/oxford-iiit-pet/images/keeshond_110.jpg'),Path('/root/.fastai/data/oxford-iiit-pet/images/yorkshire_terrier_54.jpg'),Path('/root/.fastai/data/oxford-iiit-pet/images/wheaten_terrier_11.jpg'),Path('/root/.fastai/data/oxford-iiit-pet/images/British_Shorthair_62.jpg'),Path('/root/.fastai/data/oxford-iiit-pet/images/german_shorthaired_171.jpg'),Path('/root/.fastai/data/oxford-iiit-pet/images/havanese_84.jpg')...]</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="e37229b6-d9ac-4aef-ff57-3b0cb98d5736">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ximg <span class="op">=</span> PILImage.create(<span class="st">'/root/.fastai/data/oxford-iiit-pet/images/havanese_36.jpg'</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>ximg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="60">
+<p><img src="DL_CNN_2(XAI_정리)_files/figure-html/cell-18-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-outputid="3234ec07-7ae8-4a57-8caf-a07a194d4e0b">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span> first(dls.test_dl([ximg]))[<span class="dv">0</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>x.shape <span class="co"># 위 이미지의 shape</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="61">
+<pre><code>torch.Size([1, 3, 512, 512])</code></pre>
+</div>
+</div>
+<ul>
+<li>torch.nn.AdaptiveAvgPool2d()
+<ul>
+<li>pooling을 평균으로 하는 것으로 output_size = 1이라면 채널당 하나의 값을 출력해줌</li>
+<li>위의 이미지는 채널이 3개이므로 이미지 하나당 3개의 값을 출력</li>
+</ul></li>
+</ul>
+<div class="cell" data-outputid="616b6abb-2f69-44e6-d820-d085c8745ec6">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>ap <span class="op">=</span> torch.nn.AdaptiveAvgPool2d(output_size<span class="op">=</span><span class="dv">1</span>) <span class="co"># output size가 1이라는 것은 (1x1)로 출력하겠다는 뜻</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 만약 2이면 출력이 (2 x 2) 즉 채널당 4개의 값이 나오는 것임</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>ap(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>TensorImage([[[[0.6086]],
+
+              [[0.5648]],
+
+              [[0.5058]]]], device='cuda:0')</code></pre>
+</div>
+</div>
+<section id="이미지-차원의-순서-변경torch.einsum" class="level3">
+<h3 class="anchored" data-anchor-id="이미지-차원의-순서-변경torch.einsum">이미지 차원의 순서 변경(torch.einsum)</h3>
+<ul>
+<li>데이터 로더를 사용해 불러온 이미지 데이트의 차원을 확인해보면 [1, 3, 512, 512]이다. 이는 배치사이즈, 채널, 높이, 너비 순으로 되어있는 것임</li>
+<li>이러한 데이터를 높이, 너비, 채널 순으로 바꾸고 싶음 <span class="math inline">\(\to\)</span> torch.einsum()사용</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>torch.einsum(<span class="st">'ij,jk-&gt;ik'</span>,tensor1, tensor2) <span class="co"># 크기가 i x j인 tensor1과 j x k인 tensor2의 행렬 곱을 해줌</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>torch.Size([1, 3, 512, 512]) <span class="math inline">\(\to\)</span> torch.Size([512, 512, 3]) 형태로 만들고 싶음</li>
+</ul>
+<p><code>→</code> tensor의 차원을 변경하거나 계산을 할 때에는 torch.einsum()함수를 사용하면 좋음</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>x_new <span class="op">=</span> torch.einsum(<span class="st">'ocij -&gt; ijc'</span>,x.to(<span class="st">'cpu'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>plt는 높이 x 너비 x 채널 순으로 데이터가 입력되길 기대</li>
+<li>만약 x 즉, 채널 x 높이 x 너비 순으로 되어있는 데이터를 입력하면 에러가 발생함</li>
+</ul>
+<div class="cell" data-outputid="eee45dc4-33d0-47d6-8364-b64027efa0ff">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(x_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="64">
+<pre><code>&lt;matplotlib.image.AxesImage at 0x7fb7e874cf10&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="DL_CNN_2(XAI_정리)_files/figure-html/cell-22-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="cam-구현" class="level2">
+<h2 class="anchored" data-anchor-id="cam-구현">CAM 구현</h2>
+<ul>
+<li>CAM(Class Activation Mapping): CNN의 판단근거를 시각화하는 기술</li>
+</ul>
+<section id="네트워크-선택" class="level3">
+<h3 class="anchored" data-anchor-id="네트워크-선택">네트워크 선택</h3>
+<div class="cell" data-outputid="b75edf22-3467-4789-dc4d-2b47a092f246">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>lrnr <span class="op">=</span> vision_learner(dls,resnet34,metrics<span class="op">=</span>accuracy) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  f"The parameter '{pretrained_param}' is deprecated since 0.13 and will be removed in 0.15, "
+/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNet34_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet34_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /root/.cache/torch/hub/checkpoints/resnet34-b627a593.pth</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"a52e32bf888d4ece9b2cafa9441804b5","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
+<div class="cell" data-outputid="5bcf6898-a509-4e61-e2e3-de5df349b1a8">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>lrnr.fine_tune(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">accuracy</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.208073</td>
+<td>0.010794</td>
+<td>0.995940</td>
+<td>01:55</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">accuracy</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.047890</td>
+<td>0.002702</td>
+<td>0.998647</td>
+<td>02:25</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li>lrnr.model 함수를 사용하면 resnet34의 구조를 볼 수 있음</li>
+<li>구조를 확인해보면 resnet34는 두 개의 모델이 합쳐져 있음</li>
+<li>첫 번째 모델은 그대로 사용하고 두 번째 모델만 약간 수정하여 사용해보자</li>
+</ul>
+</section>
+<section id="네트워크-살짝-변형" class="level3">
+<h3 class="anchored" data-anchor-id="네트워크-살짝-변형">네트워크 살짝 변형</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>net1 <span class="op">=</span> lrnr.model[<span class="dv">0</span>]</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>net2 <span class="op">=</span> lrnr.model[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="1e9e9ce6-1a3f-4a50-cef5-245fa8cadecc">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>net1.to(<span class="st">'cpu'</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>net2.to(<span class="st">'cpu'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>Sequential(
+  (0): AdaptiveConcatPool2d(
+    (ap): AdaptiveAvgPool2d(output_size=1)
+    (mp): AdaptiveMaxPool2d(output_size=1)
+  )
+  (1): fastai.layers.Flatten(full=False)
+  (2): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (3): Dropout(p=0.25, inplace=False)
+  (4): Linear(in_features=1024, out_features=512, bias=False)
+  (5): ReLU(inplace=True)
+  (6): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (7): Dropout(p=0.5, inplace=False)
+  (8): Linear(in_features=512, out_features=2, bias=False)
+)</code></pre>
+</div>
+</div>
+<ul>
+<li>BatchNorm1d과 Dropout, ReLU 층은 파라미터 개수에 변화를 주지 않음</li>
+<li>pooling층과 Linear층을 주목해야 함</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>_X, _y <span class="op">=</span> dls.one_batch() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>_X <span class="op">=</span> _X.to(<span class="st">'cpu'</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># net1(_X).shape #torch.Size([64, 512, 16, 16]) 이러한 형태로 출력됨</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>net2<span class="op">=</span> torch.nn.Sequential(</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    torch.nn.AdaptiveAvgPool2d(output_size<span class="op">=</span><span class="dv">1</span>), <span class="co"># (64,512,16,16) -&gt; (64,512,1,1) </span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    torch.nn.Flatten(), <span class="co"># (64,512,1,1) -&gt; (64,512) </span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    torch.nn.Linear(<span class="dv">512</span>,<span class="dv">2</span>,bias<span class="op">=</span><span class="va">False</span>) <span class="co"># (64,512) -&gt; (64,2) </span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="2f4579ce-2d88-464b-c7d6-3dfab3655c84">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>net <span class="op">=</span> torch.nn.Sequential(</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    net1,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    net2</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>lrnr2<span class="op">=</span> Learner(dls,net,metrics<span class="op">=</span>accuracy)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>lrnr2.fine_tune(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">accuracy</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.232032</td>
+<td>1.522452</td>
+<td>0.836265</td>
+<td>02:25</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">accuracy</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.134071</td>
+<td>0.816453</td>
+<td>0.830176</td>
+<td>02:24</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.138622</td>
+<td>0.150047</td>
+<td>0.936401</td>
+<td>02:25</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.095163</td>
+<td>0.100338</td>
+<td>0.960081</td>
+<td>02:24</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.051146</td>
+<td>0.039767</td>
+<td>0.984438</td>
+<td>02:28</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.024118</td>
+<td>0.044908</td>
+<td>0.982409</td>
+<td>02:30</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="average-pooling과-선형변환층-순서-변경" class="level3">
+<h3 class="anchored" data-anchor-id="average-pooling과-선형변환층-순서-변경">average pooling과 선형변환층 순서 변경</h3>
+<p><code>-</code> net2의 순서 바꾸기 전 전체 네트워크:</p>
+<p><span class="math display">\[\underset{(1,3,512,512)}{\boldsymbol x} \overset{net_1}{\to} \left( \underset{(1,512,16,16)}{\tilde{\boldsymbol x}} \overset{ap}{\to} \underset{(1,512,1,1)}{{\boldsymbol \sharp}}\overset{flatten}{\to} \underset{(1,512)}{{\boldsymbol \sharp}}\overset{linear}{\to} \underset{(1,2)}{\hat{\boldsymbol y}}\right) = [-9.0358,  9.0926]\]</span></p>
+<ul>
+<li>위의 수식을 아래의 수식으로 바꾸고 싶음
+<ul>
+<li>순서만 바꾸는 것임 -&gt; 결과는 똑같음</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[\underset{(1,3,224,224)}{\boldsymbol x} \overset{net_1}{\to} \left( \underset{(1,512,16,16)}{\tilde{\boldsymbol x}} \overset{linear}{\to} \underset{(1,2,16,16)}{{\bf why}}\overset{ap}{\to} \underset{(1,2,1,1)}{{\boldsymbol \sharp}}\overset{flatten}{\to} \underset{(1,2)}{\hat{\boldsymbol y}}\right) = [−9.0358,9.0926]\]</span></p>
+<ul>
+<li><p>여기서 주목해야 하는 것은 <span class="math inline">\(why\)</span></p></li>
+<li><p><span class="math inline">\(why\)</span>의 값들을 평균을 내고 이 값을 선형변환하여 하나의 값을 만듦 [−9.0358 or 9.0926]</p></li>
+<li><p><span class="math inline">\(why\)</span>의 tensor를 확인해보자!</p></li>
+<li><p>바꾸기 전 net2의 구조 중 일부분 (배치를 넣는 것이 아니라 하나의 이미지를 net에 넣을때임)</p>
+<ul>
+<li>X = net1(x)
+<ul>
+<li>X.shape = (1, 512, 16, 16)</li>
+</ul></li>
+<li>XX = torch.nn.AdaptiveAvgPool2d(X)
+<ul>
+<li>XX.shape =(1, 512, 1, 1)</li>
+</ul></li>
+<li>XXX= torch.nn.Flatten(XX)
+<ul>
+<li>XXX.shape -&gt; (1,512)</li>
+</ul></li>
+<li>XXX @ net2[2].weight <span class="math inline">\(\to\)</span> shape(1, 2)
+<ul>
+<li>net2[2].weight.shape -&gt; (512, 2)</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>ximg <span class="op">=</span> PILImage.create(<span class="st">'/root/.fastai/data/oxford-iiit-pet/images/havanese_36.jpg'</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> first(dls.test_dl([ximg]))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="e7a110c8-6537-43ec-ee0c-eb9c57679173">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 위의 정리된 것들을 보면</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># net2[2].weight의 크기는 (512, 2)</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># net1(x)의 크기는 (1, 512, 16, 16)</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># why의 크기를 (1, 2, 16, 16)으로 만들고 싶음</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>why <span class="op">=</span> torch.einsum(<span class="st">'cb,abij-&gt;acij'</span>,</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>                   net2[<span class="dv">2</span>].weight,<span class="co">#(512, 2)</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>                   net1(x) <span class="co"># (1, 512, 16, 16)</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>                   )</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>why.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>torch.Size([1, 2, 16, 16])</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="fa79c93e-aaef-40ef-f793-2aa47bf888f8">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># net2[0]은 avg pooling layer -&gt; 높이와 폭을 0으로 만듦</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (1, 2, 16, 16) -&gt; (1, 2, 1, 1)</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>net2[<span class="dv">0</span>](why)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>TensorImage([[[[-7.2395]],
+
+              [[ 7.5647]]]], device='cuda:0', grad_fn=&lt;AliasBackward0&gt;)</code></pre>
+</div>
+</div>
+<section id="why의-tensor-확인" class="level4">
+<h4 class="anchored" data-anchor-id="why의-tensor-확인">why의 tensor 확인</h4>
+<section id="why의-첫번째-값-확인" class="level5">
+<h5 class="anchored" data-anchor-id="why의-첫번째-값-확인">why의 첫번째 값 확인</h5>
+<ul>
+<li>tensor의 평균 -9.0358</li>
+<li>해당 tensor의 평균이 크다면 고양이라고 판단을 함
+<ul>
+<li>하지만 이번 예시에서는 평균이 음수가 나옴 -&gt; 해당 값이 작으면 작을수록 고양이가 아니라고 생각하는 근거가 됨</li>
+</ul></li>
+<li>그러므로 해당 tensor에서 엄청 작은 값들은 고양이가 아니라고 판단하는 근거가 되는 점들임</li>
+</ul>
+<div class="cell" data-outputid="e7088103-9148-44b0-efdb-47a8f1038d1a">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>why[<span class="dv">0</span>,<span class="dv">0</span>,:,:].to(torch.int64)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>TensorImage([[  -1,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+                 0,    0,    0,    0,    0],
+             [  -1,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+                 0,    0,    0,    0,    0],
+             [  -1,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+                 0,    0,    0,    0,    0],
+             [  -1,    0,    1,    1,    0,    1,    1,    1,    1,    0,    0,
+                 0,    0,    0,    0,    0],
+             [  -1,    0,    0,    0,    1,    1,    0,    0,   -1,   -2,   -2,
+                -1,    0,    2,    2,    1],
+             [   0,    0,    0,    0,    0,    0,   -2,  -10,  -17,  -18,  -17,
+               -14,   -7,    2,    5,    1],
+             [  -1,    0,    0,    0,    0,    0,   -7,  -26,  -45,  -43,  -38,
+               -34,  -16,    0,    3,    0],
+             [  -1,    0,    0,   -1,   -2,   -3,  -10,  -32,  -56,  -58,  -50,
+               -43,  -22,   -2,    1,    1],
+             [   1,    2,    0,   -6,  -14,  -12,  -11,  -25,  -45,  -66,  -71,
+               -49,  -20,    0,    2,    2],
+             [   8,   10,    2,   -9,  -19,  -18,  -10,  -13,  -34,  -74, -100,
+               -65,  -21,    1,    1,    0],
+             [  11,   12,    2,   -6,  -13,  -13,   -7,   -5,  -23,  -60,  -82,
+               -63,  -21,    0,    0,    0],
+             [   7,    6,    1,    0,   -2,   -4,   -3,   -1,  -12,  -32,  -45,
+               -36,  -14,   -1,    0,   -2],
+             [   0,    1,    0,    1,    2,    0,    0,    0,   -1,   -7,  -12,
+               -11,   -5,   -1,   -1,   -2],
+             [  -2,   -1,   -1,   -1,   -1,   -1,    0,    1,    4,    1,   -1,
+                -1,   -2,   -2,   -2,   -3],
+             [  -4,   -4,   -4,   -5,   -4,   -4,   -4,   -2,   -2,   -3,   -4,
+                -5,   -5,   -5,   -5,   -4],
+             [  -5,   -6,   -6,   -6,   -6,   -6,   -5,   -5,   -5,   -5,   -6,
+                -6,   -6,   -6,   -5,   -5]], device='cuda:0')</code></pre>
+</div>
+</div>
+</section>
+<section id="why의-두-번째-값-확인" class="level5">
+<h5 class="anchored" data-anchor-id="why의-두-번째-값-확인">why의 두 번째 값 확인</h5>
+<ul>
+<li>tensor의 평균 9.0926</li>
+<li>해당 tensor는 강아지라고 판단하는 tensor라고 생각하면 됨</li>
+<li>그러므로 해당 tensor에서 엄청 작은 값들은 고양이가 아니라고 판단하는 근거가 되는 점들임</li>
+</ul>
+<div class="cell" data-outputid="ff496cac-552c-4d49-b60c-5f7ba5ccc434">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>why[<span class="dv">0</span>,<span class="dv">1</span>,:,:].to(torch.int64)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>TensorImage([[ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1],
+             [ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+             [ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+             [ 2,  0, -1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+             [ 1,  0,  0,  0,  0,  0,  0,  0,  1,  2,  2,  2,  0, -1, -1,  0],
+             [ 0,  0,  0,  0,  0,  0,  2, 10, 16, 18, 17, 14,  7, -1, -3, -1],
+             [ 1,  1,  0,  0,  0,  0,  6, 25, 43, 42, 37, 32, 16,  1, -2,  0],
+             [ 1,  0,  0,  1,  2,  3, 10, 32, 55, 58, 50, 42, 21,  3,  0,  0],
+             [ 0, -1,  0,  6, 13, 12, 11, 24, 44, 65, 69, 49, 20,  1, -1, -1],
+             [-7, -8, -1,  9, 18, 17, 10, 13, 33, 72, 97, 65, 22,  0,  0,  0],
+             [-9, -9, -2,  5, 12, 13,  7,  5, 22, 58, 81, 62, 21,  1,  0,  1],
+             [-6, -6, -1,  1,  2,  4,  3,  1, 11, 31, 43, 34, 14,  1,  1,  2],
+             [ 0,  0,  0,  0,  0,  0,  1,  0,  1,  7, 12, 10,  5,  1,  1,  3],
+             [ 3,  2,  2,  2,  2,  1,  1,  0, -2,  0,  1,  2,  2,  3,  3,  4],
+             [ 5,  6,  6,  6,  6,  6,  5,  3,  4,  5,  5,  6,  6,  6,  6,  6],
+             [ 5,  6,  7,  7,  7,  7,  6,  6,  6,  6,  6,  7,  7,  7,  6,  6]],
+            device='cuda:0')</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="근거를-바탕으로-시각화" class="level3">
+<h3 class="anchored" data-anchor-id="근거를-바탕으로-시각화">근거를 바탕으로 시각화</h3>
+<ul>
+<li>why의 값과 이미지를 동시에 출력한다면 그림의 어떠한 부분을 보고 강아지라고 판단을 한 것인지 알 수 있음</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>why_cat <span class="op">=</span> why[<span class="dv">0</span>,<span class="dv">0</span>,:,:] <span class="co"># 해당 tensor의 값이 작으면 작을 수록 고양이가 아니라고 판단하는 근거가 됨</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>why_dog <span class="op">=</span> why[<span class="dv">0</span>,<span class="dv">1</span>,:,:] <span class="co"># 해당 tensor의 값이 크면 클수록 강아지라고 판단하는 근거가 됨</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>밑에서 cmap을 magma로 지정하였는 이는 값이 작은 부분은 검정색 큰 부분은 노란색으로 표시함
+<ul>
+<li>검정 -&gt; 보라 -&gt; 빨강 -&gt; 노랑</li>
+</ul></li>
+<li>이를 해석하면 why_cat에서 값이 가장 작은 부분, 즉 검정색이 고양이가 아니라고 판단함</li>
+<li>why_dog에서는 값이 가장 큰 부분, 즉 노란색이 강아지라고 판단하는 영역을 표시함</li>
+</ul>
+<div class="cell" data-outputid="81c91968-0ad5-4120-fb8a-dfff78e0308b">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">3</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].imshow(torch.einsum(<span class="st">'ocij -&gt; ijc'</span>,dls.decode((x,))[<span class="dv">0</span>]).to(<span class="st">"cpu"</span>))</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].imshow(why_cat.to(<span class="st">"cpu"</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">2</span>].imshow(why_dog.to(<span class="st">"cpu"</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>&lt;matplotlib.image.AxesImage at 0x7f7cc99c0810&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="DL_CNN_2(XAI_정리)_files/figure-html/cell-37-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<ul>
+<li>why의 크기 조절</li>
+</ul>
+<div class="cell" data-outputid="3af70adf-eeff-43de-b30b-5ca058279bd6">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">3</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].imshow(torch.einsum(<span class="st">'ocij -&gt; ijc'</span>,dls.decode((x,))[<span class="dv">0</span>]).to(<span class="st">"cpu"</span>))</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].imshow(why_cat.to(<span class="st">"cpu"</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">511</span>,<span class="dv">511</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>)</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">2</span>].imshow(why_dog.to(<span class="st">"cpu"</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">511</span>,<span class="dv">511</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>&lt;matplotlib.image.AxesImage at 0x7f7cc90e9410&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="DL_CNN_2(XAI_정리)_files/figure-html/cell-38-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<ul>
+<li>크기조절 후 겹쳐그리기</li>
+</ul>
+<div class="cell" data-outputid="a53a90d2-efc2-41a3-a107-8b39c14522ed">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].imshow(torch.einsum(<span class="st">'ocij -&gt; ijc'</span>,dls.decode((x,))[<span class="dv">0</span>]).to(<span class="st">"cpu"</span>))</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].imshow(why_cat.to(<span class="st">"cpu"</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">511</span>,<span class="dv">511</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].imshow(torch.einsum(<span class="st">'ocij -&gt; ijc'</span>,dls.decode((x,))[<span class="dv">0</span>]).to(<span class="st">"cpu"</span>))</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].imshow(why_dog.to(<span class="st">"cpu"</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">511</span>,<span class="dv">511</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>&lt;matplotlib.image.AxesImage at 0x7f7cc8df78d0&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="DL_CNN_2(XAI_정리)_files/figure-html/cell-39-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="정확도도-함께-표시하기" class="level5">
+<h5 class="anchored" data-anchor-id="정확도도-함께-표시하기">정확도도 함께 표시하기</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># why값을 확률로 출력하기</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>sftmax<span class="op">=</span>torch.nn.Softmax(dim<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>sftmax(net(x))</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>catprob, dogprob <span class="op">=</span> sftmax(net(x))[<span class="dv">0</span>,<span class="dv">0</span>].item(), sftmax(net(x))[<span class="dv">0</span>,<span class="dv">1</span>].item()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="5d97dcfd-e7d3-42b0-d518-49807679f0a2">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].imshow(torch.einsum(<span class="st">'ocij -&gt; ijc'</span>,dls.decode((x,))[<span class="dv">0</span>]).to(<span class="st">"cpu"</span>))</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].imshow(why_cat.to(<span class="st">"cpu"</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">511</span>,<span class="dv">511</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">'catprob= </span><span class="sc">%f</span><span class="st">'</span> <span class="op">%</span> catprob) </span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].imshow(torch.einsum(<span class="st">'ocij -&gt; ijc'</span>,dls.decode((x,))[<span class="dv">0</span>]).to(<span class="st">"cpu"</span>))</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].imshow(why_dog.to(<span class="st">"cpu"</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">511</span>,<span class="dv">511</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_title(<span class="st">'dogprob=</span><span class="sc">%f</span><span class="st">'</span> <span class="op">%</span> dogprob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>Text(0.5, 1.0, 'dogprob=1.000000')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="DL_CNN_2(XAI_정리)_files/figure-html/cell-41-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="cam-시각화" class="level3">
+<h3 class="anchored" data-anchor-id="cam-시각화">CAM 시각화</h3>
+<div class="cell" data-outputid="0bff4760-47b0-493d-8c5a-a6d5993a8bf8">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">5</span>,<span class="dv">5</span>) </span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span><span class="dv">0</span> </span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>): </span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>        x, <span class="op">=</span> first(dls.test_dl([PILImage.create(get_image_files(path)[k])]))</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>        why <span class="op">=</span> torch.einsum(<span class="st">'cb,abij -&gt; acij'</span>, net2[<span class="dv">2</span>].weight, net1(x))</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>        why_cat <span class="op">=</span> why[<span class="dv">0</span>,<span class="dv">0</span>,:,:] </span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>        why_dog <span class="op">=</span> why[<span class="dv">0</span>,<span class="dv">1</span>,:,:] </span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>        catprob, dogprob <span class="op">=</span> sftmax(net(x))[<span class="dv">0</span>][<span class="dv">0</span>].item(), sftmax(net(x))[<span class="dv">0</span>][<span class="dv">1</span>].item()</span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> catprob<span class="op">&gt;</span>dogprob: </span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>            dls.train.decode((x,))[<span class="dv">0</span>].squeeze().show(ax<span class="op">=</span>ax[i][j])</span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a>            ax[i][j].imshow(why_cat.to(<span class="st">"cpu"</span>).detach(),alpha<span class="op">=</span><span class="fl">0.5</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">511</span>,<span class="dv">511</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,cmap<span class="op">=</span><span class="st">'magma'</span>)</span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a>            ax[i][j].set_title(<span class="st">"cat(</span><span class="sc">%2f</span><span class="st">)"</span> <span class="op">%</span> catprob)</span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a>            dls.train.decode((x,))[<span class="dv">0</span>].squeeze().show(ax<span class="op">=</span>ax[i][j])</span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a>            ax[i][j].imshow(why_dog.to(<span class="st">"cpu"</span>).detach(),alpha<span class="op">=</span><span class="fl">0.5</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">511</span>,<span class="dv">511</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,cmap<span class="op">=</span><span class="st">'magma'</span>)</span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a>            ax[i][j].set_title(<span class="st">"dog(</span><span class="sc">%2f</span><span class="st">)"</span> <span class="op">%</span> dogprob)</span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a>        k<span class="op">=</span>k<span class="op">+</span><span class="dv">1</span> </span>
+<span id="cb61-19"><a href="#cb61-19" aria-hidden="true" tabindex="-1"></a>fig.set_figwidth(<span class="dv">16</span>)            </span>
+<span id="cb61-20"><a href="#cb61-20" aria-hidden="true" tabindex="-1"></a>fig.set_figheight(<span class="dv">16</span>)</span>
+<span id="cb61-21"><a href="#cb61-21" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="DL_CNN_2(XAI_정리)_files/figure-html/cell-42-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"0b6a79621ee543d283fe0b375a080d27":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_e47341e8ea114715b3ba1a3b08e055f8","placeholder":"​","style":"IPY_MODEL_2cfac797e7c74247947269ffa72999de","value":" 83.3M/83.3M [00:00&lt;00:00, 178MB/s]"}},"2cfac797e7c74247947269ffa72999de":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"3261ebe4a1564d0ca8ad7c0171bd5242":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"489cd28762464b83a8563f68e97c0da2":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"FloatProgressModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_3261ebe4a1564d0ca8ad7c0171bd5242","max":87319819,"min":0,"orientation":"horizontal","style":"IPY_MODEL_d1d205dff7be4b8584751cdf0bfc6af7","value":87319819}},"a52e32bf888d4ece9b2cafa9441804b5":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HBoxModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_fe2a8bc942f9437b9c468abca64b5908","IPY_MODEL_489cd28762464b83a8563f68e97c0da2","IPY_MODEL_0b6a79621ee543d283fe0b375a080d27"],"layout":"IPY_MODEL_ffde8e188800458cb24b2d1a5cbc99e3"}},"a8659e35b12344e7a2939aa63e04b288":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"d1d205dff7be4b8584751cdf0bfc6af7":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"ProgressStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"e47341e8ea114715b3ba1a3b08e055f8":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"fb34c957936f477185a17eea5a611102":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"fe2a8bc942f9437b9c468abca64b5908":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_a8659e35b12344e7a2939aa63e04b288","placeholder":"​","style":"IPY_MODEL_fb34c957936f477185a17eea5a611102","value":"100%"}},"ffde8e188800458cb24b2d1a5cbc99e3":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}}}
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
