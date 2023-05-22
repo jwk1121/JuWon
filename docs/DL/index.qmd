@@ -11,7 +11,6 @@ listing:
 page-layout: full
 toc: true
 margin-header: signup.html
-title-block-banner: "#EDF3F9"
-title-block-banner-color: body
+title-block-banner: true
 serach: true
 ---

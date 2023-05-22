@@ -46,5 +46,14 @@
   },
   "docs/DL/posts/DL_CNN_2(XAI_정리).ipynb": {
     "DL_CNN_2(XAI_정리).html": "d02f5fe5"
+  },
+  "docs/DL/posts/FCN_summary.ipynb": {
+    "FCN_summary.html": "e6514811"
+  },
+  "docs/DL/posts/U-net_summary.ipynb": {
+    "U-net_summary.html": "c28ee004"
+  },
+  "docs/DL/posts/DCGAN.ipynb": {
+    "DCGAN.html": "d5dcba08"
   }
 }
