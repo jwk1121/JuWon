@@ -67,5 +67,11 @@
   },
   "docs/DL/posts/DL_logistic_regression.ipynb": {
     "DL_logistic_regression.html": "0926626a"
+  },
+  "docs/DL/posts/DL_ANN.ipynb": {
+    "DL_ANN.html": "babf7e50"
+  },
+  "docs/DL/posts/DL_regression.ipynb": {
+    "DL_regression.html": "94ba1b71"
   }
 }

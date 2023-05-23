@@ -5,7 +5,7 @@ website:
   title: "BME JuWon's summary"
   navbar:
     search: true
-    logo: ./img/minions.jpg
+    logo: ./img/minions2.png
     background: dark
     left:
       - href: index.qmd
