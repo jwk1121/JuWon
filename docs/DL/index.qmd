@@ -9,8 +9,8 @@ listing:
   categories: true
   feed: true
 page-layout: full
-toc: true
+toc: false
 margin-header: signup.html
 title-block-banner: true
-serach: true
+serach: false
 ---

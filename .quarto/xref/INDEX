@@ -73,5 +73,11 @@
   },
   "docs/DL/posts/DL_regression.ipynb": {
     "DL_regression.html": "94ba1b71"
+  },
+  "docs/BME/index.qmd": {
+    "index.html": "b0d451f7"
+  },
+  "docs/BME/posts/DL_Object_Detection.ipynb": {
+    "DL_Object_Detection.html": "9f7afefb"
   }
 }

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>BME JuWon’s summary - 객체 탐지 (Object Detection)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../.././img/minions2.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">BME JuWon’s summary</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="true"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/DL/index.html" rel="" target="">
+ <span class="menu-text">DL summary</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jwk1121" rel="" target=""><i class="bi bi-github" role="img" aria-label="JuWon's github">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">객체 탐지 (Object Detection)</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#applications" id="toc-applications" class="nav-link active" data-scroll-target="#applications">Applications</a></li>
+  <li><a href="#용어-설명" id="toc-용어-설명" class="nav-link" data-scroll-target="#용어-설명">용어 설명</a>
+  <ul class="collapse">
+  <li><a href="#boudning-box" id="toc-boudning-box" class="nav-link" data-scroll-target="#boudning-box">Boudning Box</a></li>
+  <li><a href="#iouintersection-over-union" id="toc-iouintersection-over-union" class="nav-link" data-scroll-target="#iouintersection-over-union">IOU(Intersection Over Union)</a></li>
+  <li><a href="#nmsnon-maximum-suppression-비최댓값-억제" id="toc-nmsnon-maximum-suppression-비최댓값-억제" class="nav-link" data-scroll-target="#nmsnon-maximum-suppression-비최댓값-억제">NMS(Non-Maximum Suppression, 비최댓값 억제)</a></li>
+  </ul></li>
+  <li><a href="#모델-성능-평가" id="toc-모델-성능-평가" class="nav-link" data-scroll-target="#모델-성능-평가">모델 성능 평가</a>
+  <ul class="collapse">
+  <li><a href="#정밀도와-재현율" id="toc-정밀도와-재현율" class="nav-link" data-scroll-target="#정밀도와-재현율">정밀도와 재현율</a></li>
+  </ul></li>
+  <li><a href="#qquad-precision-fractptp-fp" id="toc-qquad-precision-fractptp-fp" class="nav-link" data-scroll-target="#qquad-precision-fractptp-fp"><span class="math inline">\(\qquad precision = \frac{TP}{TP \ + \ FP}\)</span></a></li>
+  <li><a href="#qquad-recall-fractptp-fn" id="toc-qquad-recall-fractptp-fn" class="nav-link" data-scroll-target="#qquad-recall-fractptp-fn"><span class="math inline">\(\qquad recall = \frac{TP}{TP \ + \ FN}\)</span></a>
+  <ul class="collapse">
+  <li><a href="#정밀도-재현율-곡선precision-recall-curve" id="toc-정밀도-재현율-곡선precision-recall-curve" class="nav-link" data-scroll-target="#정밀도-재현율-곡선precision-recall-curve">정밀도-재현율 곡선(precision-recall curve)</a></li>
+  <li><a href="#ap-average-precision-평균-정밀도-와-mapmean-average-precision" id="toc-ap-average-precision-평균-정밀도-와-mapmean-average-precision" class="nav-link" data-scroll-target="#ap-average-precision-평균-정밀도-와-mapmean-average-precision">AP (Average Precision, 평균 정밀도) 와 mAP(mean Average Precision)</a></li>
+  </ul></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a>
+  <ul class="collapse">
+  <li><a href="#voc" id="toc-voc" class="nav-link" data-scroll-target="#voc">VOC</a></li>
+  <li><a href="#coco-dataset" id="toc-coco-dataset" class="nav-link" data-scroll-target="#coco-dataset">COCO Dataset</a></li>
+  </ul></li>
+  <li><a href="#yolo-you-only-look-once" id="toc-yolo-you-only-look-once" class="nav-link" data-scroll-target="#yolo-you-only-look-once">YOLO (You Only Look Once)</a>
+  <ul class="collapse">
+  <li><a href="#yolo-backbone" id="toc-yolo-backbone" class="nav-link" data-scroll-target="#yolo-backbone">YOLO Backbone</a></li>
+  <li><a href="#yolo의-계층-출력" id="toc-yolo의-계층-출력" class="nav-link" data-scroll-target="#yolo의-계층-출력">YOLO의 계층 출력</a></li>
+  <li><a href="#앵커-박스anchor-box" id="toc-앵커-박스anchor-box" class="nav-link" data-scroll-target="#앵커-박스anchor-box">앵커 박스(Anchor Box)</a></li>
+  </ul></li>
+  <li><a href="#yolov3-inference-연습-tensorflow-2" id="toc-yolov3-inference-연습-tensorflow-2" class="nav-link" data-scroll-target="#yolov3-inference-연습-tensorflow-2">YOLOv3 Inference 연습 : tensorflow 2</a>
+  <ul class="collapse">
+  <li><a href="#clone-and-install-dependencies" id="toc-clone-and-install-dependencies" class="nav-link" data-scroll-target="#clone-and-install-dependencies">Clone and install dependencies</a></li>
+  <li><a href="#check-tensorflow2-version" id="toc-check-tensorflow2-version" class="nav-link" data-scroll-target="#check-tensorflow2-version">Check Tensorflow2 version</a></li>
+  <li><a href="#convert-pretrained-darknet-weight" id="toc-convert-pretrained-darknet-weight" class="nav-link" data-scroll-target="#convert-pretrained-darknet-weight">Convert Pretrained Darknet Weight</a></li>
+  <li><a href="#initial-detector" id="toc-initial-detector" class="nav-link" data-scroll-target="#initial-detector">Initial Detector</a></li>
+  <li><a href="#detect-image" id="toc-detect-image" class="nav-link" data-scroll-target="#detect-image">Detect Image</a></li>
+  </ul></li>
+  <li><a href="#yolov3-inference-연습-pytorch" id="toc-yolov3-inference-연습-pytorch" class="nav-link" data-scroll-target="#yolov3-inference-연습-pytorch">YOLOv3 inference 연습 : Pytorch</a>
+  <ul class="collapse">
+  <li><a href="#prepare-yolov3-pytorch" id="toc-prepare-yolov3-pytorch" class="nav-link" data-scroll-target="#prepare-yolov3-pytorch">Prepare YOLOv3-pytorch</a></li>
+  <li><a href="#git-clone-to-get-short-videos" id="toc-git-clone-to-get-short-videos" class="nav-link" data-scroll-target="#git-clone-to-get-short-videos">Git clone to get short videos</a></li>
+  <li><a href="#process-video" id="toc-process-video" class="nav-link" data-scroll-target="#process-video">Process Video</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<ul>
+<li><p>참조 : https://github.com/wikibook/dl-vision</p></li>
+<li><p>한 이미지에서 객체와 그 경계 상자(bounding box)를 탐지</p></li>
+<li><p>객체 탐지 알고리즘은 일반적으로 이미지를 입력으로 받고, 경계 상자와 객체 클래스 리스트를 출력</p></li>
+<li><p>경계 상자에 대해 그에 대응하는 예측 클래스와 클래스의 신뢰도(confidence)를 출력</p></li>
+</ul>
+<section id="applications" class="level2">
+<h2 class="anchored" data-anchor-id="applications">Applications</h2>
+<ul>
+<li><p>자율 주행 자동차에서 다른 자동차와 보행자를 찾을 때</p></li>
+<li><p>의료 분야에서 방사선 사진을 사용해 종양이나 위험한 조직을 찾을 때</p></li>
+<li><p>제조업에서 조립 로봇이 제품을 조립하거나 수리할 때</p></li>
+<li><p>보안 산업에서 위협을 탐지하거나 사람을 셀 때</p></li>
+</ul>
+</section>
+<section id="용어-설명" class="level2">
+<h2 class="anchored" data-anchor-id="용어-설명">용어 설명</h2>
+<section id="boudning-box" class="level3">
+<h3 class="anchored" data-anchor-id="boudning-box">Boudning Box</h3>
+<ul>
+<li><p>이미지에서 하나의 객체 전체를 포함하는 가장 작은 직사각형</p>
+<p><img src="https://miro.medium.com/max/850/1*KL6r494Eyfh3iYEXQA2tzg.png"></p>
+<p><sub>[이미지 출처] https://medium.com/anolytics/how-bounding-box-annotation-helps-object-detection-in-machine-learning-use-cases-431d93e7b25b</sub></p></li>
+</ul>
+</section>
+<section id="iouintersection-over-union" class="level3">
+<h3 class="anchored" data-anchor-id="iouintersection-over-union">IOU(Intersection Over Union)</h3>
+<ul>
+<li><p>실측값(Ground Truth)과 모델이 예측한 값이 얼마나 겹치는지를 나타내는 지표</p>
+<p><img src="https://pyimagesearch.com/wp-content/uploads/2016/09/iou_equation.png" width="300"></p></li>
+<li><p>IOU가 높을수록 잘 예측한 모델</p>
+<p><img src="https://pyimagesearch.com/wp-content/uploads/2016/09/iou_examples.png" width="400"></p></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p>예시 <img src="https://www.pyimagesearch.com/wp-content/uploads/2016/09/iou_stop_sign.jpg"></p>
+<p><sub>[이미지 출처] https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/</sub></p></li>
+</ul>
+</section>
+<section id="nmsnon-maximum-suppression-비최댓값-억제" class="level3">
+<h3 class="anchored" data-anchor-id="nmsnon-maximum-suppression-비최댓값-억제">NMS(Non-Maximum Suppression, 비최댓값 억제)</h3>
+<ul>
+<li><p>확률이 가장 높은 상자와 겹치는 상자들을 제거하는 과정</p></li>
+<li><p>최댓값을 갖지 않는 상자들을 제거</p></li>
+<li><p>과정</p>
+<ol type="1">
+<li><p>확률 기준으로 모든 상자를 정렬하고 먼저 가장 확률이 높은 상자를 취함</p></li>
+<li><p>각 상자에 대해 다른 모든 상자와의 IOU를 계산</p></li>
+<li><p>특정 임곗값을 넘는 상자는 제거</p></li>
+</ol>
+<p><img src="https://pyimagesearch.com/wp-content/uploads/2014/10/nms_fast_03.jpg"></p>
+<p><sub>[이미지 출처] https://www.pyimagesearch.com/2015/02/16/faster-non-maximum-suppression-python/</sub></p></li>
+</ul>
+</section>
+</section>
+<section id="모델-성능-평가" class="level2">
+<h2 class="anchored" data-anchor-id="모델-성능-평가">모델 성능 평가</h2>
+<section id="정밀도와-재현율" class="level3">
+<h3 class="anchored" data-anchor-id="정밀도와-재현율">정밀도와 재현율</h3>
+<ul>
+<li><p>일반적으로 객체 탐지 모델 평가에 사용되지는 않지만, 다른 지표를 계산하는 기본 지표 역할을 함</p>
+<ul>
+<li><p><code>TP</code></p>
+<ul>
+<li><p>True Positives</p></li>
+<li><p>예측이 동일 클래스의 실제 상자와 일치하는지 측정</p></li>
+</ul></li>
+<li><p><code>FP</code></p>
+<ul>
+<li><p>False Positives</p></li>
+<li><p>예측이 실제 상자와 일치하지 않는지 측정</p></li>
+</ul></li>
+<li><p><code>FN</code></p>
+<ul>
+<li><p>False Negatives</p></li>
+<li><p>실제 분류값이 그와 일치하는 예측을 갖지 못하는지 측정</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br></p>
+</section>
+</section>
+<section id="qquad-precision-fractptp-fp" class="level2">
+<h2 class="anchored" data-anchor-id="qquad-precision-fractptp-fp"><span class="math inline">\(\qquad precision = \frac{TP}{TP \ + \ FP}\)</span></h2>
+</section>
+<section id="qquad-recall-fractptp-fn" class="level2">
+<h2 class="anchored" data-anchor-id="qquad-recall-fractptp-fn"><span class="math inline">\(\qquad recall = \frac{TP}{TP \ + \ FN}\)</span></h2>
+<ul>
+<li><p>모델이 안정적이지 않은 특징을 기반으로 객체 존재를 예측하면 거짓긍정(FP)이 많아져서 정밀도가 낮아짐</p></li>
+<li><p>모델이 너무 엄격해서 정확한 조건을 만족할 때만 객체가 탐지된 것으로 간주하면 거짓부정(FN)이 많아져서 재현율이 낮아짐</p></li>
+</ul>
+<section id="정밀도-재현율-곡선precision-recall-curve" class="level3">
+<h3 class="anchored" data-anchor-id="정밀도-재현율-곡선precision-recall-curve">정밀도-재현율 곡선(precision-recall curve)</h3>
+<ul>
+<li><p>신뢰도 임곗값마다 모델의 정밀도와 재현율을 시각화</p></li>
+<li><p>모든 bounding box와 함께 모델이 예측의 정확성을 얼마나 확실하는지 0 ~ 1사이의 숫자로 나타내는 신뢰도를 출력</p></li>
+<li><p>임계값 T에 따라 정밀도와 재현율이 달라짐</p>
+<ul>
+<li><p>임곗값 T 이하의 예측은 제거함</p></li>
+<li><p>T가 1에 가까우면 정밀도는 높지만 재현율은 낮음<br>
+놓치는 객체가 많아져서 재현율이 낮아짐. 즉, 신뢰도가 높은 예측만 유지하기때문에 정밀도는 높아짐</p></li>
+<li><p>T가 0에 가까우면 정밀도는 낮지만 재현율은 높음<br>
+대부분의 예측을 유지하기때문에 재현율은 높아지고, 거짓긍정(FP)이 많아져서 정밀도가 낮아짐</p></li>
+</ul></li>
+<li><p>예를 들어, 모델이 보행자를 탐지하고 있으면 특별한 이유없이 차를 세우더라도 어떤 보행자도 놓치지 않도록 재현율을 높여야 함 모델이 투자 기회를 탐지하고 있다면 일부 기회를 놓치게 되더라도 잘못된 기회에 돈을 거는 일을 피하기 위해 정밀도를 높여야 함</p></li>
+</ul>
+<p><img src="https://www.researchgate.net/profile/Davide_Chicco/publication/321672019/figure/fig1/AS:614279602511886@1523467078452/a-Example-of-Precision-Recall-curve-with-the-precision-score-on-the-y-axis-and-the.png"></p>
+<p><sub>[이미지 출처] https://www.researchgate.net/figure/a-Example-of-Precision-Recall-curve-with-the-precision-score-on-the-y-axis-and-the_fig1_321672019</sub></p>
+</section>
+<section id="ap-average-precision-평균-정밀도-와-mapmean-average-precision" class="level3">
+<h3 class="anchored" data-anchor-id="ap-average-precision-평균-정밀도-와-mapmean-average-precision">AP (Average Precision, 평균 정밀도) 와 mAP(mean Average Precision)</h3>
+<ul>
+<li><p>곡선의 아래 영역에 해당</p></li>
+<li><p>항상 1x1 정사각형으로 구성되어 있음<br>
+즉, 항상 0 ~ 1 사이의 값을 가짐</p></li>
+<li><p>단일 클래스에 대한 모델 성능 정보를 제공</p></li>
+<li><p>전역 점수를 얻기위해서 mAP를 사용</p></li>
+<li><p>예를 들어, 데이터셋이 10개의 클래스로 구성된다면 각 클래스에 대한 AP를 계산하고, 그 숫자들의 평균을 다시 구함</p></li>
+<li><p>(참고)</p>
+<ul>
+<li><p>최소 2개 이상의 객체를 탐지하는 대회인 PASCAL Visual Object Classes와 Common Objects in Context(COCO)에서 mAP가 사용됨</p></li>
+<li><p>COCO 데이터셋이 더 많은 클래스를 포함하고 있기 때문에 보통 Pascal VOC보다 점수가 더 낮게 나옴</p></li>
+<li><p>예시</p>
+<p><img src="https://www.researchgate.net/profile/Bong_Nam_Kang/publication/328939155/figure/tbl2/AS:692891936649218@1542209719916/Evaluation-on-PASCAL-VOC-2007-and-MS-COCO-test-dev.png"></p>
+<p><sub>[이미지 출처] https://www.researchgate.net/figure/Evaluation-on-PASCAL-VOC-2007-and-MS-COCO-test-dev_tbl2_328939155</sub></p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="dataset" class="level2">
+<h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
+<section id="voc" class="level3">
+<h3 class="anchored" data-anchor-id="voc">VOC</h3>
+<ul>
+<li><p>2005년부터 2012년까지 진행</p></li>
+<li><p>Object Detection 기술의 benchmark로 간주</p></li>
+<li><p>데이터셋에는 20개의 클래스가 존재</p>
+<pre><code>background
+aeroplane
+bicycle
+bird
+boat
+bottle
+bus
+car
+cat
+chair
+cow
+diningtable
+dog
+horse
+motorbike
+person
+pottedplant
+sheep
+sofa
+train
+tvmonitor</code></pre></li>
+<li><p>훈련 및 검증 데이터 : 11,530개</p></li>
+<li><p>ROI에 대한 27,450개의 Annotation이 존재</p></li>
+<li><p>이미지당 2.4개의 객체 존재</p>
+<p><img src="https://paperswithcode.github.io/sotabench-eval/img/pascalvoc2012.png"></p>
+<p><sub>[이미지 출처] https://paperswithcode.github.io/sotabench-eval/pascalvoc/</sub></p></li>
+</ul>
+</section>
+<section id="coco-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="coco-dataset">COCO Dataset</h3>
+<ul>
+<li><p>Common Objects in Context</p></li>
+<li><p>200,000개의 이미지</p></li>
+<li><p>80개의 카테고리에 500,000개 이상의 객체 Annotation이 존재 person bicycle car motorbike aeroplane bus train truck boat traffic light fire hydrant stop sign parking meter bench bird cat dog horse sheep cow elephant bear zebra giraffe backpack umbrella handbag tie suitcase frisbee skis snowboard sports ball kite baseball bat baseball glove skateboard surfboard tennis racket bottle wine glass cup fork knife spoon bowl banana apple sandwich orange broccoli carrot hot dog pizza donut cake chair sofa pottedplant bed diningtable toilet tvmonitor laptop mouse remote keyboard cell phone microwave oven toaster sink refrigerator book clock vase scissors teddy bear hair drier toothbrush</p></li>
+<li><p>https://cocodataset.org/#home</p></li>
+</ul>
+<p><img src="https://cocodataset.org/images/coco-examples.jpg"></p>
+</section>
+</section>
+<section id="yolo-you-only-look-once" class="level1">
+<h1>YOLO (You Only Look Once)</h1>
+<ul>
+<li><p>가장 빠른 객체 검출 알고리즘 중 하나</p></li>
+<li><p>256x256 사이즈의 이미지</p></li>
+<li><p>GPU 사용 시, 초당 170프레임(170<strong>FPS</strong>, <strong>frames per second</strong>),<br>
+이는 파이썬, 텐서플로 기반 프레임워크가 아닌 C++로 구현된 코드 기준</p></li>
+<li><p>작은 크기의 물체를 탐지하는데는 어려움</p></li>
+</ul>
+<p><img src="https://miro.medium.com/max/1400/1*bSLNlG7crv-p-m4LVYYk3Q.png" width="600"></p>
+<ul>
+<li><p>https://pjreddie.com/darknet/yolo/</p></li>
+<li><p>자세한 내용 참조 : https://www.kaggle.com/aruchomu/yolo-v3-object-detection-in-tensorflow</p></li>
+</ul>
+<section id="yolo-backbone" class="level2">
+<h2 class="anchored" data-anchor-id="yolo-backbone">YOLO Backbone</h2>
+<ul>
+<li><p>백본 모델(backbone model) 기반</p></li>
+<li><p>특징 추출기(Feature Extractor)라고도 불림</p></li>
+<li><p>YOLO는 자체 맞춤 아키텍쳐 사용</p></li>
+<li><p>어떤 특징 추출기 아키텍쳐를 사용했는지에 따라 성능 달라짐</p>
+<p><img src="https://www.researchgate.net/publication/335865923/figure/fig1/AS:804106595758082@1568725360777/Structure-detail-of-YOLOv3It-uses-Darknet-53-as-the-backbone-network-and-uses-three.jpg"></p>
+<p><sub>[이미지 출처] https://www.researchgate.net/figure/Structure-detail-of-YOLOv3It-uses-Darknet-53-as-the-backbone-network-and-uses-three_fig1_335865923</sub></p></li>
+<li><p>마지막 계층은 크기가 <span class="math inline">\(w \times h \times D\)</span>인 특징 볼륨 출력</p></li>
+<li><p>$w h $는 그리드의 크기이고, <span class="math inline">\(D\)</span>는 특징 볼륨 깊이</p></li>
+</ul>
+</section>
+<section id="yolo의-계층-출력" class="level2">
+<h2 class="anchored" data-anchor-id="yolo의-계층-출력">YOLO의 계층 출력</h2>
+<ul>
+<li><p>마지막 계층 출력은 <span class="math inline">\(w \times h \times M\)</span> 행렬</p>
+<ul>
+<li><p><span class="math inline">\(M = B \times (C + 5)\)</span></p>
+<ul>
+<li><p>B : 그리드 셀당 경계 상자 개수</p></li>
+<li><p>C : 클래스 개수</p></li>
+</ul></li>
+<li><p>클래스 개수에 5를 더한 이유는 해당 값 만큼의 숫자를 예측해야함</p>
+<ul>
+<li><p><span class="math inline">\(t_x\)</span>, <span class="math inline">\(t_y\)</span>는 경계상자의 중심 좌표를 계산</p></li>
+<li><p><span class="math inline">\(t_w\)</span>, <span class="math inline">\(t_h\)</span>는 경계상자의 너비와 높이를 계산</p></li>
+<li><p><span class="math inline">\(c\)</span>는 객체가 경계 상자 안에 있다고 확신하는 신뢰도</p></li>
+<li><p><span class="math inline">\(p1, p2, ..., pC\)</span>는 경계상자가 클래스 1, 2, …, C의 객체를 포함할 확률</p></li>
+</ul></li>
+</ul>
+<p><br></p>
+<p><img src="https://www.researchgate.net/profile/Thi_Le3/publication/337705605/figure/fig3/AS:831927326089217@1575358339500/Structure-of-one-output-cell-in-YOLO.ppm"></p>
+<p><sub>[이미지 출처] https://www.researchgate.net/figure/Structure-of-one-output-cell-in-YOLO_fig3_337705605</sub></p></li>
+</ul>
+</section>
+<section id="앵커-박스anchor-box" class="level2">
+<h2 class="anchored" data-anchor-id="앵커-박스anchor-box">앵커 박스(Anchor Box)</h2>
+<ul>
+<li><p>YOLOv2에서 도입</p></li>
+<li><p>사전 정의된 상자(prior box)</p></li>
+<li><p>객체에 가장 근접한 앵커 박스를 맞추고 신경망을 사용해 앵커 박스의 크기를 조정하는 과정때문에 <span class="math inline">\(t_x, t_y, t_w, t_h\)</span>이 필요</p>
+<p><img src="https://kr.mathworks.com/help/vision/ug/ssd_detection.png"></p>
+<p><sub>[이미지 출처] https://kr.mathworks.com/help/vision/ug/getting-started-with-yolo-v2.html</sub></p></li>
+</ul>
+</section>
+</section>
+<section id="yolov3-inference-연습-tensorflow-2" class="level1">
+<h1>YOLOv3 Inference 연습 : tensorflow 2</h1>
+<ul>
+<li>코드 참조 : https://github.com/zzh8829/yolov3-tf2</li>
+</ul>
+<section id="clone-and-install-dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="clone-and-install-dependencies">Clone and install dependencies</h2>
+</section>
+<section id="check-tensorflow2-version" class="level2">
+<h2 class="anchored" data-anchor-id="check-tensorflow2-version">Check Tensorflow2 version</h2>
+</section>
+<section id="convert-pretrained-darknet-weight" class="level2">
+<h2 class="anchored" data-anchor-id="convert-pretrained-darknet-weight">Convert Pretrained Darknet Weight</h2>
+<ul>
+<li>https://pjreddie.com/media/files/yolov3.weights</li>
+<li><code>yolov3.weights</code>를 <code>/yolov3-tf2/data/</code>로 넣기</li>
+</ul>
+</section>
+<section id="initial-detector" class="level2">
+<h2 class="anchored" data-anchor-id="initial-detector">Initial Detector</h2>
+</section>
+<section id="detect-image" class="level2">
+<h2 class="anchored" data-anchor-id="detect-image">Detect Image</h2>
+</section>
+</section>
+<section id="yolov3-inference-연습-pytorch" class="level1">
+<h1>YOLOv3 inference 연습 : Pytorch</h1>
+<ul>
+<li>video inference</li>
+<li>코드 참조 : https://towardsdatascience.com/yolov3-pytorch-on-google-colab-c4a79eeecdea</li>
+<li>https://github.com/ultralytics/yolov3</li>
+</ul>
+<section id="prepare-yolov3-pytorch" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-yolov3-pytorch">Prepare YOLOv3-pytorch</h2>
+</section>
+<section id="git-clone-to-get-short-videos" class="level2">
+<h2 class="anchored" data-anchor-id="git-clone-to-get-short-videos">Git clone to get short videos</h2>
+<ul>
+<li>https://github.com/vindruid/yolov3-in-colab.git</li>
+</ul>
+</section>
+<section id="process-video" class="level2">
+<h2 class="anchored" data-anchor-id="process-video">Process Video</h2>
+<ul>
+<li><p>Custom Data Train 참고</p>
+<ul>
+<li>https://github.com/AntonMu/TrainYourOwnYOLO</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

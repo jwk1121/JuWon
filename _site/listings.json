@@ -21,5 +21,11 @@
       "/docs/DL/posts/DL_logistic_regression.html",
       "/docs/DL/posts/DL_regression.html"
     ]
+  },
+  {
+    "listing": "/docs/BME/index.html",
+    "items": [
+      "/docs/BME/posts/DL_Object_Detection.html"
+    ]
   }
 ]

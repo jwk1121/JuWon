@@ -1,0 +1,11 @@
+---
+title: "BME summary"
+subtitle: "BME 관련 공부 내용을 업로드하는 페이지 입니다"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
+title-block-banner: true
+---

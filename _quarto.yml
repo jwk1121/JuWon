@@ -13,19 +13,22 @@ website:
         
       - text: "DL summary"
         file: docs/DL/index.qmd
+        
+      - text: "BME summary"
+        file: docs/BME/index.qmd
       
     right:
       - icon: github
         href: https://github.com/jwk1121
         aria-label: JuWon's github
-    sidebar:
-      - title: "Blog"
-        style: "floating"
-        collapse-level: 2
-        align: left
-        contents:
-          - docs/DL/index.qmd
-          - docs/DL/posts/DL_CNN.ipynb
+    
+  sidebar:
+    - style: "floating"
+      search: true
+      contents:
+        - index.qmd
+        - docs/DL/index.qmd
+        - docs/BME/index.qmd
 
 format:
   html:

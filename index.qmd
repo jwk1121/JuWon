@@ -10,7 +10,6 @@ about:
     # (additional links excluded for brevity)
 ---
 
-
 ## About me
 
 바이오메디컬공학을 전공하고 있는 학부생 입니다.\
