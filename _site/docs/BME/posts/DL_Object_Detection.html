@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="JuWon">
+<meta name="dcterms.date" content="2022-02-18">
 
-<title>BME JuWon’s summary - 객체 탐지 (Object Detection)</title>
+<title>BME JuWon’s summary - test</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -86,12 +88,16 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html" rel="" target="">
+    <a class="nav-link active" href="../../../index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../docs/DL/index.html" rel="" target="">
  <span class="menu-text">DL summary</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/BME/index.html" rel="" target="">
+ <span class="menu-text">BME summary</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -106,19 +112,48 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">test</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">객체 탐지 (Object Detection)</h1>
-                      </div>
+      <h1 class="title">test</h1>
+            <p class="subtitle lead">test 123</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">test</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>JuWon </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 18, 2022</p>
+      </div>
+    </div>
     
       
     </div>
@@ -127,11 +162,40 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="true"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JuWon Kwon</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/DL/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">딥러닝 정리 페이지</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/BME/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BME summary</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#applications" id="toc-applications" class="nav-link active" data-scroll-target="#applications">Applications</a></li>
+  <li><a href="#객체-탐지-object-detection" id="toc-객체-탐지-object-detection" class="nav-link active" data-scroll-target="#객체-탐지-object-detection">객체 탐지 (Object Detection)</a>
+  <ul class="collapse">
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a></li>
   <li><a href="#용어-설명" id="toc-용어-설명" class="nav-link" data-scroll-target="#용어-설명">용어 설명</a>
   <ul class="collapse">
   <li><a href="#boudning-box" id="toc-boudning-box" class="nav-link" data-scroll-target="#boudning-box">Boudning Box</a></li>
@@ -152,6 +216,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#voc" id="toc-voc" class="nav-link" data-scroll-target="#voc">VOC</a></li>
   <li><a href="#coco-dataset" id="toc-coco-dataset" class="nav-link" data-scroll-target="#coco-dataset">COCO Dataset</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#yolo-you-only-look-once" id="toc-yolo-you-only-look-once" class="nav-link" data-scroll-target="#yolo-you-only-look-once">YOLO (You Only Look Once)</a>
   <ul class="collapse">
@@ -187,7 +252,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <ul>
-<li><p>참조 : https://github.com/wikibook/dl-vision</p></li>
+<li>참조 : https://github.com/wikibook/dl-vision</li>
+</ul>
+<section id="객체-탐지-object-detection" class="level1">
+<h1>객체 탐지 (Object Detection)</h1>
+<ul>
 <li><p>한 이미지에서 객체와 그 경계 상자(bounding box)를 탐지</p></li>
 <li><p>객체 탐지 알고리즘은 일반적으로 이미지를 입력으로 받고, 경계 상자와 객체 클래스 리스트를 출력</p></li>
 <li><p>경계 상자에 대해 그에 대응하는 예측 클래스와 클래스의 신뢰도(confidence)를 출력</p></li>
@@ -360,6 +429,7 @@ tvmonitor</code></pre></li>
 <li><p>https://cocodataset.org/#home</p></li>
 </ul>
 <p><img src="https://cocodataset.org/images/coco-examples.jpg"></p>
+</section>
 </section>
 </section>
 <section id="yolo-you-only-look-once" class="level1">
