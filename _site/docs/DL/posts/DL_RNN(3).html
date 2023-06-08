@@ -234,7 +234,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#rnn" id="toc-rnn" class="nav-link" data-scroll-target="#rnn">RNN</a></li>
   <li><a href="#lstm" id="toc-lstm" class="nav-link" data-scroll-target="#lstm">LSTM</a></li>
-  <li><a href="#정리" id="toc-정리" class="nav-link" data-scroll-target="#정리">정리…</a></li>
   </ul></li>
   <li><a href="#lstm의-구조" id="toc-lstm의-구조" class="nav-link" data-scroll-target="#lstm의-구조">LSTM의 구조</a></li>
   </ul></li>
@@ -412,9 +411,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>LSTM은 6000번의 학습으로도 c와 C를 구별할 수 있음</li>
 </ul>
 </section>
-<section id="정리" class="level3">
-<h3 class="anchored" data-anchor-id="정리">정리…</h3>
-</section>
 </section>
 <section id="lstm의-구조" class="level2">
 <h2 class="anchored" data-anchor-id="lstm의-구조">LSTM의 구조</h2>
@@ -482,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a><span class="co">#    optim.step()</span></span>
 <span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a><span class="co">#    optim.zero_grad()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><span class="math inline">\((x_t, h_{t-1}) \overset{lin}{\to} {a, b, c, d} \to [\sigma(a), \sigma(b), \tanh(c), \sigma(d)] = [i_t, f_t, g_t, o_t]\)</span></p>
+<p>LMTM은 아래와 같은 방식으로 output을 산출함 - <span class="math inline">\((x_t, h_{t-1}) \overset{lin}{\to} {a, b, c, d} \to [\sigma(a), \sigma(b), \tanh(c), \sigma(d)] = [i_t, f_t, g_t, o_t]\)</span></p>
 <p><code>-</code> gate - input_gate: <span class="math inline">\(i_t\)</span> <code>-&gt;</code> <span class="math inline">\(g_t\)</span>의 값을 얼마나 통과시킬지를 0~1 사이의 값으로 보여줌 - forget_gate: <span class="math inline">\(f_t\)</span> <code>-&gt;</code> <span class="math inline">\(C_{t-1}\)</span>의 값을 얼마나 통과시킬지를 0~1 사이의 값으로 보여줌 - output_gate: <span class="math inline">\(o_t\)</span> <code>-&gt;</code> <span class="math inline">\(tanh(C_{t})\)</span>의 값을 얼마나 통과시킬지를 0~1 사이의 값으로 보여줌</p>
 <p><code>-</code> another value(?) - gt: <span class="math inline">\(g_t\)</span> <code>-&gt;</code> <span class="math inline">\(\sigma((W_{o1} X_t) + (W_{o2} h_{t-1}) + bias)\)</span> <code>-&gt;</code> 현재와 과거의 값을 선형결합 <em>(w와 x또는 h를 곱함)</em> 후 tanh를 통과시켜 -1에서 1사이의 값으로 보여줌</p>
 <ul>
