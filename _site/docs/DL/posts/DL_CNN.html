@@ -239,10 +239,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#relu-layer" id="toc-relu-layer" class="nav-link" data-scroll-target="#relu-layer">ReLU layer</a></li>
   <li><a href="#pooling-layer" id="toc-pooling-layer" class="nav-link" data-scroll-target="#pooling-layer">pooling layer</a></li>
   </ul></li>
-  <li><a href="#cnn-구현" id="toc-cnn-구현" class="nav-link" data-scroll-target="#cnn-구현">CNN 구현</a></li>
-  <li><a href="#path-사용법-데이터-준비" id="toc-path-사용법-데이터-준비" class="nav-link" data-scroll-target="#path-사용법-데이터-준비">### path 사용법 + 데이터 준비</a></li>
-  <li><a href="#위-코드를-사용하면-폴더-안에-있는-데이터들의-이름을-출력" id="toc-위-코드를-사용하면-폴더-안에-있는-데이터들의-이름을-출력" class="nav-link" data-scroll-target="#위-코드를-사용하면-폴더-안에-있는-데이터들의-이름을-출력">위 코드를 사용하면 폴더 안에 있는 데이터들의 이름을 출력</a>
+  <li><a href="#cnn-구현" id="toc-cnn-구현" class="nav-link" data-scroll-target="#cnn-구현">CNN 구현</a>
   <ul class="collapse">
+  <li><a href="#path-사용법-데이터-준비" id="toc-path-사용법-데이터-준비" class="nav-link" data-scroll-target="#path-사용법-데이터-준비">path 사용법 + 데이터 준비</a></li>
   <li><a href="#cnn에-사용되는-layer-알아보기" id="toc-cnn에-사용되는-layer-알아보기" class="nav-link" data-scroll-target="#cnn에-사용되는-layer-알아보기">cnn에 사용되는 layer 알아보기</a></li>
   <li><a href="#networks-설계" id="toc-networks-설계" class="nav-link" data-scroll-target="#networks-설계">networks 설계</a></li>
   </ul></li>
@@ -397,13 +396,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     
 </div>
 </div>
-</section>
-<section id="path-사용법-데이터-준비" class="level2">
-<h2 class="anchored" data-anchor-id="path-사용법-데이터-준비">### path 사용법 + 데이터 준비</h2>
+<section id="path-사용법-데이터-준비" class="level3">
+<h3 class="anchored" data-anchor-id="path-사용법-데이터-준비">path 사용법 + 데이터 준비</h3>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>(path<span class="op">/</span><span class="st">'원하는 경로'</span>).ls()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="위-코드를-사용하면-폴더-안에-있는-데이터들의-이름을-출력" class="level2">
-<h2 class="anchored" data-anchor-id="위-코드를-사용하면-폴더-안에-있는-데이터들의-이름을-출력">위 코드를 사용하면 폴더 안에 있는 데이터들의 이름을 출력</h2>
+<p>위 코드를 사용하면 폴더 안에 있는 데이터들의 이름을 출력</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>torchvision.io.read_image()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>해당 함수에 데이터 이름(이미지 이름)을 넣어주면 이미지를 tensor형태로 출력</p>
 <div class="cell" data-execution_count="9">
@@ -431,6 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  torch.Size([2115, 1]))</code></pre>
 </div>
 </div>
+</section>
 <section id="cnn에-사용되는-layer-알아보기" class="level3">
 <h3 class="anchored" data-anchor-id="cnn에-사용되는-layer-알아보기">cnn에 사용되는 layer 알아보기</h3>
 <div class="cell" data-outputid="c0a357cd-ae2f-481d-cde1-5aa5356425de" data-execution_count="12">
