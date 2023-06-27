@@ -82,5 +82,8 @@
   },
   "docs/DL/posts/DCGAN_new.ipynb": {
     "DCGAN_new.html": "ae97da5f"
+  },
+  "docs/DL/posts/KnowledgeDistillation.ipynb": {
+    "KnowledgeDistillation.html": "c7a5a008"
   }
 }
