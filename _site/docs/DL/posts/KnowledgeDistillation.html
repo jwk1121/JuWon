@@ -206,6 +206,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#distillation-schemes" id="toc-distillation-schemes" class="nav-link" data-scroll-target="#distillation-schemes">Distillation Schemes</a>
   <ul class="collapse">
   <li><a href="#offline-distillation" id="toc-offline-distillation" class="nav-link" data-scroll-target="#offline-distillation">Offline Distillation</a></li>
+  <li><a href="#online-distillation" id="toc-online-distillation" class="nav-link" data-scroll-target="#online-distillation">Online Distillation</a></li>
+  <li><a href="#self-distillation" id="toc-self-distillation" class="nav-link" data-scroll-target="#self-distillation">Self-Distillation</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -270,9 +272,9 @@ ul.task-list li input[type="checkbox"] {
 <span class="math inline">\(where\)</span> <span class="math inline">\(\phi\)</span> 는 image shape을 바꿔주는 function,<br>
 <span class="math inline">\(f_{t}(x), f_{s}(x)\)</span>는 중간 층(intermediate layers)의 activation map을 의미,<br>
 <span class="math inline">\(L_{F}()\)</span> 는 feature map간의 유사도를 확인해주는 function<br>
-이를 정리하면 상황에 따라 <span class="math inline">\(f_{t}()\)</span>가 attention map, Feature map이 될 수 는 있지만 궁극적으로는 Teature Model의 layer와 Student Model의 layer를 매치시켜 최대한 유사하도록 학습을 진행</li>
+이를 정리하면 상황에 따라 <span class="math inline">\(f_{t}()\)</span>가 attention map, Feature map이 될 수 는 있지만 궁극적으로는 Teacher Model의 layer와 Student Model의 layer를 매치시켜 최대한 유사하도록 학습을 진행</li>
 </ul>
-<p><code>※</code> Teature Model의 hint layer와 Student Model의 guided layer를 어떻게 효율적으로 선택해야 하는지는 지속적인 연구가 필요</p>
+<p><code>※</code> Teacher Model의 hint layer와 Student Model의 guided layer를 어떻게 효율적으로 선택해야 하는지는 지속적인 연구가 필요</p>
 </section>
 </section>
 <section id="relation-based-knowledge" class="level3">
@@ -287,15 +289,15 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p><strong>Distillation Loss</strong> of relation-based knowledge based on the relations of <strong>feature maps</strong><br>
 <span class="math inline">\(L_{RelD}(f_{t}, f_{s})\)</span> = <span class="math inline">\(L_{R^1}(\psi_{t}(\hat f_{t}, \check f_{t}), \psi_{t}(\hat f_{s}, \check f_{s}))\)</span><br>
-<span class="math inline">\(where\)</span> <span class="math inline">\(\hat f_{t,s}, \check f_{t,s}\)</span> 는 Teature, Student Model로부터 선택된 feature map 쌍,<br>
+<span class="math inline">\(where\)</span> <span class="math inline">\(\hat f_{t,s}, \check f_{t,s}\)</span> 는 Teacher, Student Model로부터 선택된 feature map 쌍,<br>
 <span class="math inline">\(\psi ()\)</span> 는 feature map 간의 유사도를 확인해주는 function,<br>
-<span class="math inline">\(L_{R^1}()\)</span> 는 Teature, Student feature map간의 상관관계를 확인해주는 function</p></li>
+<span class="math inline">\(L_{R^1}()\)</span> 는 Teacher, Student feature map간의 상관관계를 확인해주는 function</p></li>
 <li><p><strong>Distillation Loss</strong> of relation-based knowledge based on the relations of <strong>instance relationship</strong><br>
 <span class="math inline">\(L_{RelD}(f_{t}, f_{s})\)</span> = <span class="math inline">\(L_{R^2}(\psi_{t}(t_{i}, t_{j}), \psi_{t}(s_{i}, s_{j}))\)</span><br>
 <span class="math inline">\(where\)</span> <span class="math inline">\((t_{i},t_{j}) \in F_{t}, (s_{i},s_{j}) \in F_{s}\)</span><br>
-<span class="math inline">\(F_{t,s}\)</span> 는 Teature, Student Model로부터의 sets of feature representation,<br>
+<span class="math inline">\(F_{t,s}\)</span> 는 Teacher, Student Model로부터의 sets of feature representation,<br>
 <span class="math inline">\(\psi ()\)</span> 는 feature representation 간의 유사도를 확인해주는 function,<br>
-<span class="math inline">\(L_{R^2}()\)</span> 는 Teature, Student feature map간의 상관관계를 확인해주는 function</p></li>
+<span class="math inline">\(L_{R^2}()\)</span> 는 Teacher, Student feature map간의 상관관계를 확인해주는 function</p></li>
 </ul>
 </section>
 </section>
@@ -303,8 +305,22 @@ ul.task-list li input[type="checkbox"] {
 <section id="distillation-schemes" class="level2">
 <h2 class="anchored" data-anchor-id="distillation-schemes">Distillation Schemes</h2>
 <p><img src="DS1.png" class="img-fluid"></p>
+<p><code>※</code> 이러한 3가지의 Distillation Scheme은 서로를 보완하기 위해서 합쳐서 사용될 때도 있음</p>
 <section id="offline-distillation" class="level3">
 <h3 class="anchored" data-anchor-id="offline-distillation">Offline Distillation</h3>
+<p><code>main idea</code> 잘 학습된 모델(knowledgeable teacher)가 작은 모델(student)을 특성을 match시키거나 분포를 match시키는 방향으로 학습 진행</p>
+<p><code>Offline Distillation 진행 순서</code><br>
+1. large teacher model을 training set를 사용하여 훈련시킴<br>
+2. 학습된 teacher model을 사용해 knowledge를 logits 또는 중간층의 feature 형태로 추출하고 이를 통해 student model 학습</p>
+<p><code>단점</code> student model의 성능을 결국 teacher model의 성능을 따르게 되는데 좋은 성능의 teacher model은 복잡하고 용량이 커서 학습에 오랜시간이 걸린다.</p>
+</section>
+<section id="online-distillation" class="level3">
+<h3 class="anchored" data-anchor-id="online-distillation">Online Distillation</h3>
+<p><code>main idea</code> large-scale model(teacher model)과 small scale model(student model)을 동시에 학습을 시키는 것</p>
+</section>
+<section id="self-distillation" class="level3">
+<h3 class="anchored" data-anchor-id="self-distillation">Self-Distillation</h3>
+<p><code>main idea</code> 작은 모델(student)이 스스로 학습을 하는 것</p>
 
 
 </section>
