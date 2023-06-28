@@ -9,6 +9,7 @@
   {
     "listing": "/docs/DL/index.html",
     "items": [
+      "/docs/DL/posts/KnowledgeDistillation2.html",
       "/docs/DL/posts/KnowledgeDistillation.html",
       "/docs/DL/posts/DCGAN_new.html",
       "/docs/DL/posts/U-net_summary.html",
