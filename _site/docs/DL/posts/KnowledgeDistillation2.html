@@ -219,9 +219,13 @@ ul.task-list li input[type="checkbox"] {
 <section id="knowledge-distillation-review---distillation-scheme-teacherstudent-architecture" class="level1">
 <h1>Knowledge Distillation review - Distillation Scheme &amp; Teacher–Student Architecture</h1>
 <ul>
-<li>Knowledge Distillation에 대해 정리한 survey논문 리뷰</li>
-<li>Knowledge Distillation model (KD model)의 목적을 간략히 설명하면 large scale model(teacher model)을 KD model을 통해 small scale model(student model)로 압축(compression)하여 파라미터를 최적화 시키는 것</li>
-<li>이번 페이지에서는 small scale model에게 knowledge를 옮길 때 어떠한 방식으로 student model을 학습시키는 지에 대해 설명할 것</li>
+<li><p>Knowledge Distillation에 대해 정리한 survey 논문 리뷰</p></li>
+<li><p>Knowledge Distillation model (KD model)의 목적을 간략히 설명하면 large scale model(teacher model)을 KD model을 통해 small scale model(student model)로 압축(compression)하여 파라미터를 최적화 시키는 것</p></li>
+<li><p>이번 페이지에서는 아래와 같은 내용을 정리할 것</p>
+<ul>
+<li>small scale model에게 knowledge를 옮길 때 어떠한 방식(Distillation Scheme)으로 student model을 학습시키는지</li>
+<li>전이되는 knowledge의 퀄리티를 결정하는 Teacher and Student networks의 구조</li>
+</ul></li>
 </ul>
 <section id="distillation-schemes" class="level2">
 <h2 class="anchored" data-anchor-id="distillation-schemes">Distillation Schemes</h2>
@@ -259,14 +263,13 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="TSA1.png" class="img-fluid"></p>
 <p><code>structure of student model</code><br>
 - teacher network를 layer와 channel의 수를 줄임으로 간략하게 표현한 구조 - 구조가 보존되는 teacher network의 quantized version<br>
-<em>(양자화란, 모델에 사용되는 파라미터를 특정 비트로 줄여서 모델의 크기를 줄여 inference time을 줄이는 효과를 냄)</em><br>
+<em>양자화(quantized)란, 모델에 사용되는 파라미터를 특정 비트로 줄여서 모델의 크기를 줄여 inference time을 줄이는 효과를 냄</em><br>
 - 효율적인 기본 과정을 낼 수 있는 small network<br>
 - small network with optimized global network structure <code>?</code><br>
 - teacher model과 같은 구조</p>
 <p><code>example of T-S Architecture</code><br>
 - training gap을 줄이기 위해 <strong>보조 teacher model</strong>, <strong>residual learning</strong> 제안됨 - 구조적 차이를 줄이기 위해 student model의 구조를 <strong>teacher 모델의 small or qunatized version</strong>으로 구축<br>
-- 여러 개의 layer를 하나의 layer로 압축 - block-wise knowledge transfer <code>?</code></p>
-<p>요즘은 <a href="https://coding-yoon.tistory.com/122">Depth-wise separable convolution</a>를 통해 모델 경량화를 진행</p>
+- 여러 개의 layer를 하나의 layer로 압축 - block-wise knowledge transfer <code>?</code> - 요즘은 <a href="https://coding-yoon.tistory.com/122">Depth-wise separable convolution</a>를 통해 모델 경량화를 진행</p>
 
 
 </section>
