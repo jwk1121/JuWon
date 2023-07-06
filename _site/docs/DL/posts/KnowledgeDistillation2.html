@@ -234,42 +234,68 @@ ul.task-list li input[type="checkbox"] {
 <section id="offline-distillation" class="level3">
 <h3 class="anchored" data-anchor-id="offline-distillation">Offline Distillation</h3>
 <p><code>main idea</code> 잘 학습된 모델(knowledgeable teacher)가 작은 모델(student)을 특성을 match시키거나 분포를 match시키는 방향으로 학습 진행</p>
-<p><code>Offline Distillation 진행 순서</code><br>
-1. large teacher model을 training set를 사용하여 훈련시킴<br>
-2. 학습된 teacher model을 사용해 knowledge를 logits 또는 중간층의 feature 형태로 추출하고 이를 통해 student model 학습</p>
+<p><code>Offline Distillation 진행 순서</code></p>
+<ol type="1">
+<li>large teacher model을 training set를 사용하여 훈련시킴<br>
+</li>
+<li>학습된 teacher model을 사용해 knowledge를 logits 또는 중간층의 feature 형태로 추출하고 이를 통해 student model 학습</li>
+</ol>
 <p><code>단점</code> student model의 성능을 결국 teacher model의 성능을 따르게 되는데 좋은 성능의 teacher model은 복잡하고 용량이 커서 학습에 오랜시간이 걸린다.</p>
 </section>
 <section id="online-distillation" class="level3">
 <h3 class="anchored" data-anchor-id="online-distillation">Online Distillation</h3>
-<p><code>main idea</code> large-scale model(teacher model)과 small scale model(student model)을 동시에 학습을 시키는 것으로 Offline Distillation에서 complex high-capacity teacher model이 필요하다는 단점을 극복하기 위해 만들어진 기법<br>
-- Online Distillation은 one-phase end-to-end 구조를 띄고 있다는 장점이 잇지만</p>
-<p><code>example of Online Distillation</code><br>
-- 일반화 성능을 높이기 위해서는 ensemble of soft logits을 사용하여 deep mutual learning을 확장시킴<br>
-- 연산량을 줄이기 위해서는 각 branch는 student model을 나타내고 different branch는 같은 backbone network를 공유하는 multibracnh architecture를 제안함</p>
+<p><code>main idea</code> large-scale model(teacher model)과 small scale model(student model)을 동시에 학습을 시키는 것으로 Offline Distillation에서 complex high-capacity teacher model이 필요하다는 단점을 극복하기 위해 만들어진 기법</p>
+<ul>
+<li>Online Distillation은 one-phase end-to-end 구조를 띄고 있다는 장점이 있음</li>
+</ul>
+<p><code>example of Online Distillation</code></p>
+<ul>
+<li>일반화 성능을 높이기 위해서는 ensemble of soft logits을 사용하여 deep mutual learning을 확장시킴<br>
+</li>
+<li>연산량을 줄이기 위해서는 각 branch는 student model을 나타내고 different branch는 같은 backbone network를 공유하는 multibracnh architecture를 제안함</li>
+</ul>
 <p><code>※</code> 고용량의 teacher model을 Online 환경에서 다루지 못하여 Online 환경에서 teacher model과 student model의 관계를 파악하는 것이 흥미로운 주제임</p>
 </section>
 <section id="self-distillation" class="level3">
 <h3 class="anchored" data-anchor-id="self-distillation">Self-Distillation</h3>
 <p><code>main idea</code> 작은 모델(student)이 스스로 학습을 하는 것으로 같은 network를 teacher model과 student model이 사용한다.<br>
 <code>+</code> Online Distillation의 특별한 case로 여겨질 수 있음</p>
-<p><code>example of Self-Distillation</code><br>
-- Snapshot distillation은 self-distillation의 특별한 이형으로 초기 에포크의 네트워크 knowledge가 teacher model이 되어 마지막 부분의 에포크의 네트워크에게 knowledge를 전달하는 구조<br>
-- feature embedding space에 있는 데이터 유사도를 반영하는 기법<br>
-- class-wise self-knowledge distillation은 학습된 모델의 intra-class samples의 결과 분포와 augmented samples의 결과 분포를 match시키는 기법</p>
+<p><code>example of Self-Distillation</code></p>
+<ul>
+<li>Snapshot distillation은 self-distillation의 특별한 이형으로 초기 에포크의 네트워크 knowledge가 teacher model이 되어 마지막 부분의 에포크의 네트워크에게 knowledge를 전달하는 구조<br>
+</li>
+<li>feature embedding space에 있는 데이터 유사도를 반영하는 기법<br>
+</li>
+<li>class-wise self-knowledge distillation은 학습된 모델의 intra-class samples의 결과 분포와 augmented samples의 결과 분포를 match시키는 기법</li>
+</ul>
 </section>
 </section>
 <section id="teacherstudent-architecture" class="level2">
 <h2 class="anchored" data-anchor-id="teacherstudent-architecture">Teacher–Student Architecture</h2>
 <p><img src="TSA1.png" class="img-fluid"></p>
-<p><code>structure of student model</code><br>
-- teacher network를 layer와 channel의 수를 줄임으로 간략하게 표현한 구조 - 구조가 보존되는 teacher network의 quantized version<br>
+<p><code>structure of student model</code></p>
+<ul>
+<li>teacher network를 layer와 channel의 수를 줄임으로 간략하게 표현한 구조<br>
+</li>
+<li>구조가 보존되는 teacher network의 quantized version<br>
 <em>양자화(quantized)란, 모델에 사용되는 파라미터를 특정 비트로 줄여서 모델의 크기를 줄여 inference time을 줄이는 효과를 냄</em><br>
-- 효율적인 기본 과정을 낼 수 있는 small network<br>
-- small network with optimized global network structure <code>?</code><br>
-- teacher model과 같은 구조</p>
-<p><code>example of T-S Architecture</code><br>
-- training gap을 줄이기 위해 <strong>보조 teacher model</strong>, <strong>residual learning</strong> 제안됨 - 구조적 차이를 줄이기 위해 student model의 구조를 <strong>teacher 모델의 small or qunatized version</strong>으로 구축<br>
-- 여러 개의 layer를 하나의 layer로 압축 - block-wise knowledge transfer <code>?</code> - 요즘은 <a href="https://coding-yoon.tistory.com/122">Depth-wise separable convolution</a>를 통해 모델 경량화를 진행</p>
+</li>
+<li>효율적인 기본 과정을 낼 수 있는 small network<br>
+</li>
+<li>small network with optimized global network structure <code>?</code><br>
+</li>
+<li>teacher model과 같은 구조</li>
+</ul>
+<p><code>example of T-S Architecture</code></p>
+<ul>
+<li>training gap을 줄이기 위해 <strong>보조 teacher model</strong>, <strong>residual learning</strong> 제안됨</li>
+<li>구조적 차이를 줄이기 위해 student model의 구조를 <strong>teacher 모델의 small or qunatized version</strong>으로 구축
+<ul>
+<li>여러 개의 layer를 하나의 layer로 압축</li>
+<li>block-wise knowledge transfer <code>?</code></li>
+<li>요즘은 <a href="https://coding-yoon.tistory.com/122">Depth-wise separable convolution</a>를 통해 모델 경량화를 진행</li>
+</ul></li>
+</ul>
 
 
 </section>

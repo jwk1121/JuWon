@@ -9,7 +9,7 @@
 <meta name="author" content="JuWon">
 <meta name="dcterms.date" content="2022-02-14">
 
-<title>BME JuWon’s summary - CNN part1</title>
+<title>BME JuWon’s summary note - CNN part1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <img src="../../.././img/minions2.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">BME JuWon’s summary</span>
+    <span class="navbar-title">BME JuWon’s summary note</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="true"></div>
@@ -252,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#k개의-클래스를-분류하는-모델" id="toc-k개의-클래스를-분류하는-모델" class="nav-link" data-scroll-target="#k개의-클래스를-분류하는-모델">k개의 클래스를 분류하는 모델</a>
   <ul class="collapse">
   <li><a href="#softmaxfunction" id="toc-softmaxfunction" class="nav-link" data-scroll-target="#softmaxfunction">SoftmaxFunction</a></li>
-  <li><a href="#crossentrophyloss" id="toc-crossentrophyloss" class="nav-link" data-scroll-target="#crossentrophyloss">CrossEntrophyLoss</a></li>
+  <li><a href="#crossentropy-loss" id="toc-crossentropy-loss" class="nav-link" data-scroll-target="#crossentropy-loss">CrossEntropy Loss</a></li>
   <li><a href="#정답y의-형태" id="toc-정답y의-형태" class="nav-link" data-scroll-target="#정답y의-형태">정답(y)의 형태</a></li>
   <li><a href="#다중-클래스-분류-모델" id="toc-다중-클래스-분류-모델" class="nav-link" data-scroll-target="#다중-클래스-분류-모델">다중 클래스 분류 모델</a></li>
   <li><a href="#소프트맥스와-시그모이드" id="toc-소프트맥스와-시그모이드" class="nav-link" data-scroll-target="#소프트맥스와-시그모이드">소프트맥스와 시그모이드</a></li>
@@ -285,7 +285,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="cnn-구조" class="level2">
 <h2 class="anchored" data-anchor-id="cnn-구조">CNN 구조</h2>
-<p>간략하게 CNN의 구조를 설명하자면 - conv layer: 커널층(선형변환처럼 feature를 늘려주는 역할) - ReLU layer: 비선형을 추가해 표현력을 늘려주는 역할 - pooling layer: max 또는 avg를 통해 데이터를 요약해주는 역할</p>
+<p>간략하게 CNN의 구조를 설명하자면</p>
+<ul>
+<li>conv layer: 커널층(선형변환처럼 feature를 늘려주는 역할)<br>
+</li>
+<li>ReLU layer: 비선형을 추가해 표현력을 늘려주는 역할<br>
+</li>
+<li>pooling layer: max 또는 avg를 통해 데이터를 요약해주는 역할</li>
+</ul>
 <section id="conv-layer" class="level3">
 <h3 class="anchored" data-anchor-id="conv-layer">conv layer</h3>
 <div class="cell" data-outputid="38a48767-0576-42d2-ce8d-8aba83e95b3c" data-execution_count="3">
@@ -321,7 +328,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
          [18., 19., 20., 21.]]], grad_fn=&lt;SqueezeBackward1&gt;)</code></pre>
 </div>
 </div>
-<p>conv_tensor[1,1] = [[0, 1],[5, 6]]의 평균임을 알 수 있음 (conv.weight가 모두 1/4이어서 그런거임) - 해당 값은 (0 + 1 + 5 + 6) / 4 임을 알 수 있음 - 윈도우(커널)는 한 칸씩 움직이면서 weight를 곱하고 bias를 더함 - 첫 번째 3이라는 값은 [[0, 1],[5, 6]]에 conv을 적용 - 두 번째 4라는 값은 [[1, 2],[6, 7]]에 conv을 적용</p>
+<p>conv_tensor[1,1] = [[0, 1],[5, 6]]의 평균임을 알 수 있음 (conv.weight가 모두 1/4이어서 그런거임)</p>
+<ul>
+<li>해당 값은 (0 + 1 + 5 + 6) / 4 임을 알 수 있음<br>
+</li>
+<li>윈도우(커널)는 한 칸씩 움직이면서 weight를 곱하고 bias를 더함
+<ul>
+<li>첫 번째 3이라는 값은 [[0, 1],[5, 6]]에 conv을 적용<br>
+</li>
+<li>두 번째 4라는 값은 [[1, 2],[6, 7]]에 conv을 적용</li>
+</ul></li>
+</ul>
 <hr>
 </section>
 <section id="relu-layer" class="level3">
@@ -708,8 +725,8 @@ conv:                               torch.Size([12665, 16, 24, 24])
 <li>소프트맥스 함수가 계산하는 과정은 아래와 같음 (3개를 분류할 경우) <span class="math inline">\(softmax=\frac{e^{a 또는 b 또는 c}}{e^{a} + e^{b} + e^{c}}\)</span></li>
 </ul>
 </section>
-<section id="crossentrophyloss" class="level3">
-<h3 class="anchored" data-anchor-id="crossentrophyloss">CrossEntrophyLoss</h3>
+<section id="crossentropy-loss" class="level3">
+<h3 class="anchored" data-anchor-id="crossentropy-loss">CrossEntropy Loss</h3>
 <ul>
 <li>k개의 클래스를 분류하는 모델의 Loss 계산 방법</li>
 </ul>
@@ -721,6 +738,8 @@ conv:                               torch.Size([12665, 16, 24, 24])
 <span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 만약 값이 log(sftmax(_netout)) = [-2.2395, -2.2395, -0.2395] 이렇게 나오고 </span></span>
 <span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="co">#y_onehot이 [1, 0, 0]이라면 해당 코드의 결과, 즉 loss는 2.2395이 된다. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
+<li><p>이를 수식으로 정리하면 다음과 같음<br>
+CrossEntropy = <span class="math inline">\(- \log (Softmax(x)) * Ground Truth_{onehot}(y)\)</span></p></li>
 <li><p>만약 모델이 첫 번째 값이 확실하게 정답이라고 생각한다면 로그의 결과값은 0이 된다 -&gt; 해당 값이 정답일경우 0 * 1 = 0이므로 loss는 0이 된다</p></li>
 <li><p>최종적으로는 위 코드를 통해 얻은 Loss를 평균을 내어 출력한다.</p></li>
 </ul>
