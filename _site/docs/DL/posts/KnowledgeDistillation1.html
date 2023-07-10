@@ -308,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="일반적인-loss-function">일반적인 Loss Function</h4>
 <ul>
 <li><strong>Distillation Loss</strong> for feature-based knowledge transfer<br>
-<span class="math inline">\(L_{FeaD}(f_{t}(x), f_{s}(x))\)</span> = <span class="math inline">\(L_{F}(\phi_{t}(f_{t}(x)), \phi_{t}(f_{t}(x)))\)</span><br>
+<span class="math inline">\(L_{FeaD}(f_{t}(x), f_{s}(x))\)</span> = <span class="math inline">\(L_{F}(\phi_{t}(f_{t}(x)), \phi_{s}(f_{s}(x)))\)</span><br>
 <span class="math inline">\(where\)</span> <span class="math inline">\(\phi\)</span> 는 image shape을 바꿔주는 function,<br>
 <span class="math inline">\(f_{t}(x), f_{s}(x)\)</span>는 중간 층(intermediate layers)의 activation map을 의미,<br>
 <span class="math inline">\(L_{F}()\)</span> 는 feature map간의 유사도를 확인해주는 function<br>

@@ -715,14 +715,15 @@ conv:                               torch.Size([12665, 16, 24, 24])
 </section>
 <section id="k개의-클래스를-분류하는-모델" class="level2">
 <h2 class="anchored" data-anchor-id="k개의-클래스를-분류하는-모델">k개의 클래스를 분류하는 모델</h2>
-<blockquote class="blockquote">
-<p>다중(k개) 클래스를 분류 - LossFunction: CrossEntrophyLoss<br>
-- ActivationFunction: SoftmaxFunction - 마지막 출력층: torch.nn.Linear(n, k)</p>
-</blockquote>
+<p>다중(k개) 클래스를 분류<br>
+- LossFunction: CrossEntrophyLoss<br>
+- ActivationFunction: SoftmaxFunction<br>
+- 마지막 출력층: torch.nn.Linear(n, k)</p>
 <section id="softmaxfunction" class="level3">
 <h3 class="anchored" data-anchor-id="softmaxfunction">SoftmaxFunction</h3>
 <ul>
-<li>소프트맥스 함수가 계산하는 과정은 아래와 같음 (3개를 분류할 경우) <span class="math inline">\(softmax=\frac{e^{a 또는 b 또는 c}}{e^{a} + e^{b} + e^{c}}\)</span></li>
+<li>소프트맥스 함수가 계산하는 과정은 아래와 같음<br>
+<span class="math inline">\(softmax=\frac{e^{a 또는 b 또는 c}}{e^{a} + e^{b} + e^{c}}\)</span> <em>(3개를 분류할 경우)</em></li>
 </ul>
 </section>
 <section id="crossentropy-loss" class="level3">

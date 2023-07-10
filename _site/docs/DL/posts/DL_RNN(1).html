@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="JuWon">
 <meta name="dcterms.date" content="2022-02-11">
 
-<title>BME JuWon’s summary - RNN part1</title>
+<title>BME JuWon’s summary note - RNN part1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -94,12 +94,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit"
   }
 }</script>
-<style>
-
-      .quarto-title-block .quarto-title-banner {
-        background: #EDF3F9;
-      }
-</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -107,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,25 +109,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../.././img/minions.jpg" alt="" class="navbar-logo">
+    <img src="../../.././img/minions2.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">BME JuWon’s summary</span>
+    <span class="navbar-title">BME JuWon’s summary note</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="false"></div>
+            <div id="quarto-search" class="" title="true"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html" rel="" target="">
+    <a class="nav-link active" href="../../../index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../docs/DL/index.html" rel="" target="">
  <span class="menu-text">DL summary</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/BME/index.html" rel="" target="">
+ <span class="menu-text">BME summary</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -148,6 +146,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">RNN part1</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
@@ -186,6 +197,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="true"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JuWon Kwon</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/DL/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">딥러닝 정리 페이지</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/BME/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BME summary</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -240,7 +278,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="DL_RNN(1)_files/figure-html/cell-4-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<p><code>-</code> 문자를 mapping을 통해 숫자로 변환 - 딥러닝을 돌리기 위해서는 input이 문자가 아닌 숫자여야 함 - mapping은 key와 value로 구성된 딕셔너리가 들어감 - txt는 키값이 되어 value인 숫자가 출력됨</p>
+<p><code>-</code> 문자를 mapping을 통해 숫자로 변환</p>
+<ul>
+<li>딥러닝을 돌리기 위해서는 input이 문자가 아닌 숫자여야 함<br>
+</li>
+<li>mapping은 key와 value로 구성된 딕셔너리가 들어감<br>
+</li>
+<li>txt는 키값이 되어 value인 숫자가 출력됨</li>
+</ul>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(txt, mapping):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [mapping[key] <span class="cf">for</span> key <span class="kw">in</span> txt]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -264,7 +309,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>(['a', 'b', 'a', 'b', 'a'], ['b', 'a', 'b', 'a', 'b'])</code></pre>
 </div>
 </div>
-<p><code>-</code>class를 사용해 network를 만드는 방법 - def __init__에서는 사용할 변수(레이어)를 선언 - def forward()에서는 __init__에서 선언한 변수(레이어)를 어떻게 연산하여 yhat을 정의할지를 코드로 구현한 후 yhat을 return</p>
+<p><code>-</code>class를 사용해 network를 만드는 방법</p>
+<ul>
+<li>def __init__에서는 사용할 변수(레이어)를 선언<br>
+</li>
+<li>def forward()에서는 __init__에서 선언한 변수(레이어)를 어떻게 연산하여 yhat을 정의할지를 코드로 구현한 후 yhat을 return</li>
+</ul>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Mynet1(torch.nn.Module):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
@@ -437,9 +487,9 @@ tensor([[-0.8178],
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> torch.tensor(f(txt_y, mapping)).to(<span class="st">'cuda:0'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>1개의 은닉노드는 2개의 문자를 표현, 2개의 은닉노드는 4개의 문자를 표현<br>
-<code>-&gt;</code> <span class="math inline">\(2^n\)</span>으로 문자를 표현할 수 있음</li>
-<li>5개의 문자열이므로 <span class="math inline">\(n = 3\)</span>이 적합함</li>
+<li><p>1개의 은닉노드는 2개의 문자를 표현, 2개의 은닉노드는 4개의 문자를 표현<br>
+<code>-&gt;</code> <span class="math inline">\(2^n\)</span>으로 문자를 표현할 수 있음</p></li>
+<li><p>5개의 문자열이므로 <span class="math inline">\(n = 3\)</span>이 적합함</p></li>
 </ul>
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">43052</span>)</span>
@@ -498,7 +548,8 @@ tensor([[-0.8178],
 <section id="한계-abacad" class="level2">
 <h2 class="anchored" data-anchor-id="한계-abacad">한계: AbAcAd</h2>
 <ul>
-<li>위와 같은 문제는 직전 하나의 문자만 보는 것이 아닌 2개의 문자를 보아야 예측을 할 수 있음</li>
+<li>위와 같은 문제는 직전 하나의 문자만 보는 것이 아닌 2개의 문자를 보아야 예측을 할 수 있음<br>
+</li>
 <li>평범한 임베딩 레이어(선형 변환 레이어)를 사용하면 이와 같은 문제를 해결할 수 없음</li>
 </ul>
 <div class="cell" data-execution_count="34">

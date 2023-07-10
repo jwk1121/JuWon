@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="JuWon">
 <meta name="dcterms.date" content="2022-02-10">
 
-<title>BME JuWon’s summary - ANN</title>
+<title>BME JuWon’s summary note - ANN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <img src="../../.././img/minions2.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">BME JuWon’s summary</span>
+    <span class="navbar-title">BME JuWon’s summary note</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="true"></div>
@@ -125,12 +125,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html" rel="" target="">
+    <a class="nav-link active" href="../../../index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../docs/DL/index.html" rel="" target="">
  <span class="menu-text">DL summary</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/BME/index.html" rel="" target="">
+ <span class="menu-text">BME summary</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -145,6 +149,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">ANN</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
@@ -183,6 +200,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="true"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JuWon Kwon</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/DL/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">딥러닝 정리 페이지</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/BME/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BME summary</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -329,8 +373,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dnn-적용" class="level2">
 <h2 class="anchored" data-anchor-id="dnn-적용">DNN 적용</h2>
 <ul>
-<li>다양한 예제를 위와 같은 모델로 적합시킬 수 있다.</li>
-<li>선형 변환시 out_feature를 크게 지정하면 지정할수록 꺽이는 점이 많아져 표현력이 증가함(단, 그만큼 모델이 복잡해지고 파라미터의 수가 커짐)</li>
+<li>다양한 예제를 위와 같은 모델로 적합시킬 수 있다.<br>
+</li>
+<li>선형 변환시 out_feature를 크게 지정하면 지정할수록 꺽이는 점이 많아져 표현력이 증가함<br>
+<em>단, 그만큼 모델이 복잡해지고 파라미터의 수가 커짐</em></li>
 </ul>
 <div class="cell" data-outputid="31d37389-200f-4177-9dec-6ff61d9d2dd5">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/guebin/DL2022/master/_notebooks/2022-10-04-dnnex2.csv'</span>)</span>
@@ -553,7 +599,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="DL_ANN_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<p>위 그래프를 확인해보면 충분히 많이 학습했음에도 불구하고 net와 underlying이 일치하지 않는 것을 확인할 수 있다. 이는 local minimum에 빠져서 제대로 학습되지 못하고 있는 것을 알 수 있다. <span class="math inline">\(\to\)</span> 아래는 랜덤시드를 변경해주어 적절한 초기값을 사용한 결과이다</p>
+<p>위 그래프를 확인해보면 충분히 많이 학습했음에도 불구하고 net와 underlying이 일치하지 않는 것을 확인할 수 있다.<br>
+이는 local minimum에 빠져서 제대로 학습되지 못하고 있는 것을 알 수 있다.<br>
+<span class="math inline">\(\to\)</span> 아래는 랜덤시드를 변경해주어 적절한 초기값을 사용한 결과이다</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">5</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>net <span class="op">=</span> torch.nn.Sequential(</span>
@@ -591,7 +639,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="시벤코-정리universal-approximation-theorem-1989" class="level2">
 <h2 class="anchored" data-anchor-id="시벤코-정리universal-approximation-theorem-1989">시벤코 정리(universal approximation theorem, 1989)</h2>
 <p>시벤코 정리는 선형변환 <span class="math inline">\(\to\)</span> 시그모이드 <span class="math inline">\(\to\)</span> 선형변환을 사용하면 모든 연속함수를 원하는 정확도로 근사시킬수 있다.<br>
-- 요즘은 선형변환 <span class="math inline">\(\to\)</span> 렐루 <span class="math inline">\(\to\)</span> 선형변환 와 같은 조합을 사용한다.. - 아래와 같은 적절한 선형변환(적절한 노드의 개수와 적절한 weight와 bias)을 하면 다양한 모양의 underlying을 그릴수 있다.</p>
+- 요즘은 선형변환 <span class="math inline">\(\to\)</span> 렐루 <span class="math inline">\(\to\)</span> 선형변환 와 같은 조합을 사용한다.<br>
+- 아래와 같은 적절한 선형변환(적절한 노드의 개수와 적절한 weight와 bias)을 하면 다양한 모양의 underlying을 그릴수 있다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="kw">lambda</span> x: torch.sigmoid(<span class="dv">200</span><span class="op">*</span>(x<span class="op">+</span><span class="fl">0.5</span>))<span class="op">+</span>torch.sigmoid(<span class="op">-</span><span class="dv">200</span><span class="op">*</span>(x<span class="op">-</span><span class="fl">0.5</span>))<span class="op">-</span><span class="fl">1.0</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -658,15 +707,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <p><code>-</code> ver 2: 예전: stochastic gradient descent <span class="math inline">\(\to\)</span> 요즘: stochastic gradient descent with batch size = 1</p>
 <p>샘플 하나당 업데이트 한번 (하나의 샘플만을 이용해 slope계산)</p>
-<p>(epoch1) - <span class="math inline">\(loss=(y_1-\beta_0-\beta_1x_1)^2 \to slope \to update\)</span> - <span class="math inline">\(loss=(y_2-\beta_0-\beta_1x_2)^2 \to slope \to update\)</span> - … - <span class="math inline">\(loss=(y_{10}-\beta_0-\beta_1x_{10})^2 \to slope \to update\)</span></p>
-<p>(epoch2) - <span class="math inline">\(loss=(y_1-\beta_0-\beta_1x_1)^2 \to slope \to update\)</span> - <span class="math inline">\(loss=(y_2-\beta_0-\beta_1x_2)^2 \to slope \to update\)</span> - … - <span class="math inline">\(loss=(y_{10}-\beta_0-\beta_1x_{10})^2 \to slope \to update\)</span></p>
+<p>(epoch1)<br>
+<span class="math inline">\(loss=(y_1-\beta_0-\beta_1x_1)^2 \to slope \to update\)</span><br>
+<span class="math inline">\(loss=(y_2-\beta_0-\beta_1x_2)^2 \to slope \to update\)</span><br>
+…<br>
+<span class="math inline">\(loss=(y_{10}-\beta_0-\beta_1x_{10})^2 \to slope \to update\)</span></p>
+<p>(epoch2)<br>
+<span class="math inline">\(loss=(y_1-\beta_0-\beta_1x_1)^2 \to slope \to update\)</span><br>
+<span class="math inline">\(loss=(y_2-\beta_0-\beta_1x_2)^2 \to slope \to update\)</span><br>
+…<br>
+<span class="math inline">\(loss=(y_{10}-\beta_0-\beta_1x_{10})^2 \to slope \to update\)</span></p>
 <p>…</p>
 <hr>
 <p><code>-</code> ver 3: 예전: mini-batch gradient descent, mini-batch stochastic gradient descent <span class="math inline">\(\to\)</span> 요즘: stochastic gradient descent</p>
 <p><code>-</code> ver3: <span class="math inline">\(m (\leq n)\)</span> 개의 샘플을 이용하여 slope 계산</p>
 <p><span class="math inline">\(m=3\)</span>이라고 하자.</p>
-<p>(epoch1) - <span class="math inline">\(loss=\sum_{i=1}^{3}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span> - <span class="math inline">\(loss=\sum_{i=4}^{6}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span> - <span class="math inline">\(loss=\sum_{i=7}^{9}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span> - <span class="math inline">\(loss=(y_{10}-\beta_0-\beta_1x_{10})^2 \to slope \to update\)</span></p>
-<p>(epoch2) - <span class="math inline">\(loss=\sum_{i=1}^{3}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span> - <span class="math inline">\(loss=\sum_{i=4}^{6}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span> - <span class="math inline">\(loss=\sum_{i=7}^{9}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span> - <span class="math inline">\(loss=(y_{10}-\beta_0-\beta_1x_{10})^2 \to slope \to update\)</span></p>
+<p>(epoch1)<br>
+<span class="math inline">\(loss=\sum_{i=1}^{3}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span><br>
+<span class="math inline">\(loss=\sum_{i=4}^{6}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span><br>
+<span class="math inline">\(loss=\sum_{i=7}^{9}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span><br>
+<span class="math inline">\(loss=(y_{10}-\beta_0-\beta_1x_{10})^2 \to slope \to update\)</span></p>
+<p>(epoch2)<br>
+<span class="math inline">\(loss=\sum_{i=1}^{3}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span><br>
+<span class="math inline">\(loss=\sum_{i=4}^{6}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span><br>
+<span class="math inline">\(loss=\sum_{i=7}^{9}(y_i-\beta_0-\beta_1x_i)^2 \to slope \to update\)</span><br>
+<span class="math inline">\(loss=(y_{10}-\beta_0-\beta_1x_{10})^2 \to slope \to update\)</span></p>
 <p>…</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># X의 tensor size = torch.Size([12665, 784]), </span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># y의 tensor size = torch.Size([12665, 1])</span></span>
@@ -692,9 +757,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="오버피팅" class="level2">
 <h2 class="anchored" data-anchor-id="오버피팅">오버피팅</h2>
 <ul>
-<li>모델이 train 데이터에 너무 적합되어서 test 데이터의 추세를 맞추지 못하는 경우</li>
+<li>모델이 train 데이터에 너무 적합되어서 test 데이터의 추세를 맞추지 못하는 경우<br>
+</li>
 <li>데이터를 underlying + 오차라고 할때 데이터의 추세가 underlying이 아닌 오차를 따라갈 경우<br>
-(정의라기 보다는 오버피팅 용어에 대한 간단한 설명)</li>
+<em>(정의라기 보다는 오버피팅 용어에 대한 간단한 설명)</em></li>
 </ul>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">5</span>) </span>
@@ -741,7 +807,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="DL_ANN_files/figure-html/cell-29-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<p>위의 점선들을 확인하면 train data부분인 주황점선은 데이터의 분포를 잘 따라가지만 test data부분인 초록 점선은 데이터의 분포를 전혀 예측하지 못하고 있다. 이를 통해 해당 모델은 오버피팅이 되어 있는 것을 알 수 있다.</p>
+<p>위의 점선들을 확인하면 train data부분인 주황점선은 데이터의 분포를 잘 따라가지만 test data부분인 초록 점선은 데이터의 분포를 전혀 예측하지 못하고 있다.<br>
+이를 통해 해당 모델은 오버피팅이 되어 있는 것을 알 수 있다.</p>
 </section>
 <section id="드랍아웃" class="level2">
 <h2 class="anchored" data-anchor-id="드랍아웃">드랍아웃</h2>
@@ -772,8 +839,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>torch.nn.Dropout(<span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>위 코드는 드랍아웃층의 노드중 90%를 임의로 골라 결과를 0으로 만들고 나머지 10%의 노드는 10배만큼 값이 커지게 만들어 노드를 통과한 값들의 총합을 일정하게 유지시켜준다.</p>
 <blockquote class="blockquote">
-<p>드랍아웃 정리 - 드랍아웃 레이어 - 구조: 입력 -&gt; 드랍아웃 레이어 -&gt; 출력 - 역할: <code>(1)</code> 입력의 일부를 임의로 0으로 만드는 역할(랜덤 포레스트와 비슷한 알고리즘) <code>(2)</code> 0이 안된 것들은 스칼래배하여 드랍아웃을 통과한 모든 숫자들의 총합이 일정하게 되도록 조정 - 효과: 오버피팅을 억제하는 효과가 있음 - 의미: each iteration(each epoch x)마다 학습에 참여하는 노드가 로테이션으로 랜덤으로 결정됨. - 느낌: 모든 노드가 골고루 학습가능 + 한 두개의 특화된 능력치가 개발되기 보다 평균적인 능력치가 전박적으로 개선됨</p>
+<p>드랍아웃 정리 - 드랍아웃 레이어<br>
+- 구조: 입력 -&gt; 드랍아웃 레이어 -&gt; 출력<br>
+- 역할:<br>
+<code>(1)</code> 입력의 일부를 임의로 0으로 만드는 역할(랜덤 포레스트와 비슷한 알고리즘)<br>
+<code>(2)</code> 0이 안된 것들은 스칼래배하여 드랍아웃을 통과한 모든 숫자들의 총합이 일정하게 되도록 조정</p>
 </blockquote>
+<ul>
+<li>효과: 오버피팅을 억제하는 효과가 있음<br>
+</li>
+<li>의미: each iteration(each epoch x)마다 학습에 참여하는 노드가 로테이션으로 랜덤으로 결정됨.<br>
+</li>
+<li>느낌: 모든 노드가 골고루 학습가능 + 한 두개의 특화된 능력치가 개발되기 보다 평균적인 능력치가 전박적으로 개선됨</li>
+</ul>
 
 
 </section>
