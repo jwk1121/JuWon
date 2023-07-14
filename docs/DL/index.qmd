@@ -7,10 +7,10 @@ listing:
   sort-ui: false
   filter-ui: false
   categories: true
-  feed: true
+  feed: false
 page-layout: full
 toc: false
 margin-header: signup.html
 title-block-banner: true
-serach: false
+serach: true
 ---
