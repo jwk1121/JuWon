@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="JuWon">
+<meta name="dcterms.date" content="2023-07-18">
 
-<title>BME JuWon's summary note – ultrasound2</title>
+<title>BME JuWon’s summary note - 단일 소자 트랜스듀서</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">단일 소자 트랜스듀서</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -125,7 +127,38 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">단일 소자 트랜스듀서</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Ultrasound</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>JuWon </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 18, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -186,6 +219,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <section id="단일-소자single-element-트랜스듀서" class="level1">
 <h1>단일 소자(single element) 트랜스듀서</h1>
 <p>초음파 진단기용 트랜스듀서에는 single element와 array가 있는데 이번 포스트에서는 single만 다룬다.</p>
@@ -198,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>첨가물을 넣은 PZT는 압전성이 거의 없는 소재인데 압전성을 띠게 하려면 미세 결정들이 한 쪽 방향으로 정렬시켜야 한다. 여기서 미세 결정들이 같은 방향으로 정렬하는 것을 <strong>분극(Poling)</strong> 이라고 한다.</p>
 <p>PZT를 분극 상태로 만들기 위해 Curie온도 이상으로 물질을 가열하고 높은 전압을 일정 시간 소자에 가하며 식히는 과정을 통해 <strong>분극 상태의 PZT</strong>를 얻는다.</p>
-<p>분극 상태의 PZT, 즉 압전소자에 펄스 전압을 가하면 압전현상으로 인해 소자에 순간적으로 압력이 작용하여 순간적인 변형이 발생했다가 원래의 모양으로 되돌아오는데 이때 소자 자체의 고유 진동주파수(공진 주파수)에 따라 어느 시간동안 진동한다. 이 때의 <strong>고유진동주파수(<span class="math inline">\(\lambda\)</span>)</strong> 는 <strong>두께</strong>에 반비례하고 <strong>소자 내의 음속</strong> 에 비례한다.</p>
+<p>분극 상태의 PZT, 즉 압전소자에 펄스 전압을 가하면 압전현상으로 인해 소자에 순간적으로 압력이 작용하여 순간적인 변형이 발생했다가 원래의 모양으로 되돌아오는데 이때 소자 자체의 고유 진동주파수(공진 주파수)에 따라 어느 시간동안 진동한다. 이 때의 <strong>고유진동주파수</strong>는 <strong>두께</strong>에 반비례하고 <strong>소자 내의 음속</strong> 에 비례한다.</p>
 </section>
 <section id="트랜스듀서의-기본-구조" class="level2">
 <h2 class="anchored" data-anchor-id="트랜스듀서의-기본-구조">트랜스듀서의 기본 구조</h2>
@@ -253,12 +287,20 @@ ul.task-list li input[type="checkbox"] {
 <strong>호이겐스 원리</strong>: 파면은 점파원들이 만들어낸 구면파의 접선이다.</p>
 <p>위의 그림 3을 보면 <strong>근거리 음장(Fresnel zone; 근거리 갑섭대)</strong> 에서는 초음파가 복잡하게 간섭하며 진행한다. 해당 영역에서는 근사적으로 평면파로서 전파하고 있다고 생각할 수 있다.</p>
 <p><strong>원거리 음장(Fraunhofer zone)</strong> 에서는 근사적으로 구면파가 되어 넒게 전파한다.</p>
-<p>근거리 음장과 원거리 음장은 <span class="math inline">\(D^2/(4*\lambda)\)</span>를 기준으로 나눠졌는데 여기서 D는 진동자의 직경(aperture size)이고 <span class="math inline">\(\lambda\)</span>는 초음파의 파장을 의미한다.</p>
+<p>근거리 음장과 원거리 음장은 <strong><span class="math inline">\(D^2/(4*\lambda)\)</span></strong> 를 기준으로 나눠진다. 트랜스듀서의 압전소자부터 해당 기준까지의 거리는 Focal length라고 부른다.<br>
+<em>여기서 D는 진동자의 직경(aperture size)이고 <span class="math inline">\(\lambda\)</span>는 초음파의 파장을 의미한다.</em></p>
 <section id="근거리-음장fresnel-zone-근거리-갑섭대" class="level4">
 <h4 class="anchored" data-anchor-id="근거리-음장fresnel-zone-근거리-갑섭대">근거리 음장(Fresnel zone; 근거리 갑섭대)</h4>
+<p>근거리 음장에서 빔의 모양은 트랜스듀서의 aperture의 모양을 그대로 유지하며 진행한다. 하지만 일정한 진폭의 초음파를 계속 방사하더라도 근거리 음장의 진폭은 일정하지 않고 상당히 변화가 심한 것을 확인할 수 있다. 이러한 패턴은 빔 진행방향에 따라서도 변화가 심하다.</p>
 </section>
 <section id="원거리-음장fraunhofer-zone" class="level4">
 <h4 class="anchored" data-anchor-id="원거리-음장fraunhofer-zone">원거리 음장(Fraunhofer zone)</h4>
+원거리 음장은 근거리 음장에 비해 단순한 진폭 패턴을 보인다. 전체적으로 구면파에 가까운 형태로 거리에 따라 점차 퍼져나가는데 이를 그림3에서 아래 위 방향으로 잘라 음장의 진폭을 살펴보면 그림 4와 같다.<br>
+
+<p align="center">
+</p><p><img src="ultrasound7.png" title="그림 4" width="350" height="300"></p>
+<p>그림 4의 가로 축이 그림 3의 세로 축에 해당하고, 그림 4의 세로 축은 진폭의 절대값을 나타낸다.<br>
+그림 4에서 진폭(<span class="math inline">\(|h(x_z)|\)</span>)이 가장 큰 부분을 메인 로브(main lobe;주엽)이라 부르고 그 다음으로 진폭이 큰 부분을 제 1 사이드로브(1’st side lobe;부엽)라고 부른다.</p>
 
 
 </section>
