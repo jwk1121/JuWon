@@ -1,6 +1,6 @@
 ---
 title: "딥러닝 정리 페이지"
-subtitle: "CNN, generative model과 같은 cv관련 공부를 업로드 하는 페이지 입니다"
+subtitle: "딥러닝 공부 및 논문 정리 포스트를 업로드 하는 페이지 입니다"
 listing: 
   sort: "date desc"
   contents: posts
