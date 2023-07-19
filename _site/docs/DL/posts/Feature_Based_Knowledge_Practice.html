@@ -238,6 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#distllation-model-불러오기-및-성능-확인" id="toc-distllation-model-불러오기-및-성능-확인" class="nav-link" data-scroll-target="#distllation-model-불러오기-및-성능-확인">Distllation model 불러오기 및 성능 확인</a></li>
   </ul></li>
+  <li><a href="#학습에-사용된-attention-map-시각화" id="toc-학습에-사용된-attention-map-시각화" class="nav-link" data-scroll-target="#학습에-사용된-attention-map-시각화">학습에 사용된 Attention map 시각화</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -686,9 +687,86 @@ Files already downloaded and verified</code></pre>
 </tr>
 </tbody>
 </table>
-
-
 </section>
+</section>
+<section id="학습에-사용된-attention-map-시각화" class="level2">
+<h2 class="anchored" data-anchor-id="학습에-사용된-attention-map-시각화">학습에 사용된 Attention map 시각화</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>T_model.to(device)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>S_model1.to(device)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>T_model.<span class="bu">eval</span>()</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>S_model1.<span class="bu">eval</span>()</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, (x, y) <span class="kw">in</span> <span class="bu">enumerate</span>(test_loader):</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>        x, y <span class="op">=</span> x.to(device), y.to(device)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>        fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>].imshow(torch.einsum(<span class="st">'cij -&gt; ijc'</span>,x[<span class="dv">0</span>]).to(<span class="st">'cpu'</span>).detach())</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>].imshow(T_model.get_attention1(x)[<span class="dv">0</span>].to(<span class="st">'cpu'</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">31</span>,<span class="dv">31</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>].set_title(<span class="st">'Teacher model attention map 1'</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>].imshow(torch.einsum(<span class="st">'cij -&gt; ijc'</span>,x[<span class="dv">0</span>]).to(<span class="st">'cpu'</span>).detach())</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>].imshow(S_model1.get_attention1(x)[<span class="dv">0</span>].to(<span class="st">'cpu'</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">31</span>,<span class="dv">31</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>].set_title(<span class="st">'Student model attention map 1'</span>)</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Feature_Based_Knowledge_Practice_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>T_model.to(device)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>S_model1.to(device)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>T_model.<span class="bu">eval</span>()</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>S_model1.<span class="bu">eval</span>()</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, (x, y) <span class="kw">in</span> <span class="bu">enumerate</span>(test_loader):</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        x, y <span class="op">=</span> x.to(device), y.to(device)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>        fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>].imshow(torch.einsum(<span class="st">'cij -&gt; ijc'</span>,x[<span class="dv">0</span>]).to(<span class="st">'cpu'</span>).detach())</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>].imshow(T_model.get_attention2(x)[<span class="dv">0</span>].to(<span class="st">'cpu'</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">31</span>,<span class="dv">31</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>].set_title(<span class="st">'Teacher model attention map 2'</span>)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>].imshow(torch.einsum(<span class="st">'cij -&gt; ijc'</span>,x[<span class="dv">0</span>]).to(<span class="st">'cpu'</span>).detach())</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>].imshow(S_model1.get_attention2(x)[<span class="dv">0</span>].to(<span class="st">'cpu'</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">31</span>,<span class="dv">31</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>].set_title(<span class="st">'Student model attention map 2'</span>)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Feature_Based_Knowledge_Practice_files/figure-html/cell-15-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>T_model.to(device)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>S_model1.to(device)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>T_model.<span class="bu">eval</span>()</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>S_model1.<span class="bu">eval</span>()</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, (x, y) <span class="kw">in</span> <span class="bu">enumerate</span>(test_loader):</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        x, y <span class="op">=</span> x.to(device), y.to(device)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">16</span>,<span class="dv">8</span>))</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>][<span class="dv">0</span>].imshow(torch.einsum(<span class="st">'cij -&gt; ijc'</span>,x[<span class="dv">0</span>]).to(<span class="st">'cpu'</span>).detach())</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>][<span class="dv">0</span>].imshow(T_model.get_attention1(x)[<span class="dv">0</span>].to(<span class="st">'cpu'</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">31</span>,<span class="dv">31</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>][<span class="dv">0</span>].set_title(<span class="st">'Teacher model attention map1'</span>)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>][<span class="dv">1</span>].imshow(torch.einsum(<span class="st">'cij -&gt; ijc'</span>,x[<span class="dv">0</span>]).to(<span class="st">'cpu'</span>).detach())</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>][<span class="dv">1</span>].imshow(S_model1.get_attention1(x)[<span class="dv">0</span>].to(<span class="st">'cpu'</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">31</span>,<span class="dv">31</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">0</span>][<span class="dv">1</span>].set_title(<span class="st">'Student model attention map1'</span>)</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>][<span class="dv">0</span>].imshow(torch.einsum(<span class="st">'cij -&gt; ijc'</span>,x[<span class="dv">0</span>]).to(<span class="st">'cpu'</span>).detach())</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>][<span class="dv">0</span>].imshow(T_model.get_attention2(x)[<span class="dv">0</span>].to(<span class="st">'cpu'</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">31</span>,<span class="dv">31</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>][<span class="dv">0</span>].set_title(<span class="st">'Teacher model attention map2'</span>)</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>][<span class="dv">1</span>].imshow(torch.einsum(<span class="st">'cij -&gt; ijc'</span>,x[<span class="dv">0</span>]).to(<span class="st">'cpu'</span>).detach())</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>][<span class="dv">1</span>].imshow(S_model1.get_attention2(x)[<span class="dv">0</span>].to(<span class="st">'cpu'</span>).detach(),cmap<span class="op">=</span><span class="st">'magma'</span>,extent<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">31</span>,<span class="dv">31</span>,<span class="dv">0</span>),interpolation<span class="op">=</span><span class="st">'bilinear'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>        ax[<span class="dv">1</span>][<span class="dv">1</span>].set_title(<span class="st">'Student model attention map2'</span>)</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Feature_Based_Knowledge_Practice_files/figure-html/cell-16-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+
+
 </section>
 </section>
 
