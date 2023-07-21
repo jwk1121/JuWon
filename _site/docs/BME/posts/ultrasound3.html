@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="JuWon">
-<meta name="dcterms.date" content="2023-07-14">
+<meta name="dcterms.date" content="2023-07-21">
 
-<title>BME JuWon’s summary note - 초음파 물리</title>
+<title>BME JuWon’s summary note - 초음파 영상 관련 단위 정리</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">초음파 물리</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">초음파 영상 관련 단위 정리</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">초음파 물리</h1>
+      <h1 class="title">초음파 영상 관련 단위 정리</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Ultrasound</div>
               </div>
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 14, 2023</p>
+        <p class="date">July 21, 2023</p>
       </div>
     </div>
     
@@ -192,21 +192,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#초음파-물리" id="toc-초음파-물리" class="nav-link active" data-scroll-target="#초음파-물리">초음파 물리</a>
+  <li><a href="#초음파-영상-관련-단위-정리" id="toc-초음파-영상-관련-단위-정리" class="nav-link active" data-scroll-target="#초음파-영상-관련-단위-정리">초음파 영상 관련 단위 정리</a>
   <ul class="collapse">
-  <li><a href="#음파란" id="toc-음파란" class="nav-link" data-scroll-target="#음파란">음파란?</a></li>
-  <li><a href="#음향의-물리량" id="toc-음향의-물리량" class="nav-link" data-scroll-target="#음향의-물리량">음향의 물리량</a>
+  <li><a href="#해상도와-초음파-빔" id="toc-해상도와-초음파-빔" class="nav-link" data-scroll-target="#해상도와-초음파-빔">해상도와 초음파 빔</a>
   <ul class="collapse">
-  <li><a href="#주파수-주기-파장-음속" id="toc-주파수-주기-파장-음속" class="nav-link" data-scroll-target="#주파수-주기-파장-음속">주파수, 주기, 파장, 음속</a></li>
-  <li><a href="#음향-임피던스-음압-강도" id="toc-음향-임피던스-음압-강도" class="nav-link" data-scroll-target="#음향-임피던스-음압-강도">음향 임피던스, 음압, 강도</a></li>
-  <li><a href="#회로-변수와-음향-변수-비유" id="toc-회로-변수와-음향-변수-비유" class="nav-link" data-scroll-target="#회로-변수와-음향-변수-비유">회로 변수와 음향 변수 비유</a></li>
+  <li><a href="#축방향-해상도axial-resoulution" id="toc-축방향-해상도axial-resoulution" class="nav-link" data-scroll-target="#축방향-해상도axial-resoulution">축방향 해상도(axial resoulution)</a></li>
+  <li><a href="#측방향-해상도lateral-resoulution" id="toc-측방향-해상도lateral-resoulution" class="nav-link" data-scroll-target="#측방향-해상도lateral-resoulution">측방향 해상도(lateral resoulution)</a></li>
   </ul></li>
-  <li><a href="#경계면과-초음파" id="toc-경계면과-초음파" class="nav-link" data-scroll-target="#경계면과-초음파">경계면과 초음파</a>
+  <li><a href="#음향-렌즈" id="toc-음향-렌즈" class="nav-link" data-scroll-target="#음향-렌즈">음향 렌즈</a></li>
+  <li><a href="#포커싱" id="toc-포커싱" class="nav-link" data-scroll-target="#포커싱">포커싱</a></li>
+  <li><a href="#f넘버-초점심도" id="toc-f넘버-초점심도" class="nav-link" data-scroll-target="#f넘버-초점심도">f넘버, 초점심도</a>
   <ul class="collapse">
-  <li><a href="#반사-및-투과" id="toc-반사-및-투과" class="nav-link" data-scroll-target="#반사-및-투과">반사 및 투과</a></li>
-  <li><a href="#굴절" id="toc-굴절" class="nav-link" data-scroll-target="#굴절">굴절</a></li>
-  <li><a href="#산란" id="toc-산란" class="nav-link" data-scroll-target="#산란">산란</a></li>
-  <li><a href="#감쇠" id="toc-감쇠" class="nav-link" data-scroll-target="#감쇠">감쇠</a></li>
+  <li><a href="#f넘버-fsharp" id="toc-f넘버-fsharp" class="nav-link" data-scroll-target="#f넘버-fsharp">f넘버 (<span class="math inline">\(f/\sharp\)</span>)</a></li>
+  <li><a href="#초점심도-dof" id="toc-초점심도-dof" class="nav-link" data-scroll-target="#초점심도-dof">초점심도 (DOF)</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -222,131 +220,82 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="초음파-물리" class="level1">
-<h1>초음파 물리</h1>
-<p>초음파에 적용되는 물리 법칙에 대해 간단히 설명하는 글</p>
-<p>※ 초음파 진단기에서 사용되는 초음파가 인체내를 전파되어 갈 경우 액체 속을 전파하는 초음파로 해석하므로 앞으로의 초음파에 대한 글에서는 액체 속의 음파 만을 다룸</p>
-<section id="음파란" class="level2">
-<h2 class="anchored" data-anchor-id="음파란">음파란?</h2>
-<p>주파수에 따라 음파는 가청주파수와 초음파로 나뉜다. 가청주파수의 주파수는 20 ~ 20kHz이고 초음파는 20kHz보다 높은 주파수를 의미한다. 초음파 진단기에서는 주로 2 ~ 20MHz를 사용한다.</p>
-<p>음파의 전달 현상: 매질 내의 압력의 변화가 입자의 속도를 변화시키고, 입자의 속도 변화가 매질 내의 새로운 압력 변화를 만들어 내는 과정</p>
+<section id="초음파-영상-관련-단위-정리" class="level1">
+<h1>초음파 영상 관련 단위 정리</h1>
+<section id="해상도와-초음파-빔" class="level2">
+<h2 class="anchored" data-anchor-id="해상도와-초음파-빔">해상도와 초음파 빔</h2>
+<p>축방향 해상도(axial resoulution)와 측방향 해상도(lateral resoulution)에 대해 다룰 예정이다.</p>
+<section id="축방향-해상도axial-resoulution" class="level3">
+<h3 class="anchored" data-anchor-id="축방향-해상도axial-resoulution">축방향 해상도(axial resoulution)</h3>
+<p>축방향 해상도는 <strong>송신된 초음파 펄스의 지속시간(Pulse Duration: PD)</strong>에 의해 결정된다.<br>
+PD가 길면 해상도가 낮아지고, PD가 짧아지면 해상도는 좋아진다.</p>
+<p align="center">
+</p><p><img src="img/ultrasound12.png"></p>
+<p><span class="math display">\[PD = N_c \times T = \frac{N_c}{f(MHz)} [\mu s]\]</span><br>
+여기서 <span class="math inline">\(N_c\)</span>는 사이클 개수, <span class="math inline">\(T\)</span>는 주기를 의미한다.</p>
 </section>
-<section id="음향의-물리량" class="level2">
-<h2 class="anchored" data-anchor-id="음향의-물리량">음향의 물리량</h2>
-<section id="주파수-주기-파장-음속" class="level3">
-<h3 class="anchored" data-anchor-id="주파수-주기-파장-음속">주파수, 주기, 파장, 음속</h3>
-<p><strong>주파수(frequency, <span class="math inline">\(f, Hz\)</span>)</strong>: 1초에 몇 회 진동하는지를 나타내는 값<br>
-<strong>주기(period, <span class="math inline">\(T, s\)</span>)</strong>: 한 번 진동하는 동안 걸리는 시간</p>
-<p><span class="math display">\[f = \frac{1}{T}[Hz], T = \frac{1}{f}[s]\]</span></p>
-<p><strong>초음파의 전달속도(<span class="math inline">\(c, m/s\)</span>)</strong>: 초음파가 1초에 몇 m를 퍼져나가는지를 나타내는 값으로 액체 내에서의 초음파 전달속도는 아래와 같이 근사적으로 나타낼 수 있음<br>
-<span class="math display">\[c = \sqrt{\frac{B}{\rho}}[m/s]\]</span><br>
-여기서 <span class="math inline">\(B[N/m^2]\)</span> 는 Bulk Modulus로 매질의 경도(stiffness = incompressibility)를 나타낸다. B의 값이 크면 물질이 딱딱하고 B의 값이 작으면 물질이 물렁하다.<br>
-<span class="math inline">\(\rho [kg/m^3]\)</span> 는 매질의 밀도를 나타낸다.</p>
-<p><strong>초음파의 파장(<span class="math inline">\(\lambda, m\)</span>)</strong>: 음파의 인접한 골 사이의 거리를 의미<br>
-<span class="math display">\[\lambda = c \cdot T = \frac{c}{f}[m]\]</span></p>
-</section>
-<section id="음향-임피던스-음압-강도" class="level3">
-<h3 class="anchored" data-anchor-id="음향-임피던스-음압-강도">음향 임피던스, 음압, 강도</h3>
-<p>매질에 정현파(sin wave)의 압력을 계속 가해 주면 입자의 속도가 정현파가 된다.</p>
-<p><strong>음향 임피던스(Acoustic Impedence, <span class="math inline">\(Z, Rayl = kg/m^2/s\)</span>)</strong>: 같은 크기의 정현파 압력을 가해 주어도 매질의 특성에 따라서 입자의 진동의 크기가 달라질 수 있다. 여기서 매질의 특성을 나타내는 것이 음향 임피던스이다.</p>
-<p><span class="math display">\[Z = \rho \cdot c = P/v = \sqrt{\rho \cdot B} [kg/m^2/s]\]</span></p>
-<p><strong>음압(Sound Pressure)</strong>: 음파의 진폭으로 압력, 입자의 속도 등으로 표현할 수 있다. 정현파의 경우 첨두치(peak) 압력을 음압으로 본다.</p>
-<p><strong>강도(Intensity)</strong>: 단위면적을 통과하는 파워로 아래와 같이 나타낼 수 있다.</p>
-<p><span class="math display">\[I = VP = \frac{P^2}{Z} = V^2 Z\]</span><br>
-<span class="math inline">\(V\)</span>는 입자의 속력, <span class="math inline">\(P\)</span>는 음압, <span class="math inline">\(Z\)</span>는 음향 임피던스를 의미한다.<br>
-단위면적을 통과하는 파워이므로 골고루 퍼져 넓은 면적을 통과한다면 강도는 약해지게 된다.</p>
-</section>
-<section id="회로-변수와-음향-변수-비유" class="level3">
-<h3 class="anchored" data-anchor-id="회로-변수와-음향-변수-비유">회로 변수와 음향 변수 비유</h3>
-<p>전압은 음압, 전류는 음향의 입자 속력, 임피던스는 음향 임피던스, 전력은 음향의 강도에 비유할 수 있다.</p>
-<p><span class="math display">\[
+<section id="측방향-해상도lateral-resoulution" class="level3">
+<h3 class="anchored" data-anchor-id="측방향-해상도lateral-resoulution">측방향 해상도(lateral resoulution)</h3>
+<p><em>이번 파트를 읽을 때 <strong>확산각 <span class="math inline">\(\theta = \frac{1.22\lambda}{D}\)</span></strong> 임을 기억하고 읽어야 한다</em><br>
+측방향 해상도는 빔 폭에 의해 결정된다. 점근선의 폭(<span class="math inline">\(W\)</span>)은 아래와 같다. <span class="math display">\[
+W
 \begin{cases}
-V = IZ \quad \quad 전기회로(교류)\\
-P = UZ \quad \quad 음향 \\
+D \;\quad \;\quad \;\quad \;\quad \;for \; z &lt; \frac{D^2}{2.44\lambda}\\
+= 2\times\frac{1.22\lambda}{D}z \; \quad \; otherwise\\
+\end{cases}
+\]</span> #### 원거리 음장 위 식을 보면 원거리 음장의 폭을 <span class="math inline">\(2\times\frac{1.22\lambda}{D}z\)</span>라고 하지만 사실상 그 폭의 절반인 <span class="math inline">\(\frac{1.22\lambda}{D}z\)</span>을 빔 폭으로 본다.<br>
+그 이유는 빔이 가장 강한 곳으로부터 빔의 진폭이 1/2로 줄어드는 아래 위의 폭, 엄밀히는 -6dB(<span class="math inline">\(20 \cdot \log_{10}(1/2) [dB] = 20 \times -0.3 \approx -6[dB]\)</span>) 빔 폭을 종종 빔폭이라 부르기 때문이다.</p>
+<section id="근거리-음장" class="level4">
+<h4 class="anchored" data-anchor-id="근거리-음장">근거리 음장</h4>
+<p>근거리 음장에서는 aperture의 크기, 즉 트랜스듀서 구경 폭이 빔 폭이 된다. 하지만 근거리 음장과 원거리 음장이 만나는 경계에서는 빔이 점근선처럼 그대로 직선으로 뻗어 왔다면 원거리 음장의 빔폭과 서로 일치하지 않게 된다. <span class="math display">\[W_{NFL} = \frac{1.2\lambda}{D}\cdot\frac{D^2}{2.44\lambda} =0.5D\]</span><br>
+위 식을 보면 알듯 NFL부근에서 빔 폭은 점점 모양이 무너지다가 교차점 지점에서는 부드러운 봉우리 모양이 된다. 빔 축상의 음압이 더욱 커지며 빔 축상 음압의 절반이 되는 아래 위 두 점 사이의 폭은 구경의 절반 부근이 되어 점근선보다 좁아지기 때문이다.</p>
+<p>근거리 음장에서 빔 폭을 줄이는 방법은 aperture 크기를 줄이는 방법(D↓) 밖에 없다. 하지만 aperture의 크기를 줄이게 되면 NFL(<span class="math inline">\(= \frac{D^2}{4\lambda}\)</span>)이 짧아지게 되고 원거리 음장에서는 빔이 크게 확산(<span class="math inline">\(\theta = \frac{1.22\lambda}{D}\)</span>)하게 된다. 만약 NFL을 올리려면 고주파(<span class="math inline">\(f\)</span>↑)를 사용해야 한다.</p>
+<p>aperture와 빔 폭의 관계를 고려한다면 아래와 같다.<br>
+- 원거리 음장에서는 주파수가 올라가거나 aperture 크기가 커져도 발산각이 좁아져 발산각(<span class="math inline">\(\theta\)</span>)이 좁아져 측 방향 해상도가 좋아지게 된다.<br>
+- aperture 크기가 커진다면 근거리 음장에서의 빔 폭은 커지지만 근거리 음장이 길어져 빔 확산 시작 지점이 멀어지고 원거리 음장의 확산각이 줄어들게 된다.</p>
+<p>이를 정리해보면 고주파의 초음파를 사용한다면 원거리 음장에서의 빔폭도 줄고 NFL 길이도 길어진다. 하지만 고주파 초음파를 사용한다면 인체내에서의 감쇠가 심해진다는 것을 유의해야 한다.</p>
+</section>
+</section>
+</section>
+<section id="음향-렌즈" class="level2">
+<h2 class="anchored" data-anchor-id="음향-렌즈">음향 렌즈</h2>
+<p align="center">
+</p><p><img src="img/ultrasound13.png"></p>
+<p><strong>음향 렌즈(acoustic lens)</strong> 는 위 그림처럼 초음파를 집속할 때 사용한다. 초음파 진단기의 경우 음향 렌즈 구성하는 물질의 음속이 인체 내의 음속보다 느리면 볼록 렌즈가 초음파를 모아준다. 반대의 경우엔 오목 렌즈가 초음파를 모아준다. 이를 정리하면 아래와 같다. <span class="math display">\[
+\begin{cases}
+c_2 &gt; c_1 \; \quad \; \to  볼록 렌즈\\
+c_2 &lt; c_1 \; \quad \; \to  오목 렌즈\\
 \end{cases}
 \]</span><br>
-<em><span class="math inline">\(P\)</span>는 음압, <span class="math inline">\(U\)</span>는 매질 입자의 속도, <span class="math inline">\(Z\)</span>는 음향 임피던스를 의미</em></p>
-<p><span class="math display">\[
-\begin{cases}
-P(전력) = VI \quad \quad 전기회로(교류)\\
-J(강도, W/m^2) = \frac{UP}{2} \quad \quad 음향 \\
-\end{cases}
-\]</span><br>
-<span class="math inline">\(\frac{1}{2}\)</span> <em>계수는 음향에서는 P와 U는 첨두치, J는 실효치를 사용했지만 회로에서는 실효치만 사용했기 떄문</em></p>
+하지만 렌즈를 아무리 완벽하게 만들어도 초음파(빛)의 회절현상으로 인해 초음파(빛)를 한 점에 모을 수는 없다.</p>
 </section>
+<section id="포커싱" class="level2">
+<h2 class="anchored" data-anchor-id="포커싱">포커싱</h2>
+<p>잘 이해가 안되므로 질문..</p>
 </section>
-<section id="경계면과-초음파" class="level2">
-<h2 class="anchored" data-anchor-id="경계면과-초음파">경계면과 초음파</h2>
-<p>다른 성질을 갖는 매질이 서로 접해 있는 경계면에 초음파가 도달하면 반사, 투과, 굴절 등의 현상이 생김</p>
-<section id="반사-및-투과" class="level3">
-<h3 class="anchored" data-anchor-id="반사-및-투과">반사 및 투과</h3>
-<p><img src="img/ultrasound1.png" class="img-fluid"><br>
-<em>위의 사진을 통해 초음파의 반사(reflection)와 투과(transmission)를 확인할 수 있다.</em></p>
-<p>매질이나 경계면에서 에너지의 손실이 없으면 반사되는 음압<span class="math inline">\(P_r\)</span>은 입사된 음압<span class="math inline">\(P_i\)</span>에 대해 아래와 같은 관계를 갖게 됨<br>
-<span class="math inline">\(P_r = R \cdot P_i\)</span><br>
-여기서 R은 반사계수로 아래와 같이 표현할 수 있다<br>
-<span class="math inline">\(R = \frac{P_r}{P_i} = \frac{Z_2 - Z_1}{Z_2 + Z_1}\)</span> <em>(만약 R &lt; 0이라면 반사파의 위상이 반전됨)</em></p>
-<p>에너지 보존법칙에 따라 <span class="math inline">\(I_i = I_r + I_t\)</span> 와 같다.<br>
-<span class="math display">\[1 = R^2 + T^2 \frac{Z_1}{Z_2} \to T = \frac{2Z_2}{Z_1 + Z_2} = 1+R\]</span></p>
-<p><strong>투과파의 음압</strong>은 <span class="math inline">\(P_t = T \cdot P_i\)</span> 이다.</p>
+<section id="f넘버-초점심도" class="level2">
+<h2 class="anchored" data-anchor-id="f넘버-초점심도">f넘버, 초점심도</h2>
+<section id="f넘버-fsharp" class="level3">
+<h3 class="anchored" data-anchor-id="f넘버-fsharp">f넘버 (<span class="math inline">\(f/\sharp\)</span>)</h3>
+<p>초점에서는 원겨리 영역의 식이 성립되므로 초점거리를 <span class="math inline">\(z_F\)</span>라 할 때 빔 폭 <span class="math inline">\(W\)</span>는 다음과 같다.<br>
+<span class="math display">\[W_F = \frac{1.2\lambda}{D}z_F\]</span></p>
+<p>초점거리(focal length)를 <span class="math inline">\(f_L\)</span>, aperture 크기를 <span class="math inline">\(D\)</span>라 하면 f넘버 <span class="math inline">\((f/\sharp , N)\)</span> 는 다음과 같다.<br>
+<span class="math display">\[f/\sharp = N = \frac{f_L}{D}\]</span> 즉, 원거리 영역에서의 빔 폭은 <span class="math inline">\(W_F = 1.2\lambda \cdot f/\sharp\)</span>으로 정의할 수 있다.</p>
 </section>
-<section id="굴절" class="level3">
-<h3 class="anchored" data-anchor-id="굴절">굴절</h3>
-<p><strong>굴절(reflection)</strong>: 초음파가 경계면에 수직으로 입사하지 않는 경우, 입사각과 투과각이 달라지는 현상</p>
-<p><img src="img/ultrasound2.png" class="img-fluid"><br>
-스넬의 법칙: <span class="math inline">\(\frac{\sin{\theta_1}}{c_1} = \frac{\sin{\theta_2}}{c_2}\)</span> (<em><span class="math inline">\(\theta_1\)</span>은 입사각(반사각), <span class="math inline">\(\theta_2\)</span>는 굴절각을 의미</em>)<br>
-입사각과 굴절각의 관계는 각각의 매질의 음속에만 직접적으로 관련이 있으며 밀도, 음향 임피던스는 직접적으로 관련이 있지 않음을 의미<br>
-만약 굴절각(<span class="math inline">\(\theta_2\)</span>)가 90<span class="math inline">\(\degree\)</span>가 넘게 되면 반사파만이 존재하게 되어 <strong>전반사</strong>가 일어남을 의미</p>
-</section>
-<section id="산란" class="level3">
-<h3 class="anchored" data-anchor-id="산란">산란</h3>
-<p><strong>산란(scattering)</strong>: 평면 초음파가 만난 경계면이 파장에 비해 길이가 작은 면을 만나면 반사파는 구면파에 가깝게 되어 넓게 퍼져나가게 되는 현상<br>
-<strong>산란체(scatter)</strong>: 위와 같은 경계면을 만든 작은 매질<br>
-<strong>레일리 산란(Rayleigh Scattering)</strong>: 산란체의 크기가 파장에 비해 상당히 작은 경우에 발생하는 산란</p>
-</section>
-<section id="감쇠" class="level3">
-<h3 class="anchored" data-anchor-id="감쇠">감쇠</h3>
-<p><strong>감쇠(attenuation)</strong>: 매질의 에너지 손실(음향 에너지 <span class="math inline">\(\to\)</span> 주로 열 에너지) 및 산란으로 인해 음압이 줄어드는 현상<br>
-초음파 공학에서는 감쇠가 주파수에 비례한다고 근사화하여 <strong>감쇠계수(<span class="math inline">\(\alpha, dB/(cm \cdot MHz)\)</span>)</strong> 를 이와 같이 표기한다.<br>
-<em>일반적인 공학에서는 감쇠계수의 단위는 <span class="math inline">\(dB/cm\)</span>이다</em></p>
-<section id="db-scale" class="level4">
-<h4 class="anchored" data-anchor-id="db-scale"><span class="math inline">\(dB\)</span> scale</h4>
-<p>감쇠계수에 사용되는 <span class="math inline">\(dB\)</span>라는 단위에 대해서 먼저 알아보면<br>
-<span class="math inline">\(dB\)</span>: <strong>두 물리량의 크기의 비</strong>를 나타내는 방법 중 하나</p>
-<p>신호 B에 대한 신호 A에 대한 <span class="math inline">\(dB\)</span>는 아래와 같이 표현할 수 있음 (신호 A,B는 전류, 전압, 음압 등을 의미)<br>
-<span class="math display">\[x = 20 \cdot \log_{10}(\frac{A}{B})\]</span></p>
-<p>전력 또는 음향의 강도에 대한 <span class="math inline">\(dB\)</span>는 아래와 같이 표현할 수 있음<br>
-<span class="math display">\[y = 10 \cdot \log_{10}(\frac{C}{D}) = 10 \cdot \log_{10}(\frac{A^2}{B^2}) = 2 \cdot 10 \cdot \log_{10}(\frac{A}{B}) = x\]</span><br>
-이와 같이 표현할 수 있는 이유는 신호가 작용하는 곳의 임피던스(음향 임피던스)가 같은 경우, 전력(음향의 강도)의 비는 전압(음압)의 제곱의 비와 같기 때문임(<span class="math inline">\(P = V \cdot I = V^2 / Z\)</span>)</p>
-<p>정리하자면 임피던스가 통일되어 있는 경우 전압(음압)비를 나타낸 <span class="math inline">\(dB\)</span>와 전력(강도)비를 나타낸 <span class="math inline">\(dB\)</span>는 동일함</p>
-<blockquote class="blockquote">
-<p><em>공학에서 <span class="math inline">\(dB\)</span>를 사용하는 이유는 사용자연계에서 많은 일들이 지수함수적으로 발생하는데 이를 log를 이용해 표현하면 지수함수를 대수함수로 바꾸어 표현할 수 있어 사람이 다루기 쉬워진다 장점이 있기 때문</em></p>
-</blockquote>
-</section>
-<section id="초음파-매질-내에서의-감쇠" class="level4">
-<h4 class="anchored" data-anchor-id="초음파-매질-내에서의-감쇠">초음파 매질 내에서의 감쇠</h4>
-<p>일반적인 공학에서 사용하는 감쇠계수<span class="math inline">\(\alpha\)</span>는 다음과 같다.<br>
-<span class="math inline">\(\alpha = 감쇠량[dB]/진행거리[cm]\)</span><br>
-<em>if)</em> 특정 주파수를 갖는 초음파가 1cm 진행하였더니 음압이 1/2로 줄었다면 해당 주파수에서의 매질의 감쇠계수 <span class="math inline">\(6dB/cm\)</span>이다.<br>
-계산을 하면 <span class="math display">\[\alpha = 20\log_{10}\frac{1}{2}[dB] / 1[cm] = 20 \cdot -0.301[dB] / 1[cm] = -6dB/cm\]</span> 이지만 <strong>감쇠계수</strong>이므로 부호를 바꿔줘야 한다.</p>
-</section>
-<section id="주파수에-의존하는-감쇠" class="level4">
-<h4 class="anchored" data-anchor-id="주파수에-의존하는-감쇠">주파수에 의존하는 감쇠</h4>
-<p>초음파가 감쇠될 떄, 일반적으로 감쇠되는 양은 초음파의 주파수에 따라 크게 달라진다. 그러므로 위에서 언급한 것 처럼 초음파진단기 공학에서의 감쇠계수 단위는 <span class="math inline">\(dB/(cm \cdot MHz)\)</span>이다.<br>
-즉 <span class="math inline">\(감쇠량[dB] = 감쇠계수[dB/cm] \times 진행거리[cm] \times 주파수[MHz]\)</span> 이다.</p>
-</section>
-<section id="광대역-신호의-주파수에-따른-감쇠" class="level4">
-<h4 class="anchored" data-anchor-id="광대역-신호의-주파수에-따른-감쇠">광대역 신호의 주파수에 따른 감쇠</h4>
-<p><em>지금까지의 주파수는 한가지 주파수만을 갖는 음파가 겪는 감쇠에 대한 설명이다</em><br>
-실제 초음파는 여러 주파수 성분이 한꺼번에 섞여 들어있는 경우가 대부분이며, 그런 음파의 경우 각각의 주파수 성분에 대한 감쇠의 양이 각각 다르므로 감쇠가 된 다음에는 음파의 스펙트럼이 변화하게 된다. 즉, 신호의 대역폭이 넓을수록 스펙트럼의 변화가 커진다.<br>
-<img src="img/ultrasound3.png" class="img-fluid"><br>
-<em>반사되어 돌아오는 신호를 에코신호로 생각하면 되고 세로축은 각 주파수 성분의 진폭을 나타낸다.</em><br>
-위의 그림을 통해 확인할 수 있는<br>
-첫 번째 정보는 높은 주파수의 음파가 감쇠가 크므로 스펙트럼의 높은 주파수 성분이 줄어들어 저주파 성분이 비교적 많이 남게 된다는 점이고<br>
-두 번째 정보는 음파의 진행거리가 길어질수록 높은 주파수 성분의 감쇠가 급격하게 커지므로 먼 거리를 투과해 온 음파의 스펙트럼일수록 중심주파수는 낮아지게 된다는 것이다.</p>
+<section id="초점심도-dof" class="level3">
+<h3 class="anchored" data-anchor-id="초점심도-dof">초점심도 (DOF)</h3>
+<p align="center">
+</p><p><img src="img/ultrasound14.jpg" width="500" height="200/"></p>
+<p>초점에서 빔 폭이 작다면 이는 초점 밖은 빔 폭이 매우 큼을 의미한다.<br>
+초점심도(depth of focus: DOF)는 빔 폭이 초점거리에서의 빔 폭의 두 배가 되는 초점 앞 뒤의 빔 축 위의 두점 사이의 거리를 의미한다.<br>
+<span class="math display">\[DOF = 7\times \lambda \times N^2\]</span><br>
+만약 f넘버가 작다면 DOF는 얕아진다. 이는 원하는 거리, 즉 focusing zone은 고해상도의 영상을 얻지만 그 밖의 거리는 저해상도의 영상을 얻는 것을 의미한다.<br>
+반대로 f넘버가 크다면 DOF는 깊어지므로 넓은 범위에서 비슷한 해상도의 영상을 얻을 수 있다.</p>
+<p>추가로 수식을 잘 살펴보면 DOF는 aperture의 크기와도 관련이 있는 것을 알 수 있다.</p>
+<p>즉 정리하면 한 점만 고해상도로 얻을지 넓은 범위를 적절한 해상도를 얻을 지를 생각하여 적절한 f넘버, DOF의 값을 산출해내는 것이 중요하다.<br>
+<em>어레이 트랜스듀서에서는 <span class="math inline">\(F_L\)</span>, aperture 등을 실시간으로 변경이 가능하므로 single에서의 고민이 많이 해결되게 된다.</em></p>
 
 
-</section>
 </section>
 </section>
 </section>

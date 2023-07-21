@@ -291,10 +291,17 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="초음파-빔-점근선의-간이작도법">초음파 빔 점근선의 간이작도법</h3>
 <p>빔의 개략적 형상을 그리면 그림 4과 같다.<br>
 <img src="img/ultrasound10.png" class="img-fluid" alt="그림 4"><br>
-그림 4에 표기된 NFL은 near field length의 약자로 근거리 음장의 길이를 의미한다. 근거리 음장은 다른 말로 focal 지점까지의 거리를 의미하기도 한다. <em>뒤에서 말할 natural focal length와 똑같은 의미인것 같음</em><br>
+그림 4에 표기된 NFL은 near field length의 약자로 근거리 음장의 길이를 의미한다. 근거리 음장은 다른 말로 focal zone까지의 거리를 의미하기도 한다. <em>뒤에서 말할 natural focal length와 똑같은 의미인것 같음</em><br>
 NFL을 구하는 방법은 다음과 같다. <span class="math inline">\(NFL = \frac{D^2}{4\lambda}\)</span><br>
 또한 지향각 <span class="math inline">\(\theta\)</span> <span class="math inline">\(=1.22 \lambda / D [rad]\)</span> 이와 같은 방법을 통해 알 수 있다.<br>
 <em>D는 진동자의 직경을 의미하고 <span class="math inline">\(\lambda\)</span>는 초음파의 파장을 의미</em></p>
+여기서 유의해야할 점은 빔 구경을 연장한 평행선과 구경 중심으로부터 퍼져나가는 직선이 만나는 점, 즉, 교차점이 aperture와의 거리를 z라 할 때, z의 값과 NFL의 값이 다르다는 점이다.<br>
+
+<p align="center">
+</p><p><img src="img/ultrasound11.jpg" width="250" height="100"></p>
+<p>z가 위 그림과 같다면 <span class="math inline">\(\tan{\theta} = \frac{D/2}{z} = \frac{D}{2z}\)</span> 인데 여기서 <span class="math inline">\(\tan\theta \approx \theta\)</span>라 하면 <span class="math inline">\(\theta = \frac{D}{2z}\)</span> 이다.<br>
+지향각 <span class="math inline">\(\theta = 1.22\lambda/D = D/2z\)</span>이므로 <span class="math inline">\(z = \frac{D^2}{2.44\lambda}\)</span> 이다. 즉 <span class="math inline">\(z\)</span>는 <span class="math inline">\(NFL = \frac{D^2}{4\lambda}\)</span>과 일치하지 않는다.<br>
+식을 살펴보면 z의 길이가 NFL보다 긴데 이는 z는 원거리 음자에 위치하고 있음을 알 수 있다. 즉, 점근선에서 빔이 확산되기 전부터 이미 원거리 음장 영역이었음을 의미한다.</p>
 </section>
 <section id="호이겐스-원리" class="level3">
 <h3 class="anchored" data-anchor-id="호이겐스-원리">호이겐스 원리</h3>
@@ -316,7 +323,7 @@ NFL을 구하는 방법은 다음과 같다. <span class="math inline">\(NFL = \
 </p><p><img src="img/ultrasound7.png" title="그림 5" width="350" height="300"></p>
 <p>그림 5의 가로 축이 그림 3의 세로 축에 해당하고, 그림 5의 세로 축은 진폭의 절대값을 나타낸다.<br>
 그림 5에서 진폭(<span class="math inline">\(|h(x_z)|\)</span>)이 가장 큰 부분을 메인 로브(main lobe;주엽)이라 부르고 그 다음으로 진폭이 큰 부분을 제 1 사이드로브(1’st side lobe;부엽)라고 부른다.</p>
-<p>좀더 상세하게 설명하면 만약 aperture의 모양이 원이라면 그림 5와 같은 <strong>Bessel function</strong>이 focal 지점에서 나타난다.</p>
+<p>좀더 상세하게 설명하면 만약 aperture의 모양이 원이라면 그림 5와 같은 <strong>Bessel function</strong>이 focal zone에서 나타난다.</p>
 <p align="center">
 </p><p><img src="img/ultrasound8.png" title="그림 6" width="400" height="300"></p>
 <p>반면 aperture 모양이 사각형이라면 그림 6과 같은 <strong>sinc function</strong>이 나타난다. 이러한 현상이 일어나는 이유는 aperture 모양을 푸리에 변환을 하기 때문에 aperture 모양에 따라 다른 음장이 나오게 된다.</p>
