@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="feature-based-knowledge-distillation" class="level1">
 <h1>Feature-Based Knowledge Distillation</h1>
-<p><img src="RBKD3.png" class="img-fluid"></p>
+<p><img src="img/RBKD3.png" class="img-fluid"></p>
 <ul>
 <li><p>Distillation Loss = 모델의 중간 층의 출력인 Attention map을 MSE Loss를 통해 비교한 Loss 2개 + student model의 Cross entropy Loss 1개</p></li>
 <li><p>Teacher Model(ResNet 18 + SE Block)과 Student Model(CNN with 3 Layers + SE Block)은 사전에 학습을 시킨 후 불러왔음</p></li>

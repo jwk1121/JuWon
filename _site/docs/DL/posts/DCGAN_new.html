@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img2vec.png" class="img-fluid figure-img"></p>
+<p><img src="img/img2vec.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Alt text</figcaption>
 </figure>
 </div>
@@ -275,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="filter.png" class="img-fluid figure-img"></p>
+<p><img src="img/filter.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Alt text</figcaption>
 </figure>
 </div>
@@ -288,7 +288,7 @@ DCGAN은<br>
 <p>[DETAILS OF ADVERSARIAL TRAINING]</p>
 <ul>
 <li>모델 및 옵티마이저<br>
-<img src="Generator structure.png" class="img-fluid" alt="Alt text">
+<img src="img/Generator structure.png" class="img-fluid" alt="Alt text">
 <ul>
 <li><p>mini-batch Stochastic Gradient Descent(SGD) a with batch size of 128</p></li>
 <li><p>All weight: zero-centered Normal distribution with std 0.02</p></li>
@@ -306,7 +306,7 @@ DCGAN은<br>
 </ul></li>
 </ul>
 <p>DCGAN에서 중요한 기준 - NOT MIMICKING TRAIN DATA -&gt; 단순히 학습 데이터를 모방하면 안됨! - “Walking in the latent Space” -&gt; G의 input z의 공간인 latent Space에서 z1에서 z2로 살짝 이동한다 하더라도 급작스러운 변화가 일어나지 않고 물흐르듯 부드러운 변화를 보여줘야 한다.<br>
-<img src="vecz2img.png" class="img-fluid" alt="Alt text"></p>
+<img src="img/vecz2img.png" class="img-fluid" alt="Alt text"></p>
 </section>
 <section id="논문-구현" class="level2">
 <h2 class="anchored" data-anchor-id="논문-구현">논문 구현</h2>
