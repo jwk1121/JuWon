@@ -1,6 +1,6 @@
 ---
 title: "BME summary"
-subtitle: "초음파 공부 포스트를 업로드하는 페이지 입니다"
+subtitle: "초음파와 관련된 전공 포스트를 업로드하는 페이지 입니다"
 listing:
   contents: posts
   sort: "date desc"

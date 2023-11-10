@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="JuWon">
+<meta name="dcterms.date" content="2023-11-10">
 
-<title>BME JuWon’s summary note - BME summary</title>
+<title>BME JuWon’s summary note - 신호 및 시스템에 들어가기 앞선 기본 개념</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,40 +60,11 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -103,29 +74,29 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../.././img/minions2.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../.././img/minions2.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">BME JuWon’s summary note</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
+            <div id="quarto-search" class="" title="true"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../index.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="../../../index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../docs/DL/index.html" rel="" target="">
+    <a class="nav-link" href="../../../docs/DL/index.html" rel="" target="">
  <span class="menu-text">DL summary</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../docs/BME/index.html" rel="" target="">
+    <a class="nav-link" href="../../../docs/BME/index.html" rel="" target="">
  <span class="menu-text">BME summary</span></a>
   </li>  
 </ul>
@@ -146,28 +117,42 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/BME/index.html">BME summary</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">신호 및 시스템에 들어가기 앞선 기본 개념</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">BME summary</h1>
-            <p class="subtitle lead">초음파와 관련된 전공 포스트를 업로드하는 페이지 입니다</p>
-                      </div>
+      <h1 class="title">신호 및 시스템에 들어가기 앞선 기본 개념</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">signal and system</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>JuWon </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 10, 2023</p>
+      </div>
+    </div>
     
       
     </div>
@@ -178,232 +163,94 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="true"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">JuWon Kwon</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/DL/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/DL/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DL summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/BME/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../docs/BME/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BME summary</span></a>
   </div>
 </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#신호-및-시스템에-들어가기-앞선-기본-개념" id="toc-신호-및-시스템에-들어가기-앞선-기본-개념" class="nav-link active" data-scroll-target="#신호-및-시스템에-들어가기-앞선-기본-개념">신호 및 시스템에 들어가기 앞선 기본 개념</a>
+  <ul class="collapse">
+  <li><a href="#오일러-공식" id="toc-오일러-공식" class="nav-link" data-scroll-target="#오일러-공식">오일러 공식</a>
+  <ul class="collapse">
+  <li><a href="#오일러-공식-유도" id="toc-오일러-공식-유도" class="nav-link" data-scroll-target="#오일러-공식-유도">오일러 공식 유도</a></li>
+  <li><a href="#오일러-공식과-관련된-중요-공식" id="toc-오일러-공식과-관련된-중요-공식" class="nav-link" data-scroll-target="#오일러-공식과-관련된-중요-공식">오일러 공식과 관련된 중요 공식</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-
-</div></div>
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Ultrasound">Ultrasound <span class="quarto-category-count">(4)</span></div><div class="category" data-category="signal and system">signal and system <span class="quarto-category-count">(1)</span></div></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<section id="신호-및-시스템에-들어가기-앞선-기본-개념" class="level1">
+<h1>신호 및 시스템에 들어가기 앞선 기본 개념</h1>
+<section id="오일러-공식" class="level2">
+<h2 class="anchored" data-anchor-id="오일러-공식">오일러 공식</h2>
+오일러 공식은 가장 많이 사용되고 기본으로 사용되는 공식이므로 반드시 개념을 잘 이해하고 암기해야 한다.<br>
+
+<p align="center">
+</p><p><img src="img/sp0_1.png" width="300" height="300"></p>
+<p>위 그림에서 x축을 실수 축이라고 생각하고 y축을 허수 축이라고 생각하면 z는 아래와 같다.<br>
+<span class="math display">\[(x,y) = z = cos(\theta) + j sin(\theta)\]</span><br>
+위 식에서는 z를 삼각함수를 사용하여 표현하였는데 이를 exponential form으로 표현하기 위해서는 오일러 공식을 사용해야 한다.</p>
+<section id="오일러-공식-유도" class="level3">
+<h3 class="anchored" data-anchor-id="오일러-공식-유도">오일러 공식 유도</h3>
+<p><span class="math display">\[z = cos(\theta) + j sin(\theta)\]</span><br>
+<span class="math display">\[z' = -sin(\theta) + j cos(\theta) = j^2sin(\theta) + j cos(\theta)\]</span><br>
+<span class="math display">\[= j(cos(\theta) + j sin(\theta)) = j z\]</span><br>
+즉 z를 미분하면 z에 허수를 곱한 형태가 나오게 된다.</p>
+<p>여기에서 다시 양변을 적분하게 되면<br>
+<span class="math display">\[z' = \frac{dz}{d\theta} = jz \to \frac{1}{z}dz= jd\theta\]</span><br>
+<span class="math display">\[\overset{\int}\to \int \frac{1}{z}dz = \int j d\theta\]</span><br>
+<span class="math display">\[\to ln(z) = j\theta + C\]</span> <span class="math display">\[(if) \theta = 0 \to ln(z) = C \to e^{C} = z = cos(0) + j sin(0) = 1\]</span><br>
+<span class="math display">\[\to C = 0\]</span><br>
+<span class="math display">\[\therefore ln(z) = j\theta \to z = e^{j\theta}\]</span><br>
+이와 같은 과정을 통해 오일러 공식이 유도된다.</p>
+</section>
+<section id="오일러-공식과-관련된-중요-공식" class="level3">
+<h3 class="anchored" data-anchor-id="오일러-공식과-관련된-중요-공식">오일러 공식과 관련된 중요 공식</h3>
+<p><span class="math display">\[e^{j\theta} = cos(\theta) + jsin(\theta)\]</span><br>
+<span class="math display">\[sin(\theta) = \frac{e^{j\theta} + e^{-j\theta}}{2}\]</span><br>
+<span class="math display">\[cos(\theta) = \frac{e^{j\theta} - e^{-j\theta}}{2j}\]</span></p>
 
 
+</section>
+</section>
+</section>
 
+</main> <!-- /main -->
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="signal and system" data-listing-date-sort="1699542000000" data-listing-file-modified-sort="1699628455499" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="../../docs/BME/posts/ss0.html"> <p class="card-img-top"><img src="posts\img\sp0_1.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="../../docs/BME/posts/ss0.html">
-<h3 class="no-anchor listing-title">
-신호 및 시스템에 들어가기 앞선 기본 개념
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('signal and system'); return false;">
-signal and system
-</div>
-</div>
-<a href="../../docs/BME/posts/ss0.html">
-<div class="listing-description">
-
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../../docs/BME/posts/ss0.html">
-<div class="listing-date">
-Nov 10, 2023
-</div>
-<div class="listing-author">
-JuWon
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Ultrasound" data-listing-date-sort="1690297200000" data-listing-file-modified-sort="1690359954459" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
-<div class="thumbnail">
-<p><a href="../../docs/BME/posts/ultrasound4.html"> <p class="card-img-top"><img src="posts\img\ultrasound16.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="../../docs/BME/posts/ultrasound4.html">
-<h3 class="no-anchor listing-title">
-초음파 영상 신호 처리
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Ultrasound'); return false;">
-Ultrasound
-</div>
-</div>
-<a href="../../docs/BME/posts/ultrasound4.html">
-<div class="listing-description">
-이번 포스트에서는 아날로그 초음파 진단기에서의 신호 흐름에 대해 설명할 예정이다.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../../docs/BME/posts/ultrasound4.html">
-<div class="listing-date">
-Jul 26, 2023
-</div>
-<div class="listing-author">
-JuWon
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Ultrasound" data-listing-date-sort="1689865200000" data-listing-file-modified-sort="1690346050722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<div class="thumbnail">
-<p><a href="../../docs/BME/posts/ultrasound3.html"> <p class="card-img-top"><img src="posts\img\ultrasound12.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="../../docs/BME/posts/ultrasound3.html">
-<h3 class="no-anchor listing-title">
-초음파 영상 관련 단위 정리
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Ultrasound'); return false;">
-Ultrasound
-</div>
-</div>
-<a href="../../docs/BME/posts/ultrasound3.html">
-<div class="listing-description">
-축방향 해상도(axial resoulution)와 측방향 해상도(lateral resoulution)에 대해 다룰 예정이다.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../../docs/BME/posts/ultrasound3.html">
-<div class="listing-date">
-Jul 21, 2023
-</div>
-<div class="listing-author">
-JuWon
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Ultrasound" data-listing-date-sort="1689606000000" data-listing-file-modified-sort="1689852102374" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
-<div class="thumbnail">
-<p><a href="../../docs/BME/posts/ultrasound2.html"> <p class="card-img-top"><img src="posts\img\ultrasound4.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="../../docs/BME/posts/ultrasound2.html">
-<h3 class="no-anchor listing-title">
-단일 소자 트랜스듀서
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Ultrasound'); return false;">
-Ultrasound
-</div>
-</div>
-<a href="../../docs/BME/posts/ultrasound2.html">
-<div class="listing-description">
-초음파 진단기용 트랜스듀서에는 single element와 array가 있는데 이번 포스트에서는 single에 대해 다룬다.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../../docs/BME/posts/ultrasound2.html">
-<div class="listing-date">
-Jul 18, 2023
-</div>
-<div class="listing-author">
-JuWon
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Ultrasound" data-listing-date-sort="1689260400000" data-listing-file-modified-sort="1689927082019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
-<div class="thumbnail">
-<p><a href="../../docs/BME/posts/ultrasound1.html"> <p class="card-img-top"><img src="posts\img\ultrasound1.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="../../docs/BME/posts/ultrasound1.html">
-<h3 class="no-anchor listing-title">
-초음파 물리
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Ultrasound'); return false;">
-Ultrasound
-</div>
-</div>
-<a href="../../docs/BME/posts/ultrasound1.html">
-<div class="listing-description">
-초음파에 적용되는 물리 법칙에 대해 간단히 설명하는 글
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../../docs/BME/posts/ultrasound1.html">
-<div class="listing-date">
-Jul 14, 2023
-</div>
-<div class="listing-author">
-JuWon
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
