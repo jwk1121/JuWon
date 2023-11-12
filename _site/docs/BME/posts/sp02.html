@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="JuWon">
-<meta name="dcterms.date" content="2023-11-10">
 
-<title>BME JuWon’s summary note - 신호 및 시스템에 들어가기 앞선 기본 개념</title>
+<title>BME JuWon's summary note – sp02</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">신호 및 시스템에 들어가기 앞선 기본 개념</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -127,38 +125,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">신호 및 시스템에 들어가기 앞선 기본 개념</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">signal and system</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>JuWon </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">November 10, 2023</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -192,12 +159,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#신호-및-시스템에-들어가기-앞선-기본-개념" id="toc-신호-및-시스템에-들어가기-앞선-기본-개념" class="nav-link active" data-scroll-target="#신호-및-시스템에-들어가기-앞선-기본-개념">신호 및 시스템에 들어가기 앞선 기본 개념</a>
+  <li><a href="#특이-함수-singularity-function" id="toc-특이-함수-singularity-function" class="nav-link active" data-scroll-target="#특이-함수-singularity-function">특이 함수 (Singularity Function)</a>
   <ul class="collapse">
-  <li><a href="#오일러-공식" id="toc-오일러-공식" class="nav-link" data-scroll-target="#오일러-공식">오일러 공식</a>
+  <li><a href="#unit-step-function-단위-계단-함수" id="toc-unit-step-function-단위-계단-함수" class="nav-link" data-scroll-target="#unit-step-function-단위-계단-함수">unit step function (단위 계단 함수)</a></li>
+  <li><a href="#unit-rectangle-function-단위-사각-함수" id="toc-unit-rectangle-function-단위-사각-함수" class="nav-link" data-scroll-target="#unit-rectangle-function-단위-사각-함수">unit rectangle function (단위 사각 함수)</a></li>
+  <li><a href="#unit-impulse-function-단위-임펄스-함수" id="toc-unit-impulse-function-단위-임펄스-함수" class="nav-link" data-scroll-target="#unit-impulse-function-단위-임펄스-함수">unit impulse function (단위 임펄스 함수)</a>
   <ul class="collapse">
-  <li><a href="#오일러-공식-유도" id="toc-오일러-공식-유도" class="nav-link" data-scroll-target="#오일러-공식-유도">오일러 공식 유도</a></li>
-  <li><a href="#오일러-공식과-관련된-중요-공식" id="toc-오일러-공식과-관련된-중요-공식" class="nav-link" data-scroll-target="#오일러-공식과-관련된-중요-공식">오일러 공식과 관련된 중요 공식</a></li>
+  <li><a href="#properties-of-unit-impulse-function" id="toc-properties-of-unit-impulse-function" class="nav-link" data-scroll-target="#properties-of-unit-impulse-function">properties of unit impulse function</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -212,45 +180,73 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-
-<section id="신호-및-시스템에-들어가기-앞선-기본-개념" class="level1">
-<h1>신호 및 시스템에 들어가기 앞선 기본 개념</h1>
-<section id="오일러-공식" class="level2">
-<h2 class="anchored" data-anchor-id="오일러-공식">오일러 공식</h2>
-오일러 공식은 가장 많이 사용되고 기본으로 사용되는 공식이므로 반드시 개념을 잘 이해하고 암기해야 한다.<br>
-
+<section id="특이-함수-singularity-function" class="level1">
+<h1>특이 함수 (Singularity Function)</h1>
+<p>이번 포스트에서는 신호 및 시스템에 자주 등장하는 특이 함수에 대해 설명할 것이다.</p>
+<section id="unit-step-function-단위-계단-함수" class="level2">
+<h2 class="anchored" data-anchor-id="unit-step-function-단위-계단-함수">unit step function (단위 계단 함수)</h2>
+<p><span class="math display">\[
+u(t-t_0) =
+\begin{cases}
+1,\;\; t &gt; t_0\\
+0,\;\; t &lt; t_0\\
+\end{cases}
+\]</span></p>
 <p align="center">
-</p><p><img src="img/sp0_1.png" width="300" height="300"></p>
-<p>위 그림에서 x축을 실수 축이라고 생각하고 y축을 허수 축이라고 생각하면 z는 아래와 같다.<br>
-<span class="math display">\[(x,y) = z = cos(\theta) + j sin(\theta)\]</span><br>
-위 식에서는 z를 삼각함수를 사용하여 표현하였는데 이를 exponential form으로 표현하기 위해서는 오일러 공식을 사용해야 한다.</p>
-<section id="오일러-공식-유도" class="level3">
-<h3 class="anchored" data-anchor-id="오일러-공식-유도">오일러 공식 유도</h3>
-<p><span class="math display">\[z = cos(\theta) + j sin(\theta)\]</span><br>
-<span class="math display">\[z' = -sin(\theta) + j cos(\theta) = j^2sin(\theta) + j cos(\theta)\]</span><br>
-<span class="math display">\[= j(cos(\theta) + j sin(\theta)) = j z\]</span><br>
-즉 z를 미분하면 z에 허수를 곱한 형태가 나오게 된다.</p>
-<p>여기에서 다시 양변을 적분하게 되면<br>
-<span class="math display">\[z' = \frac{dz}{d\theta} = jz \to \frac{1}{z}dz= jd\theta\]</span><br>
-<span class="math display">\[\overset{\int}\to \int \frac{1}{z}dz = \int j d\theta\]</span><br>
-<span class="math display">\[\to ln(z) = j\theta + C\]</span> <span class="math display">\[(if) \theta = 0 \to ln(z) = C \to e^{C} = z = cos(0) + j sin(0) = 1\]</span><br>
-<span class="math display">\[\to C = 0\]</span><br>
-<span class="math display">\[\therefore ln(z) = j\theta \to z = e^{j\theta}\]</span><br>
-이와 같은 과정을 통해 오일러 공식이 유도된다.</p>
-<section id="오일러-공식-예시" class="level4">
-<h4 class="anchored" data-anchor-id="오일러-공식-예시">오일러 공식 예시</h4>
-<p>ex. complex form인 <span class="math inline">\(z\)</span>를 polar coordinate system과 exponential form으로 표현하라.<br>
-<span class="math display">\[z = 2 + 3j\]</span><br>
-<span class="math display">\[|z| = \sqrt{2^2 + 3^2} = 5\]</span> <span class="math display">\[\theta = tan^{-1}(\frac{y}{x}) = tan^{-1}(\frac{3}{2}) \approx 56.3^\circ\]</span><br>
-<span class="math display">\[\therefore z = |z|\angle\theta = 5 \angle56^\circ(polar coordinate)\]</span><br>
-<span class="math display">\[\therefore z = |z|e^{j\theta} = 5e^{j0.3\pi}(exponential form)\]</span></p>
+</p><p><img src="img/sp2_1.png" width="300" height="150"></p>
+<p>단위 계단 함수는 <span class="math inline">\(t_0\)</span> 이전에는 값이 없고 이후에만 1이라는 값을 갖는다.<br>
+<em><span class="math inline">\(t_0\)</span>의 값은 정의되지 않는데 이것이 큰 문제를 갖지는 않음</em></p>
+<p>단위 계단 함수를 아래와 같이 사용(switching)할 수 있음 <span class="math display">\[cos(\omega t) u(t) =
+\begin{cases}
+cos(\omega t),\;\; t &gt; 0\\
+0, \;\quad t &lt; 0\\
+\end{cases}\]</span></p>
 </section>
+<section id="unit-rectangle-function-단위-사각-함수" class="level2">
+<h2 class="anchored" data-anchor-id="unit-rectangle-function-단위-사각-함수">unit rectangle function (단위 사각 함수)</h2>
+<p><span class="math display">\[
+rect(t/T) =
+\begin{cases}
+1,\;\; -T/2&lt; t &lt; T/2\\
+0,\;\; otherwise\\
+\end{cases}
+\]</span></p>
+<p align="center">
+</p><p><img src="img/sp2_2.png" width="300" height="200"></p>
+<p>위와 같은 단위 사각 함수는 단위 계단 함수로도 표현할 수 있다.<br>
+<span class="math display">\[rect(t/T) = u(t+T/2) - u(t-T/2)\]</span></p>
+<p>단위 사각 함수는 신호의 일부분을 추출(extracting)할 때 유용하다.</p>
+<p><span class="math display">\[x(t) = cost \cdot rect[(t - \pi)/2\pi]\]</span><br>
+<span class="math inline">\(cost\)</span> 신호를 0부터 <span class="math inline">\(2\pi\)</span>구간까지 추출<br>
+<span class="math inline">\(\because rect[(t - \pi)/2\pi]\)</span>는 <span class="math inline">\(rect(t/2\pi)\)</span>를 <span class="math inline">\(\pi\)</span>만큼 time-shifted한 것</p>
 </section>
-<section id="오일러-공식과-관련된-중요-공식" class="level3">
-<h3 class="anchored" data-anchor-id="오일러-공식과-관련된-중요-공식">오일러 공식과 관련된 중요 공식</h3>
-<p><span class="math display">\[e^{j\theta} = cos(\theta) + jsin(\theta)\]</span><br>
-<span class="math display">\[sin(\theta) = \frac{e^{j\theta} + e^{-j\theta}}{2}\]</span><br>
-<span class="math display">\[cos(\theta) = \frac{e^{j\theta} - e^{-j\theta}}{2j}\]</span></p>
+<section id="unit-impulse-function-단위-임펄스-함수" class="level2">
+<h2 class="anchored" data-anchor-id="unit-impulse-function-단위-임펄스-함수">unit impulse function (단위 임펄스 함수)</h2>
+<p><em>디렉 델타 함수로 불리기도 함</em> 연속 시간 일때의 임펄스 함수는 아래와 같이 정의할 수 있다.</p>
+<p><span class="math display">\[\delta (t) =
+\begin{cases}
+\infty,\;\; t = 0\\
+0,\;\;\;\; otherwise\\
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[\int_{-\infty}^{\infty}\delta(t)dt = 1\]</span></p>
+<section id="properties-of-unit-impulse-function" class="level3">
+<h3 class="anchored" data-anchor-id="properties-of-unit-impulse-function">properties of unit impulse function</h3>
+<ul>
+<li><p>Sifting property <span class="math display">\[\int_{-\infty}^{\infty}f(t)\delta(t-t_0)dt = f(t_0)\]</span><br>
+<span class="math display">\[f(t)\delta(t-t_0) = f(t_0)\delta(t-t_0)\]</span><br>
+<em>sift는 채로 거른다는 의미를 갖고 있음</em></p></li>
+<li><p>other property<br>
+<span class="math display">\[\delta(t-t_0) = \frac{d}{dt}u(t-t_0)\]</span></p></li>
+</ul>
+<p><span class="math display">\[ u(t-t_0) = \int_{-\infty}^{t}\delta(t-t_0)d\tau =
+\begin{cases}
+1, t&gt; t_0\\
+0, t&lt;t_0\\
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[\int_{-\infty}^{\infty}\delta(at-t_0)dt = \frac{1}{|a|}\int_{-\infty}^{\infty}\delta(t-t_0/a)dt\]</span></p>
+<p><span class="math display">\[\delta(t) = \delta(-t)\]</span></p>
 
 
 </section>

@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="JuWon">
-<meta name="dcterms.date" content="2023-11-10">
 
-<title>BME JuWon’s summary note - 신호 및 시스템에 들어가기 앞선 기본 개념</title>
+<title>BME JuWon's summary note – sp01</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">신호 및 시스템에 들어가기 앞선 기본 개념</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -127,38 +125,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">신호 및 시스템에 들어가기 앞선 기본 개념</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">signal and system</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>JuWon </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">November 10, 2023</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -192,12 +159,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#신호-및-시스템에-들어가기-앞선-기본-개념" id="toc-신호-및-시스템에-들어가기-앞선-기본-개념" class="nav-link active" data-scroll-target="#신호-및-시스템에-들어가기-앞선-기본-개념">신호 및 시스템에 들어가기 앞선 기본 개념</a>
+  <li><a href="#연속-시간-신호" id="toc-연속-시간-신호" class="nav-link active" data-scroll-target="#연속-시간-신호">연속 시간 신호</a>
   <ul class="collapse">
-  <li><a href="#오일러-공식" id="toc-오일러-공식" class="nav-link" data-scroll-target="#오일러-공식">오일러 공식</a>
+  <li><a href="#신호-변환-transformation-of-signals" id="toc-신호-변환-transformation-of-signals" class="nav-link" data-scroll-target="#신호-변환-transformation-of-signals">신호 변환 (transformation of signals)</a></li>
+  <li><a href="#주기-함수periodic-signals" id="toc-주기-함수periodic-signals" class="nav-link" data-scroll-target="#주기-함수periodic-signals">주기 함수(periodic signals)</a>
   <ul class="collapse">
-  <li><a href="#오일러-공식-유도" id="toc-오일러-공식-유도" class="nav-link" data-scroll-target="#오일러-공식-유도">오일러 공식 유도</a></li>
-  <li><a href="#오일러-공식과-관련된-중요-공식" id="toc-오일러-공식과-관련된-중요-공식" class="nav-link" data-scroll-target="#오일러-공식과-관련된-중요-공식">오일러 공식과 관련된 중요 공식</a></li>
+  <li><a href="#주기-신호의-덧셈" id="toc-주기-신호의-덧셈" class="nav-link" data-scroll-target="#주기-신호의-덧셈">주기 신호의 덧셈</a></li>
+  </ul></li>
+  <li><a href="#공학에서의-exponential-fuction이란" id="toc-공학에서의-exponential-fuction이란" class="nav-link" data-scroll-target="#공학에서의-exponential-fuction이란">공학에서의 exponential fuction이란</a>
+  <ul class="collapse">
+  <li><a href="#c와-a가-실수real일때" id="toc-c와-a가-실수real일때" class="nav-link" data-scroll-target="#c와-a가-실수real일때">C와 a가 실수(real)일때</a></li>
+  <li><a href="#c는-복소수-a는-허수일-때" id="toc-c는-복소수-a는-허수일-때" class="nav-link" data-scroll-target="#c는-복소수-a는-허수일-때">C는 복소수, a는 허수일 때</a></li>
+  <li><a href="#c와-a가-복소수일-때" id="toc-c와-a가-복소수일-때" class="nav-link" data-scroll-target="#c와-a가-복소수일-때">C와 a가 복소수일 때</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -212,45 +185,104 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-
-<section id="신호-및-시스템에-들어가기-앞선-기본-개념" class="level1">
-<h1>신호 및 시스템에 들어가기 앞선 기본 개념</h1>
-<section id="오일러-공식" class="level2">
-<h2 class="anchored" data-anchor-id="오일러-공식">오일러 공식</h2>
-오일러 공식은 가장 많이 사용되고 기본으로 사용되는 공식이므로 반드시 개념을 잘 이해하고 암기해야 한다.<br>
+<section id="연속-시간-신호" class="level1">
+<h1>연속 시간 신호</h1>
+<section id="신호-변환-transformation-of-signals" class="level2">
+<h2 class="anchored" data-anchor-id="신호-변환-transformation-of-signals">신호 변환 (transformation of signals)</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;"><span class="math inline">\(y(t)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Time reversal</td>
+<td style="text-align: center;"><span class="math inline">\(x(-t)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Time scailing</td>
+<td style="text-align: center;"><span class="math inline">\(x(at)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Time shiting</td>
+<td style="text-align: center;"><span class="math inline">\(x(t-t_{0})\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Amplitude reversal</td>
+<td style="text-align: center;"><span class="math inline">\(-x(t)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Amplitude scailing</td>
+<td style="text-align: center;"><span class="math inline">\(Ax(t)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Amplitude shiting</td>
+<td style="text-align: center;"><span class="math inline">\(x(t)+B\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="주기-함수periodic-signals" class="level2">
+<h2 class="anchored" data-anchor-id="주기-함수periodic-signals">주기 함수(periodic signals)</h2>
+<p>주기(period)가 T인 신호는 아래와 같은 수식을 만족한다.<br>
+<span class="math display">\[x(t) = x(t + T), T &gt; 0\]</span><br>
+가장 작은 주기 T를 기본 주기(fundamental period)라 부르고 <span class="math inline">\(T_0\)</span>으로 표현한다. 기본 주기가 <span class="math inline">\(T_0\)</span>라면 아래와 같은 식을 통해 기본 주파수를 얻을 수 있다.<br>
+<span class="math display">\[f_0 = \frac{1}{T_0}Hz\]</span><br>
+<span class="math display">\[w = 2\pi f_0 = \frac{2\pi}{T_0}rad/s\]</span></p>
+<section id="주기-신호의-덧셈" class="level3">
+<h3 class="anchored" data-anchor-id="주기-신호의-덧셈">주기 신호의 덧셈</h3>
+<p><span class="math display">\[x(t) = x_1(t)+x_2(t)+\cdots+x_N(t)\]</span><br>
+위 식에서 <span class="math inline">\(x(t)\)</span>의 주기를 알기 위해서는 아래와 같은 과정을 통해 알 수 있다.<br>
+<em>(각 신호의 주기 비율이 유리수(정수)배 일 때는 주기신호 끼리 더하면 x(t)는 주기 신호임을 알 수 있음.)</em><br>
+&gt; 1. 각 신호들의 주기를 파악<br>
+&gt; 2. <span class="math inline">\(T_1/T_i\)</span>를 기약 분수 꼴로 구하기 <span class="math inline">\(\therefore i-1\)</span>개의 기약분수를 얻게 됨<br>
+&gt; 3. 2과정을 통해 얻은 기약 분수들의 최소공배수 <span class="math inline">\(k_0\)</span>를 찾기 &gt; 4. <span class="math inline">\(x(t)\)</span>의 주기 T_0$ 다음과 같음.<br>
+&gt; <span class="math display">\[T_0 = k_0 \cdot T_{01}\]</span></p>
+</section>
+</section>
+<section id="공학에서의-exponential-fuction이란" class="level2">
+<h2 class="anchored" data-anchor-id="공학에서의-exponential-fuction이란">공학에서의 exponential fuction이란</h2>
+<p><span class="math inline">\(x(t) = Ce^{at}\)</span>가 있을 때 C와 a의 형태에 따른 <span class="math inline">\(x(t)\)</span>의 변화에 대해 다룰 예정이다.</p>
+<section id="c와-a가-실수real일때" class="level3">
+<h3 class="anchored" data-anchor-id="c와-a가-실수real일때">C와 a가 실수(real)일때</h3>
+<blockquote class="blockquote">
+<ol type="i">
+<li>a &gt; 0일때, 지수함수는 증가하는 형태<br>
+</li>
+<li>a = 0일때, t와 무관하게 계속 <span class="math inline">\(x(t)= C\)</span><br>
+</li>
+<li>a &lt; 0일때, 지수함수는 감소하는 형태</li>
+</ol>
+</blockquote>
+여기서 a &lt; 0일 때의 <span class="math inline">\(x(t)\)</span>는 아래와 같다.<br>
+<span class="math display">\[x(t) = Ce^{at} = C e^{-t/\tau}, \tau &gt; 0\]</span><br>
+<em><span class="math inline">\(\tau\)</span>는 시상수(time constant)를 의미</em><br>
 
 <p align="center">
-</p><p><img src="img/sp0_1.png" width="300" height="300"></p>
-<p>위 그림에서 x축을 실수 축이라고 생각하고 y축을 허수 축이라고 생각하면 z는 아래와 같다.<br>
-<span class="math display">\[(x,y) = z = cos(\theta) + j sin(\theta)\]</span><br>
-위 식에서는 z를 삼각함수를 사용하여 표현하였는데 이를 exponential form으로 표현하기 위해서는 오일러 공식을 사용해야 한다.</p>
-<section id="오일러-공식-유도" class="level3">
-<h3 class="anchored" data-anchor-id="오일러-공식-유도">오일러 공식 유도</h3>
-<p><span class="math display">\[z = cos(\theta) + j sin(\theta)\]</span><br>
-<span class="math display">\[z' = -sin(\theta) + j cos(\theta) = j^2sin(\theta) + j cos(\theta)\]</span><br>
-<span class="math display">\[= j(cos(\theta) + j sin(\theta)) = j z\]</span><br>
-즉 z를 미분하면 z에 허수를 곱한 형태가 나오게 된다.</p>
-<p>여기에서 다시 양변을 적분하게 되면<br>
-<span class="math display">\[z' = \frac{dz}{d\theta} = jz \to \frac{1}{z}dz= jd\theta\]</span><br>
-<span class="math display">\[\overset{\int}\to \int \frac{1}{z}dz = \int j d\theta\]</span><br>
-<span class="math display">\[\to ln(z) = j\theta + C\]</span> <span class="math display">\[(if) \theta = 0 \to ln(z) = C \to e^{C} = z = cos(0) + j sin(0) = 1\]</span><br>
-<span class="math display">\[\to C = 0\]</span><br>
-<span class="math display">\[\therefore ln(z) = j\theta \to z = e^{j\theta}\]</span><br>
-이와 같은 과정을 통해 오일러 공식이 유도된다.</p>
-<section id="오일러-공식-예시" class="level4">
-<h4 class="anchored" data-anchor-id="오일러-공식-예시">오일러 공식 예시</h4>
-<p>ex. complex form인 <span class="math inline">\(z\)</span>를 polar coordinate system과 exponential form으로 표현하라.<br>
-<span class="math display">\[z = 2 + 3j\]</span><br>
-<span class="math display">\[|z| = \sqrt{2^2 + 3^2} = 5\]</span> <span class="math display">\[\theta = tan^{-1}(\frac{y}{x}) = tan^{-1}(\frac{3}{2}) \approx 56.3^\circ\]</span><br>
-<span class="math display">\[\therefore z = |z|\angle\theta = 5 \angle56^\circ(polar coordinate)\]</span><br>
-<span class="math display">\[\therefore z = |z|e^{j\theta} = 5e^{j0.3\pi}(exponential form)\]</span></p>
+</p><p><img src="img/sp1_1.png" width="350" height="200"></p>
+<p>위 그림을 통해 알 수 있듯이 <span class="math inline">\(t = 0\)</span> 일 때의 순간 기울기는 <span class="math inline">\(-\frac{C}{\tau}\)</span> 이다. 만약 이러한 기울기로 신호가 감소한다면 <span class="math inline">\(t = \tau\)</span> 일 때 신호는 사라지게 된다.<br>
+<span class="math inline">\(\to Ce^{-1} = 0.368C\)</span> 즉, t가 <span class="math inline">\(\tau\)</span>인 시점에서 신호의 진폭은 약 36.8%로 감소하게 된다.</p>
 </section>
+<section id="c는-복소수-a는-허수일-때" class="level3">
+<h3 class="anchored" data-anchor-id="c는-복소수-a는-허수일-때">C는 복소수, a는 허수일 때</h3>
+<p><span class="math display">\[x(t) = Ce^{at}; C = Ae^{j\phi} = A\angle\phi, a=j\omega_0\]</span><br>
+여기서 <span class="math inline">\(x(t)\)</span>는 오일러 공식을 통해 아래와 같이 표현할 수 있다.<br>
+<span class="math display">\[x(t) = Ae^{j\phi}e^{j\omega_0 t} = Ae^{j(\omega_0 t+\phi)}\]</span><br>
+<span class="math display">\[= Acos(\omega_0 t+\phi) + jAsin(\omega_0 t+\phi)\]</span></p>
+<blockquote class="blockquote">
+<p>각 주파수가 <span class="math inline">\(k \omega_0\)</span>(여기서 k는 정수)인 신호들의 집합을 <strong>harmonics</strong>라 부른다. harmonics는 이후에 나올 푸리에 급수 전개에 사용된다.</p>
+</blockquote>
 </section>
-<section id="오일러-공식과-관련된-중요-공식" class="level3">
-<h3 class="anchored" data-anchor-id="오일러-공식과-관련된-중요-공식">오일러 공식과 관련된 중요 공식</h3>
-<p><span class="math display">\[e^{j\theta} = cos(\theta) + jsin(\theta)\]</span><br>
-<span class="math display">\[sin(\theta) = \frac{e^{j\theta} + e^{-j\theta}}{2}\]</span><br>
-<span class="math display">\[cos(\theta) = \frac{e^{j\theta} - e^{-j\theta}}{2j}\]</span></p>
+<section id="c와-a가-복소수일-때" class="level3">
+<h3 class="anchored" data-anchor-id="c와-a가-복소수일-때">C와 a가 복소수일 때</h3>
+<span class="math display">\[x(t) = Ce^{at}; C = Ae^{j\phi} = A\angle\phi, a=\sigma_0+j\omega_0\]</span><br>
+<span class="math display">\[x(t)= Ae^{\sigma_0t}cos(\omega_0 t+\phi) + je^{\sigma_0t}Asin(\omega_0 t+\phi) = Re[x(t)] + Im[x(t)]\]</span><br>
+위 식에서 실수 부분인 <span class="math inline">\(Re[x(t)]\)</span>을 살펴보면 A는 x(t)의 진폭의 크기를 결정하고 <span class="math inline">\(\phi\)</span>는 위상. <span class="math inline">\(\omega_0\)</span>는 각주파수로 회전속도, <span class="math inline">\(\sigma_0\)</span>는 신호가 점점 커질지 작아질지를 결정한다.<br>
+
+<p align="center">
+</p><p><img src="img/sp1_2.png" width="600" height="200"></p>
 
 
 </section>
