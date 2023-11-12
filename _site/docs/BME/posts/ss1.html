@@ -9,7 +9,7 @@
 <meta name="author" content="JuWon">
 <meta name="dcterms.date" content="2023-11-11">
 
-<title>BME JuWon’s summary note - 연속 시간 신호</title>
+<title>BME JuWon’s summary note - 연속 시간 신호와 시스템</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">연속 시간 신호</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">연속 시간 신호와 시스템</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">연속 시간 신호</h1>
+      <h1 class="title">연속 시간 신호와 시스템</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">signal and system</div>
               </div>
@@ -192,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#연속-시간-신호" id="toc-연속-시간-신호" class="nav-link active" data-scroll-target="#연속-시간-신호">연속 시간 신호</a>
+  <li><a href="#연속-시간-신호와-시스템" id="toc-연속-시간-신호와-시스템" class="nav-link active" data-scroll-target="#연속-시간-신호와-시스템">연속 시간 신호와 시스템</a>
   <ul class="collapse">
   <li><a href="#신호-변환-transformation-of-signals" id="toc-신호-변환-transformation-of-signals" class="nav-link" data-scroll-target="#신호-변환-transformation-of-signals">신호 변환 (transformation of signals)</a></li>
   <li><a href="#주기-함수periodic-signals" id="toc-주기-함수periodic-signals" class="nav-link" data-scroll-target="#주기-함수periodic-signals">주기 함수(periodic signals)</a>
@@ -205,6 +205,16 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#c는-복소수-a는-허수일-때" id="toc-c는-복소수-a는-허수일-때" class="nav-link" data-scroll-target="#c는-복소수-a는-허수일-때">C는 복소수, a는 허수일 때</a></li>
   <li><a href="#c와-a가-복소수일-때" id="toc-c와-a가-복소수일-때" class="nav-link" data-scroll-target="#c와-a가-복소수일-때">C와 a가 복소수일 때</a></li>
   </ul></li>
+  <li><a href="#연속-시간-신호-시스템의-성질" id="toc-연속-시간-신호-시스템의-성질" class="nav-link" data-scroll-target="#연속-시간-신호-시스템의-성질">연속 시간 신호 시스템의 성질</a>
+  <ul class="collapse">
+  <li><a href="#memory-vs.-memoryless" id="toc-memory-vs.-memoryless" class="nav-link" data-scroll-target="#memory-vs.-memoryless">memory vs.&nbsp;memoryless</a></li>
+  <li><a href="#invertible-vs.-non-invertible" id="toc-invertible-vs.-non-invertible" class="nav-link" data-scroll-target="#invertible-vs.-non-invertible">Invertible vs.&nbsp;non-invertible</a></li>
+  <li><a href="#causal-vs.-noncausal" id="toc-causal-vs.-noncausal" class="nav-link" data-scroll-target="#causal-vs.-noncausal">Causal vs.&nbsp;NonCausal</a></li>
+  <li><a href="#stable-vs.-unstable" id="toc-stable-vs.-unstable" class="nav-link" data-scroll-target="#stable-vs.-unstable">Stable vs.&nbsp;Unstable</a></li>
+  <li><a href="#time-invariant-vs.-time-varying" id="toc-time-invariant-vs.-time-varying" class="nav-link" data-scroll-target="#time-invariant-vs.-time-varying">Time-invariant vs.&nbsp;Time-varying</a></li>
+  <li><a href="#linear-vs.-nonlinear" id="toc-linear-vs.-nonlinear" class="nav-link" data-scroll-target="#linear-vs.-nonlinear">Linear vs.&nbsp;nonlinear</a></li>
+  </ul></li>
+  <li><a href="#lti-system의-중요성" id="toc-lti-system의-중요성" class="nav-link" data-scroll-target="#lti-system의-중요성">LTI System의 중요성</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -219,8 +229,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="연속-시간-신호" class="level1">
-<h1>연속 시간 신호</h1>
+<section id="연속-시간-신호와-시스템" class="level1">
+<h1>연속 시간 신호와 시스템</h1>
 <section id="신호-변환-transformation-of-signals" class="level2">
 <h2 class="anchored" data-anchor-id="신호-변환-transformation-of-signals">신호 변환 (transformation of signals)</h2>
 <table class="table">
@@ -317,9 +327,56 @@ ul.task-list li input[type="checkbox"] {
 
 <p align="center">
 </p><p><img src="img/sp1_2.png" width="600" height="200"></p>
-
-
 </section>
+</section>
+<section id="연속-시간-신호-시스템의-성질" class="level2">
+<h2 class="anchored" data-anchor-id="연속-시간-신호-시스템의-성질">연속 시간 신호 시스템의 성질</h2>
+<p>연속 시간 신호와 시스템의 성질에 대해 다룸<br>
+<em>뒤로 갈수록 점점 중요도가 높아진다고 생각</em></p>
+<section id="memory-vs.-memoryless" class="level3">
+<h3 class="anchored" data-anchor-id="memory-vs.-memoryless">memory vs.&nbsp;memoryless</h3>
+<p>출력 신호 <span class="math inline">\(y(t_0)\)</span>가 입력 신호 <span class="math inline">\(x(t_0)\)</span>에만 영향을 받는다면 memoryless system이다.<br>
+* 시스템에 memory가 있다면 해당 시스템은 dynamic system(동적 시스템)이라고 불린다. <span class="math inline">\(y(t) = K \cdot \int_{-\infty}^{t} x(\tau) d\tau\)</span>는 dynamic system에 속한다.</p>
+<ul>
+<li>memoryless system은 static system(정적 시스템)이라 부른다. <span class="math inline">\(y(t) = K \cdot x(t)\)</span>은 static system에 속한다.</li>
+</ul>
+</section>
+<section id="invertible-vs.-non-invertible" class="level3">
+<h3 class="anchored" data-anchor-id="invertible-vs.-non-invertible">Invertible vs.&nbsp;non-invertible</h3>
+<p>Invertible을 쉽게 말하면 일대일 함수이다. 그렇기 때문에 <span class="math inline">\(y(t) = x^2(t)\)</span> system의 경우는 non-invertible system이다.</p>
+</section>
+<section id="causal-vs.-noncausal" class="level3">
+<h3 class="anchored" data-anchor-id="causal-vs.-noncausal">Causal vs.&nbsp;NonCausal</h3>
+<p>causal은 뜻 그대로 인과 시스템을 의미한다. output 신호의 <span class="math inline">\(t_0\)</span> 시점의 신호가 input 중 <span class="math inline">\(t(t \leq t_0)\)</span>에 속한 신호에만 영향을 받는다면 이는 causal system이다.<br>
+그렇다면 반대로 Noncausal system은 미래의 값을 예측 후 이를 다시 반영하는 시스템들을 의미한다.</p>
+</section>
+<section id="stable-vs.-unstable" class="level3">
+<h3 class="anchored" data-anchor-id="stable-vs.-unstable">Stable vs.&nbsp;Unstable</h3>
+<p>Stable system은 입력 신호가 안정(bounded)됐다면 출력 신호도 안정되는 시스템을 의미한다. 이를 BIBO Stable System이라고 부른다. <span class="math display">\[|x(t)| \leq M \to |y(t)| \leq R\]</span><br>
+<em>x(t)와 y(t)가 유계 신호임을 위와 같이 표현</em></p>
+</section>
+<section id="time-invariant-vs.-time-varying" class="level3">
+<h3 class="anchored" data-anchor-id="time-invariant-vs.-time-varying">Time-invariant vs.&nbsp;Time-varying</h3>
+<p>입력 신호가 <span class="math inline">\(t\)</span>만큼 time shift 됐다면 출력 신호 또한 <span class="math inline">\(t\)</span>만큼 time shift되는 system을 Time-invariant system이라고 한다. * Time-invariant system의 예시로는 <span class="math inline">\(y(t) = e^{x(t)}\)</span>가 있다. 만약 <span class="math inline">\(t \to t-t_0\)</span>가 된다면 <span class="math inline">\(y(t-t_o) = e^{x(t-t_0)}\)</span>이므로 이는 Time-invariant이다.</p>
+<ul>
+<li>Time-invarying system의 예시로는 <span class="math inline">\(y(t) = e^{-t}x(t)\)</span>가 있다. 만약 <span class="math inline">\(t \to t-t_0\)</span>가 된다면 <span class="math inline">\(y(t-t_0) = e^{-(t-t_0)}x(t-t_0) = e^{-t+t_0}x(t-t_0)\)</span>가 되므로 이는 time varying이다.</li>
+</ul>
+</section>
+<section id="linear-vs.-nonlinear" class="level3">
+<h3 class="anchored" data-anchor-id="linear-vs.-nonlinear">Linear vs.&nbsp;nonlinear</h3>
+<p>Linear system은 Additivity와 Homogeneity를 모두 만족, 즉 중첩 원리(principle of superposition)를 만족하는 시스템을 의미한다.<br>
+* Additivity <span class="math display">\[x_1(t) + x_2(t) \to y_1(t) + y_2(t)\]</span> * Homogeneity <span class="math display">\[ax_1(t) \to ay_1(t)\]</span> * principle of superposition <span class="math display">\[a_1x_1(t) + a_2x_2(t) \to a_1y_1(t) + a_2y_2(t)\]</span></p>
+</section>
+</section>
+<section id="lti-system의-중요성" class="level2">
+<h2 class="anchored" data-anchor-id="lti-system의-중요성">LTI System의 중요성</h2>
+<p>Linear property와 Time invariant property를 만족하는 시스템을 LTI system이라고 부른다. LTI system은 공학 분야에서 아래와 같은 이유로 매우 중요하다.<br>
+* 대부분의 물리 시스템이 LTI system으로 정확하게 모델링된다.<br>
+* LTI system 방정식은 풀 수 있다.<br>
+* 많은 LTI system의 디자인 방법 또는 분석 방법을 사용할 수 있다.<br>
+* input signal이 sum of functions이라면 LTI System의 output 또한 sum of responses이다.</p>
+
+
 </section>
 </section>
 
