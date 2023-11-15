@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="JuWon">
-<meta name="dcterms.date" content="2023-11-10">
+<meta name="dcterms.date" content="2023-11-12">
 
-<title>BME JuWon’s summary note - 신호 및 시스템에 들어가기 앞선 기본 개념</title>
+<title>BME JuWon’s summary note - Singularity Function and Convolution</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">신호 및 시스템에 들어가기 앞선 기본 개념</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Singularity Function and Convolution</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">신호 및 시스템에 들어가기 앞선 기본 개념</h1>
+      <h1 class="title">Singularity Function and Convolution</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">signal and system</div>
               </div>
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 10, 2023</p>
+        <p class="date">November 12, 2023</p>
       </div>
     </div>
     
@@ -192,12 +192,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#신호-및-시스템에-들어가기-앞선-기본-개념" id="toc-신호-및-시스템에-들어가기-앞선-기본-개념" class="nav-link active" data-scroll-target="#신호-및-시스템에-들어가기-앞선-기본-개념">신호 및 시스템에 들어가기 앞선 기본 개념</a>
+  <li><a href="#singularity-function-and-convolution" id="toc-singularity-function-and-convolution" class="nav-link active" data-scroll-target="#singularity-function-and-convolution">Singularity Function and Convolution</a>
   <ul class="collapse">
-  <li><a href="#오일러-공식" id="toc-오일러-공식" class="nav-link" data-scroll-target="#오일러-공식">오일러 공식</a>
+  <li><a href="#convolution-integral" id="toc-convolution-integral" class="nav-link" data-scroll-target="#convolution-integral">Convolution Integral</a>
   <ul class="collapse">
-  <li><a href="#오일러-공식-유도" id="toc-오일러-공식-유도" class="nav-link" data-scroll-target="#오일러-공식-유도">오일러 공식 유도</a></li>
-  <li><a href="#오일러-공식과-관련된-중요-공식" id="toc-오일러-공식과-관련된-중요-공식" class="nav-link" data-scroll-target="#오일러-공식과-관련된-중요-공식">오일러 공식과 관련된 중요 공식</a></li>
+  <li><a href="#imperse-representaion" id="toc-imperse-representaion" class="nav-link" data-scroll-target="#imperse-representaion">Imperse representaion</a></li>
+  <li><a href="#unit-impuse-response" id="toc-unit-impuse-response" class="nav-link" data-scroll-target="#unit-impuse-response">unit impuse response</a></li>
+  <li><a href="#convolution-integral-증명" id="toc-convolution-integral-증명" class="nav-link" data-scroll-target="#convolution-integral-증명">Convolution Integral 증명</a></li>
+  <li><a href="#properties-of-convolution-integral" id="toc-properties-of-convolution-integral" class="nav-link" data-scroll-target="#properties-of-convolution-integral">properties of convolution integral</a></li>
+  <li><a href="#unit-step-response" id="toc-unit-step-response" class="nav-link" data-scroll-target="#unit-step-response">unit step response</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -213,44 +216,45 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="신호-및-시스템에-들어가기-앞선-기본-개념" class="level1">
-<h1>신호 및 시스템에 들어가기 앞선 기본 개념</h1>
-<section id="오일러-공식" class="level2">
-<h2 class="anchored" data-anchor-id="오일러-공식">오일러 공식</h2>
-오일러 공식은 가장 많이 사용되고 기본으로 사용되는 공식이므로 반드시 개념을 잘 이해하고 암기해야 한다.<br>
-
-<p align="center">
-</p><p><img src="img/sp0_1.png" width="300" height="300"></p>
-<p>위 그림에서 x축을 실수 축이라고 생각하고 y축을 허수 축이라고 생각하면 z는 아래와 같다.<br>
-<span class="math display">\[(x,y) = z = cos(\theta) + j sin(\theta)\]</span><br>
-위 식에서는 z를 삼각함수를 사용하여 표현하였는데 이를 exponential form으로 표현하기 위해서는 오일러 공식을 사용해야 한다.</p>
-<section id="오일러-공식-유도" class="level3">
-<h3 class="anchored" data-anchor-id="오일러-공식-유도">오일러 공식 유도</h3>
-<p><span class="math display">\[z = cos(\theta) + j sin(\theta)\]</span><br>
-<span class="math display">\[z' = -sin(\theta) + j cos(\theta) = j^2sin(\theta) + j cos(\theta)\]</span><br>
-<span class="math display">\[= j(cos(\theta) + j sin(\theta)) = j z\]</span><br>
-즉 z를 미분하면 z에 허수를 곱한 형태가 나오게 된다.</p>
-<p>여기에서 다시 양변을 적분하게 되면<br>
-<span class="math display">\[z' = \frac{dz}{d\theta} = jz \to \frac{1}{z}dz= jd\theta\]</span><br>
-<span class="math display">\[\overset{\int}\to \int \frac{1}{z}dz = \int j d\theta\]</span><br>
-<span class="math display">\[\to ln(z) = j\theta + C\]</span> <span class="math display">\[(if) \theta = 0 \to ln(z) = C \to e^{C} = z = cos(0) + j sin(0) = 1\]</span><br>
-<span class="math display">\[\to C = 0\]</span><br>
-<span class="math display">\[\therefore ln(z) = j\theta \to z = e^{j\theta}\]</span><br>
-이와 같은 과정을 통해 오일러 공식이 유도된다.</p>
-<section id="오일러-공식-예시" class="level4">
-<h4 class="anchored" data-anchor-id="오일러-공식-예시">오일러 공식 예시</h4>
-<p>ex. complex form인 <span class="math inline">\(z\)</span>를 polar coordinate system과 exponential form으로 표현하라.<br>
-<span class="math display">\[z = 2 + 3j\]</span><br>
-<span class="math display">\[|z| = \sqrt{2^2 + 3^2} = 5\]</span> <span class="math display">\[\theta = tan^{-1}(\frac{y}{x}) = tan^{-1}(\frac{3}{2}) \approx 56.3^\circ\]</span><br>
-<span class="math display">\[\therefore z = |z|\angle\theta = 5 \angle56^\circ(polar coordinate)\]</span><br>
-<span class="math display">\[\therefore z = |z|e^{j\theta} = 5e^{j0.3\pi}(exponential form)\]</span></p>
+<section id="singularity-function-and-convolution" class="level1">
+<h1>Singularity Function and Convolution</h1>
+<p>이번 포스트에서는 연속 시간 LTI system에서의 Convoution과 Singularity Function에 대해 설명할 것이다.</p>
+<section id="convolution-integral" class="level2">
+<h2 class="anchored" data-anchor-id="convolution-integral">Convolution Integral</h2>
+<section id="imperse-representaion" class="level3">
+<h3 class="anchored" data-anchor-id="imperse-representaion">Imperse representaion</h3>
+<p><span class="math display">\[\int_{-\infty}^{\infty}x(\tau)\delta(t-\tau) d\tau \overset{sifting}\to \int_{-\infty}^{\infty}x(t)\delta(t-\tau) d\tau\]</span><br>
+<span class="math display">\[\to x(t)\int_{-\infty}^{\infty}\delta(t-\tau) d\tau = x(t)\]</span></p>
 </section>
+<section id="unit-impuse-response" class="level3">
+<h3 class="anchored" data-anchor-id="unit-impuse-response">unit impuse response</h3>
+<p><span class="math display">\[x(t) = \delta(t) \to [LTI \; system]\to y(t) = h(t)\]</span> <span class="math display">\[\delta(t) \to h(t)\]</span></p>
+<p>여기서 <span class="math inline">\(\delta(t)\)</span>는 임펄스 함수(impulse function), <span class="math inline">\(h(t)\)</span>는 <strong>임펄스 응답(impulse response)</strong> 을 의미한다. * Time-invariant에 의해 <span class="math inline">\(\delta(t-t_0) \to h(t-t_0)\)</span><br>
+* Linear에 의해 <span class="math inline">\(\Sigma_{k =0}^{\infty}\Delta\delta(t-k\Delta) \to \Sigma_{k =0}^{\infty}\Delta h(t-k\Delta)\)</span></p>
 </section>
-<section id="오일러-공식과-관련된-중요-공식" class="level3">
-<h3 class="anchored" data-anchor-id="오일러-공식과-관련된-중요-공식">오일러 공식과 관련된 중요 공식</h3>
-<p><span class="math display">\[e^{j\theta} = cos(\theta) + jsin(\theta)\]</span><br>
-<span class="math display">\[sin(\theta) = \frac{e^{j\theta} - e^{-j\theta}}{2j}\]</span><br>
-<span class="math display">\[cos(\theta) = \frac{e^{j\theta} + e^{-j\theta}}{2}\]</span></p>
+<section id="convolution-integral-증명" class="level3">
+<h3 class="anchored" data-anchor-id="convolution-integral-증명">Convolution Integral 증명</h3>
+<p><span class="math display">\[x(t) = \Sigma_{k = -\infty}^{\infty}v(k\Delta)\delta(t-k\Delta) \Delta \overset{LTI \; system}\to y(t) = \Sigma_{k =0}^{\infty}v(k\Delta) h(t-k\Delta) \Delta\]</span><br>
+<span class="math display">\[\overset{\Delta \to 0}\downarrow\]</span><br>
+<span class="math display">\[\lim_{\Delta \to 0}\Sigma_{k = -\infty}^{\infty}v(k\Delta)\delta(t-k\Delta) \Delta \overset{LTI \; system}\to \lim_{\Delta \to 0}\Sigma_{k =0}^{\infty}v(k\Delta) h(t-k\Delta) \Delta\]</span><br>
+<span class="math display">\[\downarrow\]</span><br>
+<span class="math display">\[x(t) = \int_{-\infty}^{\infty}v(\tau)\delta(t-\tau)d\tau = v(t) \overset{LTI \; system}\to y(t) = \int_{-\infty}^{\infty}v(\tau)h(t-\tau)d\tau\]</span><br>
+<span class="math display">\[\downarrow\]</span><br>
+<span class="math display">\[\therefore \; y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau = x(t) * h(t)\]</span></p>
+</section>
+<section id="properties-of-convolution-integral" class="level3">
+<h3 class="anchored" data-anchor-id="properties-of-convolution-integral">properties of convolution integral</h3>
+<ul>
+<li><p><span class="math inline">\(y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau = \int_{-\infty}^{\infty}x(t-\tau)h(\tau)d\tau\)</span></p></li>
+<li><p><span class="math inline">\(\delta(t) * h(t) = h(t)\)</span></p></li>
+<li><p><span class="math inline">\(\delta(t-t_0) * h(t) = h(t-t_0)\qquad \because time-invariant\)</span></p></li>
+</ul>
+</section>
+<section id="unit-step-response" class="level3">
+<h3 class="anchored" data-anchor-id="unit-step-response">unit step response</h3>
+<p><span class="math display">\[\delta(t) \to [LTI \; system] \to h(t)\]</span><br>
+<span class="math display">\[\overset{적분}\downarrow\underset{미분}\uparrow \qquad\qquad\qquad\quad\; \overset{적분}\downarrow\underset{미분}\uparrow\]</span><br>
+<span class="math display">\[u(t) \to [LTI \; system] \to s(t)\]</span></p>
 
 
 </section>
