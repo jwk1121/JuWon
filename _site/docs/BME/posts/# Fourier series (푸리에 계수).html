@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="JuWon">
-<meta name="dcterms.date" content="2023-11-11">
 
-<title>BME JuWon’s summary note - 연속 시간 신호와 시스템</title>
+<title>BME JuWon's summary note – fourier-series-(푸리에-계수</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">연속 시간 신호와 시스템</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -127,38 +125,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">연속 시간 신호와 시스템</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">signal and system</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>JuWon </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">November 11, 2023</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -192,29 +159,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#연속-시간-신호와-시스템" id="toc-연속-시간-신호와-시스템" class="nav-link active" data-scroll-target="#연속-시간-신호와-시스템">연속 시간 신호와 시스템</a>
+  <li><a href="#fourier-series-푸리에-계수" id="toc-fourier-series-푸리에-계수" class="nav-link active" data-scroll-target="#fourier-series-푸리에-계수">Fourier series (푸리에 계수)</a>
   <ul class="collapse">
-  <li><a href="#신호-변환-transformation-of-signals" id="toc-신호-변환-transformation-of-signals" class="nav-link" data-scroll-target="#신호-변환-transformation-of-signals">신호 변환 (transformation of signals)</a></li>
-  <li><a href="#주기-함수periodic-signals" id="toc-주기-함수periodic-signals" class="nav-link" data-scroll-target="#주기-함수periodic-signals">주기 함수(periodic signals)</a>
+  <li><a href="#fourier-series의-다양한-형태" id="toc-fourier-series의-다양한-형태" class="nav-link" data-scroll-target="#fourier-series의-다양한-형태">Fourier Series의 다양한 형태</a>
   <ul class="collapse">
-  <li><a href="#주기-신호의-덧셈" id="toc-주기-신호의-덧셈" class="nav-link" data-scroll-target="#주기-신호의-덧셈">주기 신호의 덧셈</a></li>
+  <li><a href="#complex-exponential-form" id="toc-complex-exponential-form" class="nav-link" data-scroll-target="#complex-exponential-form">complex exponential form</a></li>
+  <li><a href="#combined-trigonometric-form" id="toc-combined-trigonometric-form" class="nav-link" data-scroll-target="#combined-trigonometric-form">combined trigonometric form</a></li>
+  <li><a href="#trigonometric-form" id="toc-trigonometric-form" class="nav-link" data-scroll-target="#trigonometric-form">trigonometric form</a></li>
+  <li><a href="#fourier-coefficient-c_k" id="toc-fourier-coefficient-c_k" class="nav-link" data-scroll-target="#fourier-coefficient-c_k">Fourier Coefficient (<span class="math inline">\(C_k\)</span>)</a></li>
   </ul></li>
-  <li><a href="#공학에서의-exponential-fuction이란" id="toc-공학에서의-exponential-fuction이란" class="nav-link" data-scroll-target="#공학에서의-exponential-fuction이란">공학에서의 exponential fuction이란</a>
-  <ul class="collapse">
-  <li><a href="#c와-a가-실수real일때" id="toc-c와-a가-실수real일때" class="nav-link" data-scroll-target="#c와-a가-실수real일때">C와 a가 실수(real)일때</a></li>
-  <li><a href="#c는-복소수-a는-허수일-때" id="toc-c는-복소수-a는-허수일-때" class="nav-link" data-scroll-target="#c는-복소수-a는-허수일-때">C는 복소수, a는 허수일 때</a></li>
-  <li><a href="#c와-a가-복소수일-때" id="toc-c와-a가-복소수일-때" class="nav-link" data-scroll-target="#c와-a가-복소수일-때">C와 a가 복소수일 때</a></li>
-  </ul></li>
-  <li><a href="#연속-시간-신호-시스템의-성질" id="toc-연속-시간-신호-시스템의-성질" class="nav-link" data-scroll-target="#연속-시간-신호-시스템의-성질">연속 시간 신호 시스템의 성질</a>
-  <ul class="collapse">
-  <li><a href="#memory-vs.-memoryless" id="toc-memory-vs.-memoryless" class="nav-link" data-scroll-target="#memory-vs.-memoryless">memory vs.&nbsp;memoryless</a></li>
-  <li><a href="#invertible-vs.-non-invertible" id="toc-invertible-vs.-non-invertible" class="nav-link" data-scroll-target="#invertible-vs.-non-invertible">Invertible vs.&nbsp;non-invertible</a></li>
-  <li><a href="#causal-vs.-noncausal" id="toc-causal-vs.-noncausal" class="nav-link" data-scroll-target="#causal-vs.-noncausal">Causal vs.&nbsp;NonCausal</a></li>
-  <li><a href="#stable-vs.-unstable" id="toc-stable-vs.-unstable" class="nav-link" data-scroll-target="#stable-vs.-unstable">Stable vs.&nbsp;Unstable</a></li>
-  <li><a href="#time-invariant-vs.-time-varying" id="toc-time-invariant-vs.-time-varying" class="nav-link" data-scroll-target="#time-invariant-vs.-time-varying">Time-invariant vs.&nbsp;Time-varying</a></li>
-  <li><a href="#linear-vs.-nonlinear" id="toc-linear-vs.-nonlinear" class="nav-link" data-scroll-target="#linear-vs.-nonlinear">Linear vs.&nbsp;nonlinear</a></li>
-  </ul></li>
-  <li><a href="#lti-system의-중요성" id="toc-lti-system의-중요성" class="nav-link" data-scroll-target="#lti-system의-중요성">LTI System의 중요성</a></li>
+  <li><a href="#frequency-spectra-주파수-스펙트럼" id="toc-frequency-spectra-주파수-스펙트럼" class="nav-link" data-scroll-target="#frequency-spectra-주파수-스펙트럼">frequency spectra (주파수 스펙트럼)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -228,153 +182,58 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-
-<section id="연속-시간-신호와-시스템" class="level1">
-<h1>연속 시간 신호와 시스템</h1>
-<section id="신호-변환-transformation-of-signals" class="level2">
-<h2 class="anchored" data-anchor-id="신호-변환-transformation-of-signals">신호 변환 (transformation of signals)</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;"><span class="math inline">\(y(t)\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Time reversal</td>
-<td style="text-align: center;"><span class="math inline">\(x(-t)\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Time scailing</td>
-<td style="text-align: center;"><span class="math inline">\(x(at)\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Time shiting</td>
-<td style="text-align: center;"><span class="math inline">\(x(t-t_{0})\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Amplitude reversal</td>
-<td style="text-align: center;"><span class="math inline">\(-x(t)\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Amplitude scailing</td>
-<td style="text-align: center;"><span class="math inline">\(Ax(t)\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Amplitude shiting</td>
-<td style="text-align: center;"><span class="math inline">\(x(t)+B\)</span></td>
-</tr>
-</tbody>
-</table>
+<section id="fourier-series-푸리에-계수" class="level1">
+<h1>Fourier series (푸리에 계수)</h1>
+<p><strong>Divide and Conquer</strong>을 직역하면 쪼개서 정복하다라는 뜻인데 공학에서 이는 복잡한 문제를 잘게 쪼개서 해를 구하는 과정을 의미한다. Fourier Series 또한 이에 속한다.<br>
+<strong>Fourier Series</strong>를 간단하게 말하면 복잡한 주기함수를 단순한 신호들의 합으로 표현하는 것이다.</p>
+<section id="fourier-series의-다양한-형태" class="level2">
+<h2 class="anchored" data-anchor-id="fourier-series의-다양한-형태">Fourier Series의 다양한 형태</h2>
+<p>Fourier Series는 다양한 형태로 복잡한 주기 함수를 표현한다.<br>
+<em>아래 식에서 계속 등장하는 <span class="math inline">\(\int_{T_0}\)</span>는 적분 구간의 길이가 <span class="math inline">\(T_0\)</span>임을 의미한다.</em></p>
+<section id="complex-exponential-form" class="level3">
+<h3 class="anchored" data-anchor-id="complex-exponential-form">complex exponential form</h3>
+<p><span class="math display">\[x(t) = \displaystyle\sum^{\infty}_{k=-\infty}C_ke^{jk\omega_0t}, C_k = C_{-k}^*\]</span><br>
+<span class="math display">\[C_k = \frac{1}{T_0}\int_{T_0}x(t)e^{-jk\omega_0t}dt\]</span></p>
 </section>
-<section id="주기-함수periodic-signals" class="level2">
-<h2 class="anchored" data-anchor-id="주기-함수periodic-signals">주기 함수(periodic signals)</h2>
-<p>주기(period)가 T인 신호는 아래와 같은 수식을 만족한다.<br>
-<span class="math display">\[x(t) = x(t + T), T &gt; 0\]</span><br>
-가장 작은 주기 T를 기본 주기(fundamental period)라 부르고 <span class="math inline">\(T_0\)</span>으로 표현한다. 기본 주기가 <span class="math inline">\(T_0\)</span>라면 아래와 같은 식을 통해 기본 주파수를 얻을 수 있다.</p>
-<p><span class="math display">\[f_0 = \frac{1}{T_0}Hz\]</span><br>
-<span class="math display">\[w = 2\pi f_0 = \frac{2\pi}{T_0}rad/s\]</span></p>
-<section id="주기-신호의-덧셈" class="level3">
-<h3 class="anchored" data-anchor-id="주기-신호의-덧셈">주기 신호의 덧셈</h3>
-<p><span class="math display">\[x(t) = x_1(t)+x_2(t)+\cdots+x_N(t)\]</span><br>
-위 식에서 <span class="math inline">\(x(t)\)</span>의 주기를 알기 위해서는 아래와 같은 과정을 통해 알 수 있다.<br>
-<em>(각 신호의 주기 비율이 유리수(정수)배 일 때는 주기신호 끼리 더하면 x(t)는 주기 신호임을 알 수 있음.)</em><br>
-&gt; 1. 각 신호들의 주기를 파악<br>
-&gt; 2. <span class="math inline">\(T_1/T_i\)</span>를 기약 분수 꼴로 구하기 <span class="math inline">\(\therefore i-1\)</span>개의 기약분수를 얻게 됨<br>
-&gt; 3. 2과정을 통해 얻은 기약 분수들의 최소공배수 <span class="math inline">\(k_0\)</span>를 찾기 &gt; 4. <span class="math inline">\(x(t)\)</span>의 주기 <span class="math inline">\(T_0\)</span> 다음과 같음.<br>
-&gt; <span class="math display">\[T_0 = k_0 \cdot T_{01}\]</span></p>
+<section id="combined-trigonometric-form" class="level3">
+<h3 class="anchored" data-anchor-id="combined-trigonometric-form">combined trigonometric form</h3>
+<p><span class="math display">\[x(t) = C_0 + \displaystyle\sum^{\infty}_{k=1}2|C_k|cos(k\omega_0t + \theta_k)\]</span><br>
+<span class="math display">\[C_k = \frac{1}{T_0}\int_{T_0}x(t)e^{-jk\omega_0t}dt\]</span></p>
 </section>
+<section id="trigonometric-form" class="level3">
+<h3 class="anchored" data-anchor-id="trigonometric-form">trigonometric form</h3>
+<p><span class="math display">\[x(t) = a_0 + \displaystyle\sum_{k=1}^{\infty}(a_kcos(k\omega_0t)+b_ksin(k\omega_0t))\]</span><br>
+<span class="math display">\[a_k = \frac{2}{T_0} \int_{T_0}x(t)cos(k\omega_0t)dt,\quad b_k = \frac{2}{T_0} \int_{T_0}x(t)sin(k\omega_0t)dt,\quad a_0 = \frac{1}{T_0}\int_{T_0}x(t)dt\]</span></p>
 </section>
-<section id="공학에서의-exponential-fuction이란" class="level2">
-<h2 class="anchored" data-anchor-id="공학에서의-exponential-fuction이란">공학에서의 exponential fuction이란</h2>
-<p><span class="math inline">\(x(t) = Ce^{at}\)</span>가 있을 때 C와 a의 형태에 따른 <span class="math inline">\(x(t)\)</span>의 변화에 대해 다룰 예정이다.</p>
-<section id="c와-a가-실수real일때" class="level3">
-<h3 class="anchored" data-anchor-id="c와-a가-실수real일때">C와 a가 실수(real)일때</h3>
-<blockquote class="blockquote">
-<ol type="i">
-<li>a &gt; 0일때, 지수함수는 증가하는 형태<br>
-</li>
-<li>a = 0일때, t와 무관하게 계속 <span class="math inline">\(x(t)= C\)</span><br>
-</li>
-<li>a &lt; 0일때, 지수함수는 감소하는 형태</li>
-</ol>
-</blockquote>
-여기서 a &lt; 0일 때의 <span class="math inline">\(x(t)\)</span>는 아래와 같다.<br>
-<span class="math display">\[x(t) = Ce^{at} = C e^{-t/\tau}, \tau &gt; 0\]</span><br>
-<em><span class="math inline">\(\tau\)</span>는 시상수(time constant)를 의미</em><br>
-
-<p align="center">
-</p><p><img src="img/sp1_1.png" width="350" height="200"></p>
-<p>위 그림을 통해 알 수 있듯이 <span class="math inline">\(t = 0\)</span> 일 때의 순간 기울기는 <span class="math inline">\(-\frac{C}{\tau}\)</span> 이다. 만약 이러한 기울기로 신호가 감소한다면 <span class="math inline">\(t = \tau\)</span> 일 때 신호는 사라지게 된다.<br>
-<span class="math inline">\(\to Ce^{-1} = 0.368C\)</span> 즉, t가 <span class="math inline">\(\tau\)</span>인 시점에서 신호의 진폭은 약 36.8%로 감소하게 된다.</p>
-</section>
-<section id="c는-복소수-a는-허수일-때" class="level3">
-<h3 class="anchored" data-anchor-id="c는-복소수-a는-허수일-때">C는 복소수, a는 허수일 때</h3>
-<p><span class="math display">\[x(t) = Ce^{at}; C = Ae^{j\phi} = A\angle\phi, a=j\omega_0\]</span><br>
-여기서 <span class="math inline">\(x(t)\)</span>는 오일러 공식을 통해 아래와 같이 표현할 수 있다.<br>
-<span class="math display">\[x(t) = Ae^{j\phi}e^{j\omega_0 t} = Ae^{j(\omega_0 t+\phi)}\]</span><br>
-<span class="math display">\[= Acos(\omega_0 t+\phi) + jAsin(\omega_0 t+\phi)\]</span></p>
-<blockquote class="blockquote">
-<p>각 주파수가 <span class="math inline">\(k \omega_0\)</span>(여기서 k는 정수)인 신호들의 집합을 <strong>harmonics</strong>라 부른다. harmonics는 이후에 나올 푸리에 급수 전개에 사용된다.</p>
-</blockquote>
-</section>
-<section id="c와-a가-복소수일-때" class="level3">
-<h3 class="anchored" data-anchor-id="c와-a가-복소수일-때">C와 a가 복소수일 때</h3>
-<span class="math display">\[x(t) = Ce^{at}; C = Ae^{j\phi} = A\angle\phi, a=\sigma_0+j\omega_0\]</span><br>
-<span class="math display">\[x(t)= Ae^{\sigma_0t}cos(\omega_0 t+\phi) + je^{\sigma_0t}Asin(\omega_0 t+\phi) = Re[x(t)] + Im[x(t)]\]</span><br>
-위 식에서 실수 부분인 <span class="math inline">\(Re[x(t)]\)</span>을 살펴보면 A는 x(t)의 진폭의 크기를 결정하고 <span class="math inline">\(\phi\)</span>는 위상. <span class="math inline">\(\omega_0\)</span>는 각주파수로 회전속도, <span class="math inline">\(\sigma_0\)</span>는 신호가 점점 커질지 작아질지를 결정한다.<br>
-
-<p align="center">
-</p><p><img src="img/sp1_2.png" width="600" height="200"></p>
-</section>
-</section>
-<section id="연속-시간-신호-시스템의-성질" class="level2">
-<h2 class="anchored" data-anchor-id="연속-시간-신호-시스템의-성질">연속 시간 신호 시스템의 성질</h2>
-<p>연속 시간 신호와 시스템의 성질에 대해 다룸<br>
-<em>뒤로 갈수록 점점 중요도가 높아진다고 생각</em></p>
-<section id="memory-vs.-memoryless" class="level3">
-<h3 class="anchored" data-anchor-id="memory-vs.-memoryless">memory vs.&nbsp;memoryless</h3>
-<p>출력 신호 <span class="math inline">\(y(t_0)\)</span>가 입력 신호 <span class="math inline">\(x(t_0)\)</span>에만 영향을 받는다면 memoryless system이다.<br>
-* 시스템에 memory가 있다면 해당 시스템은 dynamic system(동적 시스템)이라고 불린다. <span class="math inline">\(y(t) = K \cdot \int_{-\infty}^{t} x(\tau) d\tau\)</span>는 dynamic system에 속한다.</p>
+<section id="fourier-coefficient-c_k" class="level3">
+<h3 class="anchored" data-anchor-id="fourier-coefficient-c_k">Fourier Coefficient (<span class="math inline">\(C_k\)</span>)</h3>
 <ul>
-<li>memoryless system은 static system(정적 시스템)이라 부른다. <span class="math inline">\(y(t) = K \cdot x(t)\)</span>은 static system에 속한다.</li>
+<li><span class="math inline">\(C_0\)</span>는 신호 <span class="math inline">\(x(t)\)</span>의 DC 값 또는 평균 값이다. <span class="math inline">\(\because C_0 = \displaystyle\frac{1}{T_0}\int_{0}^{T_0}x(t)dt\)</span><br>
+</li>
+<li><span class="math inline">\(f(t)\)</span>와 <span class="math inline">\(g(t)\)</span>가 구간 a, b에서 orthoginal(직교)하면 <span class="math inline">\(\displaystyle\int_{a}^{b}f(t)g(t)= 0\)</span>이다.<br>
+</li>
+<li>The harmonics in the Fourier series(예를 들어, <span class="math inline">\(\displaystyle\sum^{\infty}_{k=-\infty}C_ke^{jk\omega_0t}\)</span>)는 구간 0, <span class="math inline">\(T_0\)</span>에서 orthoginal(직교)한다. <span class="math inline">\(\displaystyle \because \int_{0}^{T_0}e^{jk\omega_0t}e^{-jk\omega_0t}= 0\)</span></li>
 </ul>
 </section>
-<section id="invertible-vs.-non-invertible" class="level3">
-<h3 class="anchored" data-anchor-id="invertible-vs.-non-invertible">Invertible vs.&nbsp;non-invertible</h3>
-<p>Invertible을 쉽게 말하면 일대일 함수이다. 그렇기 때문에 <span class="math inline">\(y(t) = x^2(t)\)</span> system의 경우는 non-invertible system이다.</p>
 </section>
-<section id="causal-vs.-noncausal" class="level3">
-<h3 class="anchored" data-anchor-id="causal-vs.-noncausal">Causal vs.&nbsp;NonCausal</h3>
-<p>causal은 뜻 그대로 인과 시스템을 의미한다. output 신호의 <span class="math inline">\(t_0\)</span> 시점의 신호가 input 중 <span class="math inline">\(t(t \leq t_0)\)</span>에 속한 신호에만 영향을 받는다면 이는 causal system이다.<br>
-그렇다면 반대로 Noncausal system은 미래의 값을 예측 후 이를 다시 반영하는 시스템들을 의미한다.</p>
-</section>
-<section id="stable-vs.-unstable" class="level3">
-<h3 class="anchored" data-anchor-id="stable-vs.-unstable">Stable vs.&nbsp;Unstable</h3>
-<p>Stable system은 입력 신호가 안정(bounded)됐다면 출력 신호도 안정되는 시스템을 의미한다. 이를 BIBO Stable System이라고 부른다. <span class="math display">\[|x(t)| \leq M \to |y(t)| \leq R\]</span><br>
-<em>x(t)와 y(t)가 유계 신호임을 위와 같이 표현</em></p>
-</section>
-<section id="time-invariant-vs.-time-varying" class="level3">
-<h3 class="anchored" data-anchor-id="time-invariant-vs.-time-varying">Time-invariant vs.&nbsp;Time-varying</h3>
-<p>입력 신호가 <span class="math inline">\(t\)</span>만큼 time shift 됐다면 출력 신호 또한 <span class="math inline">\(t\)</span>만큼 time shift되는 system을 Time-invariant system이라고 한다. * Time-invariant system의 예시로는 <span class="math inline">\(y(t) = e^{x(t)}\)</span>가 있다. 만약 <span class="math inline">\(t \to t-t_0\)</span>가 된다면 <span class="math inline">\(y(t-t_o) = e^{x(t-t_0)}\)</span>이므로 이는 Time-invariant이다.</p>
-<ul>
-<li>Time-invarying system의 예시로는 <span class="math inline">\(y(t) = e^{-t}x(t)\)</span>가 있다. 만약 <span class="math inline">\(t \to t-t_0\)</span>가 된다면 <span class="math inline">\(y(t-t_0) = e^{-(t-t_0)}x(t-t_0) = e^{-t+t_0}x(t-t_0)\)</span>가 되므로 이는 time varying이다.</li>
-</ul>
-</section>
-<section id="linear-vs.-nonlinear" class="level3">
-<h3 class="anchored" data-anchor-id="linear-vs.-nonlinear">Linear vs.&nbsp;nonlinear</h3>
-<p>Linear system은 Additivity와 Homogeneity를 모두 만족, 즉 중첩 원리(principle of superposition)를 만족하는 시스템을 의미한다.<br>
-* Additivity <span class="math display">\[x_1(t) + x_2(t) \to y_1(t) + y_2(t)\]</span> * Homogeneity <span class="math display">\[ax_1(t) \to ay_1(t)\]</span> * principle of superposition <span class="math display">\[a_1x_1(t) + a_2x_2(t) \to a_1y_1(t) + a_2y_2(t)\]</span></p>
-</section>
-</section>
-<section id="lti-system의-중요성" class="level2">
-<h2 class="anchored" data-anchor-id="lti-system의-중요성">LTI System의 중요성</h2>
-<p>Linear property와 Time invariant property를 만족하는 시스템을 LTI system이라고 부른다. LTI system은 공학 분야에서 아래와 같은 이유로 매우 중요하다.<br>
-* 대부분의 물리 시스템이 LTI system으로 정확하게 모델링된다.<br>
-* LTI system 방정식은 풀 수 있다.<br>
-* 많은 LTI system의 디자인 방법 또는 분석 방법을 사용할 수 있다.<br>
-* input signal이 sum of functions이라면 LTI System의 output 또한 sum of responses이다.</p>
+<section id="frequency-spectra-주파수-스펙트럼" class="level2">
+<h2 class="anchored" data-anchor-id="frequency-spectra-주파수-스펙트럼">frequency spectra (주파수 스펙트럼)</h2>
+<p align="center">
+</p><p><img src="img/sp4_1.png" width="500" height="150"></p>
+<p>위와 같은 신호의 Fourier coefficients는 아래와 같다.<br>
+<span class="math display">\[C_k = \frac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}x(t)e^{-jk\omega_0t}dt = \frac{1}{T_0}\int_{-\frac{T}{2}}^{\frac{T}{2}}X_0 e^{-jk\omega_0t}dt = \frac{X_0}{T_0(-jk\omega_0)}e^{-jk\omega_0t}|^{\frac{T}{2}}_{-\frac{T}{2}}\]</span><br>
+<span class="math display">\[ = \frac{2X_0}{kT_0\omega_0}[\frac{e^{jk\omega_0T/2} +e^{-jk\omega_0T/2}}{2j}] = \frac{2X_0}{kT_0\omega_0} sin(k\omega_0T/2) = \frac{TX_0}{T_0} \frac{sin(k\omega_0T/2)}{k\omega_0T/2}\]</span><br>
+<span class="math display">\[= \frac{TX_0}{T_0}sinc(\frac{k\omega_0T}{2})\]</span></p>
+<blockquote class="blockquote">
+여기서 <strong>sinc function</strong>에 대해서 간단히 소개하면 <span class="math inline">\(\displaystyle sinc(x) = \frac{sin(x)}{x}\)</span>와 같이 정의할 수 있고 아래와 같은 그래프 모양을 갖는다.
+<p align="center">
+</p><p><img src="img/sp4_2.png" width="400" height="230/"></p>
+</blockquote>
+정리하면 위에서 얻은 <span class="math inline">\(C_k\)</span>를 사용해 주파수 스펙트럼을 그리면 아래와 같다.
+<p align="center">
+</p><p><img src="img/sp4_3.png" width="400" height="230/"></p>
+<p>위 그래프를 간단하게 해석하면 rectangular pulse의 푸리에 계수에는 저주파 성분들의 가중치(<span class="math inline">\(|C_k|\)</span>)가 크고 고주파로 갈수록 해당 성분들의 가중치는 0에 가까운 것을 알 수 있다.</p>
+<p><em>위의 예시를 통해 알수 있듯 사각파(rectangular pulse)의 푸리에 계수는 sinc function을 포함하고 있음을 알 수 있다.</em></p>
 
 
 </section>
