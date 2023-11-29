@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="JuWon">
-<meta name="dcterms.date" content="2023-11-27">
+<meta name="dcterms.date" content="2023-11-29">
 
-<title>BME JuWon’s summary note - Fourier series (푸리에 급수)</title>
+<title>BME JuWon’s summary note - Fourier Transform (1) (푸리에 변환 1)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Fourier series (푸리에 급수)</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Fourier Transform (1) (푸리에 변환 1)</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Fourier series (푸리에 급수)</h1>
+      <h1 class="title">Fourier Transform (1) (푸리에 변환 1)</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">signal and system</div>
               </div>
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 27, 2023</p>
+        <p class="date">November 29, 2023</p>
       </div>
     </div>
     
@@ -192,16 +192,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fourier-series-푸리에-급수" id="toc-fourier-series-푸리에-급수" class="nav-link active" data-scroll-target="#fourier-series-푸리에-급수">Fourier series (푸리에 급수)</a>
+  <li><a href="#fourier-transform-1" id="toc-fourier-transform-1" class="nav-link active" data-scroll-target="#fourier-transform-1">Fourier Transform (1)</a>
   <ul class="collapse">
-  <li><a href="#fourier-series의-다양한-형태" id="toc-fourier-series의-다양한-형태" class="nav-link" data-scroll-target="#fourier-series의-다양한-형태">Fourier Series의 다양한 형태</a>
+  <li><a href="#fourier-transform의-필요성" id="toc-fourier-transform의-필요성" class="nav-link" data-scroll-target="#fourier-transform의-필요성">Fourier Transform의 필요성</a></li>
+  <li><a href="#idea-for-fourier-transform" id="toc-idea-for-fourier-transform" class="nav-link" data-scroll-target="#idea-for-fourier-transform">Idea for Fourier Transform</a></li>
+  <li><a href="#example-of-fourier-transform" id="toc-example-of-fourier-transform" class="nav-link" data-scroll-target="#example-of-fourier-transform">Example of Fourier Transform</a>
   <ul class="collapse">
-  <li><a href="#complex-exponential-form" id="toc-complex-exponential-form" class="nav-link" data-scroll-target="#complex-exponential-form">complex exponential form</a></li>
-  <li><a href="#combined-trigonometric-form" id="toc-combined-trigonometric-form" class="nav-link" data-scroll-target="#combined-trigonometric-form">combined trigonometric form</a></li>
-  <li><a href="#trigonometric-form" id="toc-trigonometric-form" class="nav-link" data-scroll-target="#trigonometric-form">trigonometric form</a></li>
-  <li><a href="#fourier-coefficient-c_k-푸리에-계수" id="toc-fourier-coefficient-c_k-푸리에-계수" class="nav-link" data-scroll-target="#fourier-coefficient-c_k-푸리에-계수">Fourier Coefficient (<span class="math inline">\(C_k\)</span>; 푸리에 계수)</a></li>
+  <li><a href="#rectangular-pulse" id="toc-rectangular-pulse" class="nav-link" data-scroll-target="#rectangular-pulse">rectangular pulse</a></li>
+  <li><a href="#impulse-function" id="toc-impulse-function" class="nav-link" data-scroll-target="#impulse-function">Impulse function</a></li>
+  <li><a href="#inverse-fourier-transform-of-impulse-function" id="toc-inverse-fourier-transform-of-impulse-function" class="nav-link" data-scroll-target="#inverse-fourier-transform-of-impulse-function">Inverse Fourier Transform of Impulse function</a></li>
   </ul></li>
-  <li><a href="#frequency-spectra-주파수-스펙트럼" id="toc-frequency-spectra-주파수-스펙트럼" class="nav-link" data-scroll-target="#frequency-spectra-주파수-스펙트럼">frequency spectra (주파수 스펙트럼)</a></li>
+  <li><a href="#properties-of-the-fourier-transform" id="toc-properties-of-the-fourier-transform" class="nav-link" data-scroll-target="#properties-of-the-fourier-transform">Properties of the Fourier Transform</a>
+  <ul class="collapse">
+  <li><a href="#linearity" id="toc-linearity" class="nav-link" data-scroll-target="#linearity">Linearity</a></li>
+  <li><a href="#time-scaling" id="toc-time-scaling" class="nav-link" data-scroll-target="#time-scaling">Time scaling</a></li>
+  <li><a href="#time-shifting" id="toc-time-shifting" class="nav-link" data-scroll-target="#time-shifting">Time shifting</a></li>
+  <li><a href="#time-revarsal" id="toc-time-revarsal" class="nav-link" data-scroll-target="#time-revarsal">Time revarsal</a></li>
+  <li><a href="#time-transformation-scailing-shifting" id="toc-time-transformation-scailing-shifting" class="nav-link" data-scroll-target="#time-transformation-scailing-shifting">Time Transformation (= scailing + shifting)</a></li>
+  <li><a href="#duality-쌍대성" id="toc-duality-쌍대성" class="nav-link" data-scroll-target="#duality-쌍대성">Duality (쌍대성)</a></li>
+  <li><a href="#convolution" id="toc-convolution" class="nav-link" data-scroll-target="#convolution">Convolution</a></li>
+  <li><a href="#frequency-shifting" id="toc-frequency-shifting" class="nav-link" data-scroll-target="#frequency-shifting">Frequency shifting</a></li>
+  <li><a href="#time-integration" id="toc-time-integration" class="nav-link" data-scroll-target="#time-integration">Time integration</a></li>
+  <li><a href="#time-differentiation" id="toc-time-differentiation" class="nav-link" data-scroll-target="#time-differentiation">Time differentiation</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -216,64 +229,99 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="fourier-series-푸리에-급수" class="level1">
-<h1>Fourier series (푸리에 급수)</h1>
-<p><strong>Divide and Conquer</strong>을 직역하면 쪼개서 정복하다라는 뜻으로 공학에서 이는 복잡한 문제를 잘게 쪼개서 해를 구하는 과정을 의미한다. Fourier Series 또한 이에 속한다.<br>
-<strong>Fourier Series</strong>를 간단하게 말하면 복잡한 주기함수를 단순한 신호들의 합으로 표현하는 것이다.</p>
-<section id="fourier-series의-다양한-형태" class="level2">
-<h2 class="anchored" data-anchor-id="fourier-series의-다양한-형태">Fourier Series의 다양한 형태</h2>
-<p>Fourier Series는 다양한 형태로 복잡한 주기 함수를 표현는 방법을 의미한다. 우선 Fourier Series의 다양한 형태를 먼저 소개하도록 하겠다.</p>
-<p><em>주로 복소지수형태와 삼각함수형태를 사용함</em></p>
-<p><em>아래 식에서 계속 등장하는 <span class="math inline">\(\int_{T_0}\)</span>는 적분 구간의 길이가 <span class="math inline">\(T_0\)</span>임을 의미한다.</em></p>
-<section id="complex-exponential-form" class="level3">
-<h3 class="anchored" data-anchor-id="complex-exponential-form">complex exponential form</h3>
-<p><span class="math display">\[x(t) = \displaystyle\sum^{\infty}_{k=-\infty}C_ke^{jk\omega_0t}, C_k = C_{-k}^*\]</span><br>
-<span class="math display">\[C_k = \frac{1}{T_0}\int_{T_0}x(t)e^{-jk\omega_0t}dt\]</span></p>
-</section>
-<section id="combined-trigonometric-form" class="level3">
-<h3 class="anchored" data-anchor-id="combined-trigonometric-form">combined trigonometric form</h3>
-<p><span class="math display">\[x(t) = C_0 + \displaystyle\sum^{\infty}_{k=1}2|C_k|cos(k\omega_0t + \theta_k)\]</span><br>
-<span class="math display">\[C_k = \frac{1}{T_0}\int_{T_0}x(t)e^{-jk\omega_0t}dt\]</span></p>
-</section>
-<section id="trigonometric-form" class="level3">
-<h3 class="anchored" data-anchor-id="trigonometric-form">trigonometric form</h3>
-<p><span class="math display">\[x(t) = a_0 + \displaystyle\sum_{k=1}^{\infty}(a_kcos(k\omega_0t)+b_ksin(k\omega_0t))\]</span><br>
-<span class="math display">\[a_k = \frac{2}{T_0} \int_{T_0}x(t)cos(k\omega_0t)dt,\quad b_k = \frac{2}{T_0} \int_{T_0}x(t)sin(k\omega_0t)dt,\quad a_0 = \frac{1}{T_0}\int_{T_0}x(t)dt\]</span></p>
-</section>
-<section id="fourier-coefficient-c_k-푸리에-계수" class="level3">
-<h3 class="anchored" data-anchor-id="fourier-coefficient-c_k-푸리에-계수">Fourier Coefficient (<span class="math inline">\(C_k\)</span>; 푸리에 계수)</h3>
+<section id="fourier-transform-1" class="level1">
+<h1>Fourier Transform (1)</h1>
+<section id="fourier-transform의-필요성" class="level2">
+<h2 class="anchored" data-anchor-id="fourier-transform의-필요성">Fourier Transform의 필요성</h2>
 <ul>
-<li><span class="math inline">\(C_0\)</span>는 신호 <span class="math inline">\(x(t)\)</span>의 DC 값 또는 평균 값이다. <span class="math inline">\(\because C_0 = \displaystyle\frac{1}{T_0}\int_{0}^{T_0}x(t)dt\)</span><br>
+<li>신호를 주파수 도메인에서 해석하기 위해서는 푸리에 변화에 대해 잘 알고 있어야 함.<br>
 </li>
-<li><span class="math inline">\(f(t)\)</span>와 <span class="math inline">\(g(t)\)</span>가 구간 a, b에서 orthoginal(직교)하면 <span class="math inline">\(\displaystyle\int_{a}^{b}f(t)g(t)= 0\)</span>이다.<br>
-</li>
-<li>The harmonics in the Fourier series(예를 들어, <span class="math inline">\(\displaystyle\sum^{\infty}_{k=-\infty}C_ke^{jk\omega_0t}\)</span>)는 구간 0, <span class="math inline">\(T_0\)</span>에서 orthoginal(직교)한다. <span class="math inline">\(\displaystyle \because \int_{0}^{T_0}e^{jk\omega_0t}e^{-jk\omega_0t}= 0\)</span></li>
+<li>푸리에 변환은 푸리에 급수의 확장이다.
+<ul>
+<li>주기성이 있는 신호라면 푸리에 급수, 푸리에 변환이 모두 가능하지만, 주기성이 없는 신호라면 푸리에 변환만을 통해 주파수 도메인에서 해석이 가능하다.</li>
+</ul></li>
 </ul>
 </section>
+<section id="idea-for-fourier-transform" class="level2">
+<h2 class="anchored" data-anchor-id="idea-for-fourier-transform">Idea for Fourier Transform</h2>
+<p>Fourier Transform을 간단히 말하면 주기(<span class="math inline">\(T_0\)</span>)가 <span class="math inline">\(\infty\)</span>인 신호의 Fourier coefficient를 구하는 과정이다. 이를 수식으로 표현하면 아래와 같다.</p>
+<p><span class="math display">\[x(t) = \sum^{\infty}_{k=-\infty}C_ke^{jk\omega_0t},\quad C_k = \frac{1}{T_0}\int_{T_0}x(t)e^{-jk\omega_0t}dt\]</span></p>
+<p><span class="math display">\[C_{k\infty} = \lim_{T_0 \to \infty}\frac{1}{2\pi}\frac{2\pi}{T_0}\int_{T_0}x(t)e^{-jk\omega_0t}dt\]</span></p>
+<p>주기 (<span class="math inline">\(T_0\)</span>)가 무한대에 가까워 지는 것이므로, <span class="math inline">\(\displaystyle\lim_{T_0 \to \infty}\frac{2\pi}{T_0} = \lim_{T_0 \to \infty}\omega_0 = d\omega\)</span>이고, <span class="math inline">\(\;\)</span> <span class="math inline">\(k\omega_0 \to kd\omega \to \omega\)</span>이 된다.</p>
+<p><span class="math display">\[ C_{k\infty} = \frac{1}{2\pi}\left[\int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt\right]d\omega\]</span></p>
+<p>정리하면 푸리에 변환과 역 푸리에 변환 식은 아래와 같이 정의할 수 있다.<br>
+<span class="math display">\[\;\mathcal{F}[x(t)] = X(\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt\]</span></p>
+<p><span class="math display">\[\mathcal{F}^{-1}[X(\omega)] = x(t) = \frac{1}{2\pi}\int^{\infty}_{-\infty}F(\omega)e^{j\omega t}d\omega\]</span></p>
 </section>
-<section id="frequency-spectra-주파수-스펙트럼" class="level2">
-<h2 class="anchored" data-anchor-id="frequency-spectra-주파수-스펙트럼">frequency spectra (주파수 스펙트럼)</h2>
-푸리에 계수에서 주목해야 하는 부분은 주파수 스펙트럼이다. rectangular pulse의 푸리에 계수를 구하는 예시를 통해 주파수 스펙트럼에 대해 소개하도록 하겠다.<br>
+<section id="example-of-fourier-transform" class="level2">
+<h2 class="anchored" data-anchor-id="example-of-fourier-transform">Example of Fourier Transform</h2>
+<p>푸리에 변환을 하다보면 자주 접하는 함수들의 예시를 다뤄보도록 하겠다. 이번에 다루는 함수들의 푸리에 변환을 암기해두면 복잡한 식들도 쉽게 풀 수 있다.</p>
+<section id="rectangular-pulse" class="level3">
+<h3 class="anchored" data-anchor-id="rectangular-pulse">rectangular pulse</h3>
+<p>주기가 T이고 크기가 V인 사각파는 <span class="math inline">\(f(t) = V rect\left(\frac{t}{T}\right)\)</span> 이러한 수식으로 표현할 수 있다. 이를 푸리에 변환하면 식은 아래와 같다.<br>
+<span class="math display">\[F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-j\omega t} dt = \int_{-T/2}^{T/2}Ve^{-j\omega t} dt = \left[\frac{V}{-j\omega}e^{-j\omega t}\right]^{T/2}_{-T/2}= \cdots = TVsinc\left(\frac{T\omega}{2}\right)\]</span> <span class="math display">\[\;\therefore rect\left(\frac{t}{T}\right) \;\xleftrightarrow{\quad\mathcal{F}\quad}\; Tsinc\left(\frac{T\omega}{2}\right) \]</span></p>
+</section>
+<section id="impulse-function" class="level3">
+<h3 class="anchored" data-anchor-id="impulse-function">Impulse function</h3>
+<p><span class="math inline">\(f(t) = A\delta(t - t_0)\)</span>를 푸리에 변환하면 식은 아래와 같다.<br>
+<span class="math display">\[F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-j\omega t} dt = A\int_{-\infty}^{\infty}\delta(t - t_0)e^{-j\omega t} dt = A e^{-j\omega t_0}\]</span> <span class="math display">\[\;\therefore \delta(t) \;\xleftrightarrow{\quad\mathcal{F}\quad}\; 1\]</span></p>
+</section>
+<section id="inverse-fourier-transform-of-impulse-function" class="level3">
+<h3 class="anchored" data-anchor-id="inverse-fourier-transform-of-impulse-function">Inverse Fourier Transform of Impulse function</h3>
+<p>주파수 도메인 상의 임펄스 함수 <span class="math inline">\(F(\omega) = 2\pi\delta(\omega - \omega_0)\)</span>을 역 푸리에 변환하면 아래와 같은 결과가 나온다.<br>
+<span class="math display">\[f(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{j\omega t} d\omega = \frac{1}{2\pi}\int_{-\infty}^{\infty}2\pi\delta(\omega - \omega_0)e^{j\omega t} d\omega = e^{j\omega_0 t}\]</span></p>
+<p><span class="math display">\[\;\therefore e^{j\omega_0 t}\;\xleftrightarrow{\quad\mathcal{F}\quad}\; 2\pi\delta(\omega - \omega_0)\]</span></p>
+</section>
+</section>
+<section id="properties-of-the-fourier-transform" class="level2">
+<h2 class="anchored" data-anchor-id="properties-of-the-fourier-transform">Properties of the Fourier Transform</h2>
+<section id="linearity" class="level3">
+<h3 class="anchored" data-anchor-id="linearity">Linearity</h3>
+<p><span class="math display">\[[af_1(t) + bf_2(t)] \;\xleftrightarrow{\quad\mathcal{F}\quad}\; [aF_1(\omega) + bF_2(\omega)]\]</span></p>
+</section>
+<section id="time-scaling" class="level3">
+<h3 class="anchored" data-anchor-id="time-scaling">Time scaling</h3>
+<p><span class="math display">\[f(at) \;\xleftrightarrow{\quad\mathcal{F}\quad}\; \frac{1}{|a|}F\left(\frac{\omega}{a}\right)\]</span></p>
+</section>
+<section id="time-shifting" class="level3">
+<h3 class="anchored" data-anchor-id="time-shifting">Time shifting</h3>
+<p><span class="math display">\[f(t-t_0) \;\xleftrightarrow{\quad\mathcal{F}\quad}\; F(\omega)e^{-j\omega t_0}\]</span></p>
+</section>
+<section id="time-revarsal" class="level3">
+<h3 class="anchored" data-anchor-id="time-revarsal">Time revarsal</h3>
+<p><span class="math display">\[f(-t) \;\xleftrightarrow{\quad\mathcal{F}\quad}\; \frac{1}{|-1|}F\left(\frac{\omega}{-1}\right) = F(-\omega)\]</span></p>
+</section>
+<section id="time-transformation-scailing-shifting" class="level3">
+<h3 class="anchored" data-anchor-id="time-transformation-scailing-shifting">Time Transformation (= scailing + shifting)</h3>
+<p><span class="math display">\[f(at-t_0) \;\xleftrightarrow{\quad\mathcal{F}\quad}\; \frac{1}{|a|}F\left(\frac{\omega}{a}\right)e^{-jt_0(\omega/a)}\]</span></p>
+</section>
+<section id="duality-쌍대성" class="level3">
+<h3 class="anchored" data-anchor-id="duality-쌍대성">Duality (쌍대성)</h3>
+<p><span class="math display">\[F(t) \;\xleftrightarrow{\quad\mathcal{F}\quad}\; 2\pi f(-\omega)\quad when \;\; f(t)  \;
+\xleftrightarrow{\;\mathcal{F}\;}\;  F(\omega)\]</span></p>
+</section>
+<section id="convolution" class="level3">
+<h3 class="anchored" data-anchor-id="convolution">Convolution</h3>
+<p>시간 영역에서의 컨볼루션 연산은 주파수 영역에서는 곱셈을 의미한다.<br>
+<span class="math display">\[f_1(t) * f_2(t) \;\xleftrightarrow{\quad\mathcal{F}\quad}\; F_1(\omega)F_2(\omega)\]</span></p>
+<p>반대로 시간영역에서의 곱셈 연산은 주파수 영역에서의 컨볼루션 연산을 의미한다. 단,<br>
+<span class="math display">\[f_1(t) f_2(t) \;\xleftrightarrow{\quad\mathcal{F}\quad}\; \frac{1}{2\pi} F_1(\omega)*F_2(\omega)\]</span></p>
+</section>
+<section id="frequency-shifting" class="level3">
+<h3 class="anchored" data-anchor-id="frequency-shifting">Frequency shifting</h3>
+<p><span class="math display">\[f(t)e^{j\omega t_0} \;\xleftrightarrow{\quad\mathcal{F}\quad}\; F(\omega - \omega_0)\]</span></p>
+</section>
+<section id="time-integration" class="level3">
+<h3 class="anchored" data-anchor-id="time-integration">Time integration</h3>
+<p><span class="math display">\[g(t) = \int_{-\infty}^{t}f(\tau)d\tau \;\xleftrightarrow{\quad\mathcal{F}\quad}\; \frac{F(\omega)}{j\omega} + \pi F(0)\delta(\omega) = G(\omega)\]</span></p>
+</section>
+<section id="time-differentiation" class="level3">
+<h3 class="anchored" data-anchor-id="time-differentiation">Time differentiation</h3>
+<p><span class="math display">\[\frac{d^n[f(t)]}{dt}\;\xleftrightarrow{\quad\mathcal{F}\quad}\;(j\omega)^nF(\omega)\]</span><br>
+<span class="math display">\[\because \; f(t) = \frac{1}{2\pi}\int F(\omega)e^{j\omega t}d\omega,\; f^\prime(t) = \frac{1}{2\pi}\frac{1}{j\omega}\int F(\omega)e^{j\omega t}d\omega\]</span></p>
 
-<p align="center">
-</p><p><img src="img/sp4_1.png" width="500" height="150"></p>
-<p>위의 신호는 rectangular pulse로 Fourier coefficients는 아래와 같다.<br>
-<span class="math display">\[C_k = \frac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}x(t)e^{-jk\omega_0t}dt = \frac{1}{T_0}\int_{-\frac{T}{2}}^{\frac{T}{2}}X_0 e^{-jk\omega_0t}dt = \frac{X_0}{T_0(-jk\omega_0)}e^{-jk\omega_0t}|^{\frac{T}{2}}_{-\frac{T}{2}}\]</span><br>
-<span class="math display">\[ = \frac{2X_0}{kT_0\omega_0}[\frac{e^{jk\omega_0T/2} +e^{-jk\omega_0T/2}}{2j}] = \frac{2X_0}{kT_0\omega_0} sin(k\omega_0T/2) = \frac{TX_0}{T_0} \frac{sin(k\omega_0T/2)}{k\omega_0T/2}\]</span><br>
-<span class="math display">\[= \frac{TX_0}{T_0}sinc(\frac{k\omega_0T}{2})\]</span></p>
-<blockquote class="blockquote">
-여기서 <strong>sinc function</strong>에 대해서 간단히 소개하면 <span class="math inline">\(\displaystyle sinc(x) = \frac{sin(x)}{x}\)</span>와 같이 정의할 수 있고 아래와 같은 그래프 모양을 갖는다.
-<p align="center">
-</p><p><img src="img/sp4_2.png" width="400" height="230/"></p>
-</blockquote>
-<span class="math inline">\(C_k\)</span>를 사용해 주파수 스펙트럼을 그리면 아래와 같다.
-<p align="center">
-</p><p><img src="img/sp4_3.png" width="400" height="230/"></p>
-<p>위 그래프를 간단하게 해석하면 rectangular pulse의 푸리에 계수에는 저주파 성분들의 가중치(<span class="math inline">\(|C_k|\)</span>)가 크고 고주파로 갈수록 해당 성분들의 가중치는 0에 가까운 것을 알 수 있다.</p>
-<p><em>주파수 스펙트럼을 살펴보면 필터와 비슷한 역할을 하고 있음을 알 수 있음</em></p>
-<p><em>위의 예시를 통해 알수 있듯 사각파(rectangular pulse)의 푸리에 계수는 sinc function을 포함하고 있음을 알 수 있음</em></p>
 
-
+</section>
 </section>
 </section>
 
