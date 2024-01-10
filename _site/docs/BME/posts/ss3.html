@@ -9,7 +9,7 @@
 <meta name="author" content="JuWon">
 <meta name="dcterms.date" content="2023-11-13">
 
-<title>BME JuWon’s summary note - Convolution</title>
+<title>BME JuWon’s summary note - Convolution (continuous-time LTI system)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Convolution</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Convolution (continuous-time LTI system)</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Convolution</h1>
+      <h1 class="title">Convolution (continuous-time LTI system)</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">signal and system</div>
               </div>
@@ -192,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#convolution" id="toc-convolution" class="nav-link active" data-scroll-target="#convolution">Convolution</a>
+  <li><a href="#연속-시간-시스템에서의-convolution" id="toc-연속-시간-시스템에서의-convolution" class="nav-link active" data-scroll-target="#연속-시간-시스템에서의-convolution">연속 시간 시스템에서의 Convolution</a>
   <ul class="collapse">
   <li><a href="#convolution-integral" id="toc-convolution-integral" class="nav-link" data-scroll-target="#convolution-integral">Convolution Integral</a>
   <ul class="collapse">
@@ -216,9 +216,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="convolution" class="level1">
-<h1>Convolution</h1>
-<p>이번 포스트에서는 연속 시간 LTI system에서의 Convoution에 대해 설명할 것이다.</p>
+<section id="연속-시간-시스템에서의-convolution" class="level1">
+<h1>연속 시간 시스템에서의 Convolution</h1>
+<p>이번 포스트에서는 연속 시간 LTI system에서의 Convolution에 대해 설명할 것이다.</p>
 <section id="convolution-integral" class="level2">
 <h2 class="anchored" data-anchor-id="convolution-integral">Convolution Integral</h2>
 <section id="imperse-representaion" class="level3">
@@ -229,8 +229,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="unit-impuse-response" class="level3">
 <h3 class="anchored" data-anchor-id="unit-impuse-response">unit impuse response</h3>
 <p><span class="math display">\[x(t) = \delta(t) \to [LTI \; system]\to y(t) = h(t)\]</span> <span class="math display">\[\delta(t) \to h(t)\]</span></p>
-<p>여기서 <span class="math inline">\(\delta(t)\)</span>는 임펄스 함수(impulse function), <span class="math inline">\(h(t)\)</span>는 <strong>임펄스 응답(impulse response)</strong> 을 의미한다. * Time-invariant에 의해 <span class="math inline">\(\delta(t-t_0) \to h(t-t_0)\)</span><br>
-* Linear에 의해 <span class="math inline">\(\Sigma_{k =0}^{\infty}\Delta\delta(t-k\Delta) \to \Sigma_{k =0}^{\infty}\Delta h(t-k\Delta)\)</span></p>
+<p>여기서 <span class="math inline">\(\delta(t)\)</span>는 임펄스 함수(impulse function), <span class="math inline">\(h(t)\)</span>는 <strong>임펄스 응답(impulse response)</strong> 을 의미한다.</p>
+<ul>
+<li>Time-invariant에 의해 <span class="math inline">\(\delta(t-t_0) \to h(t-t_0)\)</span><br>
+</li>
+<li>Linear에 의해 <span class="math inline">\(\Sigma_{k =0}^{\infty}\Delta\delta(t-k\Delta) \to \Sigma_{k =0}^{\infty}\Delta h(t-k\Delta)\)</span></li>
+</ul>
 </section>
 <section id="convolution-integral-증명" class="level3">
 <h3 class="anchored" data-anchor-id="convolution-integral-증명">Convolution Integral 증명</h3>
@@ -241,11 +245,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="math display">\[x(t) = \int_{-\infty}^{\infty}v(\tau)\delta(t-\tau)d\tau = v(t) \overset{LTI \; system}\to y(t) = \int_{-\infty}^{\infty}v(\tau)h(t-\tau)d\tau\]</span><br>
 <span class="math display">\[\downarrow\]</span><br>
 <span class="math display">\[\therefore \; y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau = x(t) * h(t)\]</span></p>
+<p><strong>위 식을 통해 알 수 있는 것은 임펄스 응답<span class="math inline">\(h(t)\)</span>와 입력 신호<span class="math inline">\(x(t)\)</span>를 컨볼루션한다면 출력 <span class="math inline">\(y(t)\)</span>를 알 수 있다는 것이다. 즉, <span class="math inline">\(h(t)\)</span>에는 시스템에 대한 모든 정보가 담겨 있는 것을 의미한다.</strong></p>
 </section>
 <section id="properties-of-convolution-integral" class="level3">
 <h3 class="anchored" data-anchor-id="properties-of-convolution-integral">properties of convolution integral</h3>
 <ul>
-<li><p><span class="math inline">\(y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau = \int_{-\infty}^{\infty}x(t-\tau)h(\tau)d\tau\)</span></p></li>
+<li><p><span class="math inline">\(y(t) = \displaystyle\int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau = \int_{-\infty}^{\infty}x(t-\tau)h(\tau)d\tau\)</span></p></li>
 <li><p><span class="math inline">\(\delta(t) * h(t) = h(t)\)</span></p></li>
 <li><p><span class="math inline">\(\delta(t-t_0) * h(t) = h(t-t_0)\qquad \because time-invariant\)</span></p></li>
 </ul>
