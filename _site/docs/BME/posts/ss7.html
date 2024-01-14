@@ -9,7 +9,7 @@
 <meta name="author" content="JuWon">
 <meta name="dcterms.date" content="2024-01-14">
 
-<title>BME JuWon’s summary note - Fourier Transform (2) (푸리에 변환 2)</title>
+<title>BME JuWon’s summary note - Laplace Transform</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Fourier Transform (2) (푸리에 변환 2)</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Laplace Transform</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Fourier Transform (2) (푸리에 변환 2)</h1>
+      <h1 class="title">Laplace Transform</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">signal and system</div>
               </div>
@@ -192,17 +192,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fourier-transform-2" id="toc-fourier-transform-2" class="nav-link active" data-scroll-target="#fourier-transform-2">Fourier Transform (2)</a>
+  <li><a href="#laplace-transform" id="toc-laplace-transform" class="nav-link active" data-scroll-target="#laplace-transform">Laplace Transform</a>
   <ul class="collapse">
-  <li><a href="#fourier-transform-of-periodic-signal" id="toc-fourier-transform-of-periodic-signal" class="nav-link" data-scroll-target="#fourier-transform-of-periodic-signal">Fourier Transform of periodic signal</a>
+  <li><a href="#idea-for-laplace-transform" id="toc-idea-for-laplace-transform" class="nav-link" data-scroll-target="#idea-for-laplace-transform">Idea for Laplace Transform</a></li>
+  <li><a href="#region-of-convergenceroc-수렴영역" id="toc-region-of-convergenceroc-수렴영역" class="nav-link" data-scroll-target="#region-of-convergenceroc-수렴영역">Region of convergence(ROC; 수렴영역)</a>
   <ul class="collapse">
-  <li><a href="#example-fourier-transform-of-periodic-signalrectangular-pulse-train" id="toc-example-fourier-transform-of-periodic-signalrectangular-pulse-train" class="nav-link" data-scroll-target="#example-fourier-transform-of-periodic-signalrectangular-pulse-train">Example: Fourier Transform of periodic signal(rectangular pulse train)</a></li>
+  <li><a href="#example-of-roc" id="toc-example-of-roc" class="nav-link" data-scroll-target="#example-of-roc">Example of ROC</a></li>
   </ul></li>
-  <li><a href="#applications-of-the-fourier-transformfilter" id="toc-applications-of-the-fourier-transformfilter" class="nav-link" data-scroll-target="#applications-of-the-fourier-transformfilter">Applications of the Fourier Transform(filter)</a>
-  <ul class="collapse">
-  <li><a href="#ideal-filter" id="toc-ideal-filter" class="nav-link" data-scroll-target="#ideal-filter">Ideal filter</a></li>
-  <li><a href="#real-filter" id="toc-real-filter" class="nav-link" data-scroll-target="#real-filter">Real filter</a></li>
-  </ul></li>
+  <li><a href="#pole-and-zero" id="toc-pole-and-zero" class="nav-link" data-scroll-target="#pole-and-zero">pole and zero</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -217,75 +214,41 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="fourier-transform-2" class="level1">
-<h1>Fourier Transform (2)</h1>
-<p>이번 포스트에서는 <strong>주기 함수의 푸리에 변환</strong>, <strong>푸리에 변환의 응용(filter)</strong> 에 대해 다룰 예정이다.</p>
-<section id="fourier-transform-of-periodic-signal" class="level2">
-<h2 class="anchored" data-anchor-id="fourier-transform-of-periodic-signal">Fourier Transform of periodic signal</h2>
-<p>이전 포스트에서 간단하게 언급했듯이 주기 신호의 경우 푸리에 변환이 가능하다. 만약 <span class="math inline">\(f(t)\)</span>라는 주기 신호가 있다면 <span class="math inline">\(\displaystyle\int_{-\infty}^{\infty}f(t)e^{-j\omega t}dt\)</span> 이와 같은 수식을 통해 푸리에 변환을 하는 것이 아닌 푸리에 계수를 구한 후 푸리에 변환을 진행해주어야 한다.</p>
-<ol type="1">
-<li>주기 신호 <span class="math inline">\(f(t)\)</span>를 푸리에 계수를 사용하여 표현하기<br>
-<span class="math inline">\(f(t) = \displaystyle\sum_{k = -\infty}^{\infty}C_ke^{j k \omega_0 t}, \quad where \quad C_k = \frac{1}{T_0}\int_{T_0}f(t)e^{-j k \omega_0 t}dt\)</span><br>
+<section id="laplace-transform" class="level1">
+<h1>Laplace Transform</h1>
+<p>이번 포스트에서는 단방향 라플라스 변환과 ROC에 대해 다룰 예정이다.<br>
+공업 수학에서 배웠듯이 라플라스 변환은 복잡한 미분방정식(ODE)을 풀 때 유용하다.</p>
+<section id="idea-for-laplace-transform" class="level2">
+<h2 class="anchored" data-anchor-id="idea-for-laplace-transform">Idea for Laplace Transform</h2>
+<p>양방향 라플라스 변환 공식은 다음과 같다.<br>
+<span class="math display">\[H(s) = \mathcal{L}[h(t)] = \int_{-\infty}^{\infty}h(t)e^{-st}dt = \int_{-\infty}^{\infty}h(t)e^{-(\sigma + j\omega)t}dt(\because \;\; s = \sigma + j\omega)\]</span><br>
+여기서 식의 형태를 보면 푸리에 변환과 식의 형태가 유사한 것을 알 수 있다.<br>
+라플라스 변환은 발산하는 신호(<span class="math inline">\(h(t)\)</span>)를 <span class="math inline">\(e^{-\alpha t}\)</span>를 사용해 발산하지 않도록 한 후 푸리에 변환을 하는 것이다. 즉, 푸리에 변환의 한계를 보완한 것이라고 생각하면 된다.</p>
+</section>
+<section id="region-of-convergenceroc-수렴영역" class="level2">
+<h2 class="anchored" data-anchor-id="region-of-convergenceroc-수렴영역">Region of convergence(ROC; 수렴영역)</h2>
+<p>앞서 말했듯 라플라스 변환에서는 <span class="math inline">\(e^{-st}\)</span>를 사용하여 발산하지 않도록 조정한다. 신호가 수렴하도록 하는 적절한 s의 실수부, <span class="math inline">\(Re[s] = \sigma\)</span>의 범위를 ROC라고 한다.</p>
+<section id="example-of-roc" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-roc">Example of ROC</h3>
+<p>unit step function을 라플라스 변환했을때의 ROC를 계산해보도록 하겠다. 우선 <span class="math inline">\(u(t)\)</span>를 라플라스 변환하는 과정은 아래와 같다.<br>
+<span class="math display">\[\mathcal{L}[u(t)] = \int_{0}^{\infty}u(t)e^{-st}dt = \int_{0}^{\infty}e^{-st}dt = \left[-\frac{e^{-st}}{s}\right]^{\infty}_{0}\]</span> 여기서 적분 결과가 수렴하기 위해서는 <span class="math inline">\(e^{-s\infty} \to 0\)</span>이어야 한다. 그러므로 ROC는 <span class="math inline">\(Re[s]&gt;0\)</span>이다.</p>
+</section>
+</section>
+<section id="pole-and-zero" class="level2">
+<h2 class="anchored" data-anchor-id="pole-and-zero">pole and zero</h2>
+<ul>
+<li>pole: H(s)가 발산하도록 하는 s
+<ul>
+<li><span class="math inline">\(\displaystyle H(s) = \frac{e^{s-3}}{s-3}\)</span>일 때의 pole은 <span class="math inline">\(s = 3 \; or \; s= \infty\)</span><br>
 </li>
-<li>푸리에 계수를 사용해 표현된 <span class="math inline">\(f(t)\)</span>를 푸리에 변환하기 (<span class="math inline">\(e^{j\omega_ot} \;\xleftrightarrow{\;\;\mathcal{F}\;\;}\;2\pi \delta(\omega - \omega_0)\)</span>를 사용)<br>
-<span class="math inline">\(\displaystyle\int_{-\infty}^{\infty}\displaystyle\sum_{k = -\infty}^{\infty}C_ke^{j k \omega_0 t}e^{-j\omega t}dt = \displaystyle\sum_{k = -\infty}^{\infty}C_k\displaystyle\int_{\infty}^{\infty}e^{j k \omega_0 t}e^{-j\omega t}dt = \displaystyle\sum_{k = -\infty}^{\infty}C_k2\pi \delta(\omega - k\omega_0)\)</span></li>
-</ol>
-<p>이를 정리하면 모든 주기 신혼는 푸리에 변환은 <strong>delta train</strong>으로 표현이 가능하다는 것을 의미한다.<br>
-<span class="math display">\[\therefore f(t) = \sum_{k = -\infty}^{\infty}C_ke^{j k \omega_0 t} \;\xleftrightarrow{\quad\mathcal{F}\quad}\; F(\omega) = \sum_{k = -\infty}^{\infty}C_k2\pi \delta(\omega - k\omega_0)\]</span></p>
-<section id="example-fourier-transform-of-periodic-signalrectangular-pulse-train" class="level3">
-<h3 class="anchored" data-anchor-id="example-fourier-transform-of-periodic-signalrectangular-pulse-train">Example: Fourier Transform of periodic signal(rectangular pulse train)</h3>
-<p align="center">
-</p><p><img src="img/sp6_1.png" width="500" height="150"></p>
-<p>위 그림과 같은 사각파가 주기적으로 나오는 신호를 푸리에 변환 한다면 아래와 같다. (진폭은 A라고 가정하겠음)<br>
-<span class="math display">\[C_k = \frac{A}{T_0}\int_{-T/2}^{T/2}e^{-j k \omega_0 t}dt = \cdots = \frac{TA}{T_0}sinc(k\omega_0T/2)\]</span> <span class="math display">\[F(\omega) = \sum_{k = -\infty}^{\infty}\frac{TA}{T_0}sinc(k\omega_0T/2)2\pi \delta(\omega - k\omega_0) = \sum_{k = -\infty}^{\infty}\omega_0TA sinc(k\omega_0T/2) \delta(\omega - k\omega_0)\]</span></p>
-rectangular pulse train의 주파수 스펙트럼은 아래와 같다.<br>
-
-<p align="center">
-</p><p><img src="img/sp6_2.png" width="500" height="330"></p>
-</section>
-</section>
-<section id="applications-of-the-fourier-transformfilter" class="level2">
-<h2 class="anchored" data-anchor-id="applications-of-the-fourier-transformfilter">Applications of the Fourier Transform(filter)</h2>
-<p>filter는 입력 신호에서 원하지 않는 특정 주파수 성분을 지울 때 사용하는 시스템이다.<br>
-filter의 종류는 아래의 그림과 같이 크게 4가지 정도로 정리할 수 있다.</p>
-<p align="center">
-</p><p><img src="img/sp6_3.png" width="500" height="320"></p>
-<section id="ideal-filter" class="level3">
-<h3 class="anchored" data-anchor-id="ideal-filter">Ideal filter</h3>
-<p>low-pass filter의 전달 함수(transfer function, <span class="math inline">\(H(\omega)\)</span>)를 아래와 같이 표현하면 ideal filter라고 하는 이유에 대해 설명하겠다.</p>
-<blockquote class="blockquote">
-<p><strong>NOTE</strong> Impulse response <span class="math inline">\(h(t)\)</span>를 푸리에 변환을 하면 Transfer function<span class="math inline">\(H(\omega)\)</span>임</p>
-</blockquote>
-<p><span class="math display">\[H(\omega) = rect(\omega / 2\omega_c)\]</span><br>
-<span class="math display">\[h(t) = \mathcal{F}^{-1}[H(\omega)] = \frac{\omega_c}{\pi}sinc(\omega_ct)\]</span><br>
-여기서 집중해야 할 것은 impulse response의 <span class="math inline">\(sinc(\omega_ct)\)</span>이다. 물리적으로 구현하기 위해서는 t가 음수인 구간의 출력이 반드시 0이어야만 하는데 sinc함수로 인해 t가 음수일 때 값이 존재한다. 그러므로 해당 시스템은 non casual system으로 물리적으로 구현할 수 없으므로 ideal filter라고 말하는 것이다.</p>
-</section>
-<section id="real-filter" class="level3">
-<h3 class="anchored" data-anchor-id="real-filter">Real filter</h3>
-필터는 크게 아날로그 필터와 디지털 필터로 나눌 수 있다. 이번 포스트에서는 아날로그 필터를 다룰 것이다. 아날로그 필터에서는 수동 필터와 능동 필터로 나눌 수 있다. 수동 필터는 R, L, C를 사용한 필터이고 능동 필터의 경우 Op-amp를 사용한 필터를 의미한다.<br>
-
-<p align="center">
-</p><p><img src="img/sp6_4.png" width="400" height="220"></p>
-<p>위와 같은 회로를 RC low-pass filter라고 한다. 이를 수식으로 표현하면 다음과 같다.<br>
-<span class="math display">\[v_i(t) = Ri(t) + \frac{1}{C}\int_{-\infty}^{t}i(\tau)d\tau, \quad v_o(t) = \frac{1}{C}\int_{-\infty}^{t}i(\tau)d\tau\]</span><br>
-이를 푸리에 변환을 하면 아래와 같다.</p>
-<span class="math display">\[V_i(t) = RI(\omega) + \frac{1}{j\omega C}I(\omega), \quad V_o(\omega) = \frac{1}{j\omega C}I(\omega)\]</span> <span class="math display">\[\therefore H(\omega) = \frac{1}{1 + j\omega R C} = \frac{1}{1 + j\omega/\omega_c}\;\;(\omega_c\triangleq \frac{1}{RC})\]</span> 여기서 <span class="math inline">\(\omega_c\)</span>를 cutoff frequancy라고 한다. <span class="math inline">\(H(\omega)\)</span>의 크기는 아래와 같다. <span class="math display">\[|H(\omega)| = \frac{1}{\sqrt{1 + (\omega/\omega_c)^2}}\]</span>
-<p align="center">
-</p><p><img src="img/sp6_5.png" width="500" height="220"></p>
-<p>위 그래프를 보면 알 수 있듯 cutoff frequancy에 따라 주파수 파형이 달라지는 것을 알 수 있다. 여기서 만약 <span class="math inline">\(\omega = \omega_c\)</span>라면 <span class="math inline">\(|H(\omega)| = \displaystyle\frac{1}{\sqrt2}\)</span>가 된다. 이때의 power는 <span class="math inline">\(|H(\omega)|^2 = \frac{1}{2}\)</span>이 된다. 정리하면 <span class="math inline">\(\omega = \omega_c\)</span>인 <span class="math inline">\(\omega_c\)</span>를 half-power frequancy라고 부른다.</p>
-<section id="butterworth-filter" class="level4">
-<h4 class="anchored" data-anchor-id="butterworth-filter">Butterworth filter</h4>
-Butterworth filter의 전달 함수는 아래와 같이 정의할 수 있다.<br>
-<span class="math display">\[|H(\omega)| = \frac{1}{\sqrt{1 + (\omega/\omega_c)^{2N}}}\]</span><br>
-차수N에 따른 주파수 스펙트럼은 아래의 그래프와 같다.<br>
-
-<p align="center">
-</p><p><img src="img/sp6_6.png" width="300" height="220"></p>
-<p>그래프를 보면 알 수 있듯 차수가 커지면 커질수록 ideal filter에 가까워지는 것을 알 수 있다.</p>
+</ul></li>
+<li>zero: H(s)가 수렴하도록 하는 s
+<ul>
+<li><span class="math inline">\(\displaystyle H(s) = \frac{e^{s-3}}{s-3}\)</span>일 때의 zero는 pole이 아닌 수</li>
+</ul></li>
+</ul>
 
 
-</section>
-</section>
 </section>
 </section>
 
