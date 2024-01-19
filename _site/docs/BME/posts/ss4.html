@@ -245,10 +245,15 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><span class="math inline">\(C_0\)</span>는 신호 <span class="math inline">\(x(t)\)</span>의 DC 값 또는 평균 값이다. <span class="math inline">\(\because C_0 = \displaystyle\frac{1}{T_0}\int_{0}^{T_0}x(t)dt\)</span><br>
 </li>
-<li><span class="math inline">\(f(t)\)</span>와 <span class="math inline">\(g(t)\)</span>가 구간 a, b에서 orthoginal(직교)하면 <span class="math inline">\(\displaystyle\int_{a}^{b}f(t)g(t)= 0\)</span>이다.<br>
+<li><span class="math inline">\(f(t)\)</span>와 <span class="math inline">\(g(t)\)</span>가 구간 a, b에서 orthogonal(직교)하면 <span class="math inline">\(\displaystyle\int_{a}^{b}f(t)g(t)= 0\)</span>이다.<br>
 </li>
-<li>The harmonics in the Fourier series(예를 들어, <span class="math inline">\(\displaystyle\sum^{\infty}_{k=-\infty}C_ke^{jk\omega_0t}\)</span>)는 구간 0, <span class="math inline">\(T_0\)</span>에서 orthoginal(직교)한다. <span class="math inline">\(\displaystyle \because \int_{0}^{T_0}e^{jk\omega_0t}e^{-jk\omega_0t}= 0\)</span></li>
+<li>The harmonics in the Fourier series(예를 들어, <span class="math inline">\(\displaystyle\sum^{\infty}_{k=-\infty}C_ke^{jk\omega_0t}\)</span>)는 구간 0, <span class="math inline">\(T_0\)</span>에서 orthogonal하다. <span class="math inline">\(\displaystyle \because \int_{0}^{T_0}e^{jk\omega_0t}e^{-jk\omega_0t}= 0\)</span></li>
 </ul>
+<blockquote class="blockquote">
+<p><span class="math inline">\(a(t), b(t)\)</span>라는 신호의 내적은 다음과 같이 표현할 수 있다. <span class="math inline">\(&lt;a(t),b(t)&gt; \displaystyle = \int_{T_0}a(t)b^*(t)\)</span><br>
+두 신호가 orthogonal한 신호라면 <span class="math inline">\(\displaystyle \int_{T_0}a(t)b^*(t) =0\)</span>이 된다.<br>
+<span class="math inline">\(if\)</span>.. <span class="math inline">\(&lt;e^{jk\omega_0 t}, e^{jr\omega_0 t}&gt; = \displaystyle \int_{T_0}e^{j(k-r)\omega_0 t} = \cdots = 0(for \;\; k \neq r), T_0(for \;\; k = r)\)</span> 이다. 이를 통해 <span class="math inline">\(e^{jk\omega_0 t}\)</span>라는 신호는 basis 신호라고 볼 수 있고, <span class="math inline">\(x(t) = \displaystyle\sum^{\infty}_{k=-\infty}C_ke^{jk\omega_0t}\)</span>를 통해 무한대의 차원을 표현할 수 있다는 것을 알 수 있다.</p>
+</blockquote>
 </section>
 </section>
 <section id="frequency-spectra-주파수-스펙트럼" class="level2">
