@@ -220,31 +220,32 @@ ul.task-list li input[type="checkbox"] {
 공업 수학에서 배웠듯이 라플라스 변환은 복잡한 미분방정식(ODE)을 풀 때 유용하다.</p>
 <section id="idea-for-laplace-transform" class="level2">
 <h2 class="anchored" data-anchor-id="idea-for-laplace-transform">Idea for Laplace Transform</h2>
-<p>양방향 라플라스 변환 공식은 다음과 같다.<br>
+<p>라플라스 변환에 대해서 설명하기 위해서는 양방향 라플라스 변환을 사용하여야 한다. 양방향 라플라스 변환 공식은 다음과 같다.<br>
 <span class="math display">\[H(s) = \mathcal{L}[h(t)] = \int_{-\infty}^{\infty}h(t)e^{-st}dt = \int_{-\infty}^{\infty}h(t)e^{-(\sigma + j\omega)t}dt(\because \;\; s = \sigma + j\omega)\]</span><br>
-여기서 식의 형태를 보면 푸리에 변환과 식의 형태가 유사한 것을 알 수 있다.<br>
-라플라스 변환은 발산하는 신호(<span class="math inline">\(h(t)\)</span>)를 <span class="math inline">\(e^{-\alpha t}\)</span>를 사용해 발산하지 않도록 한 후 푸리에 변환을 하는 것이다. 즉, 푸리에 변환의 한계를 보완한 것이라고 생각하면 된다.</p>
+식의 형태를 보면 푸리에 변환과 식의 형태가 유사한 것을 알 수 있다.<br>
+라플라스 변환은 발산하는 신호(<span class="math inline">\(h(t)\)</span>)를 <span class="math inline">\(e^{-\alpha t}\)</span>를 사용해 발산하지 않도록 한 후 푸리에 변환을 하는 것이다.<br>
+즉, 푸리에 변환의 한계를 보완한 것이라고 생각하면 된다.</p>
 </section>
 <section id="region-of-convergenceroc-수렴영역" class="level2">
 <h2 class="anchored" data-anchor-id="region-of-convergenceroc-수렴영역">Region of convergence(ROC; 수렴영역)</h2>
 <p>앞서 말했듯 라플라스 변환에서는 <span class="math inline">\(e^{-st}\)</span>를 사용하여 발산하지 않도록 조정한다. 신호가 수렴하도록 하는 적절한 s의 실수부, <span class="math inline">\(Re[s] = \sigma\)</span>의 범위를 ROC라고 한다.</p>
 <section id="example-of-roc" class="level3">
 <h3 class="anchored" data-anchor-id="example-of-roc">Example of ROC</h3>
-<p>unit step function을 라플라스 변환했을때의 ROC를 계산해보도록 하겠다. 우선 <span class="math inline">\(u(t)\)</span>를 라플라스 변환하는 과정은 아래와 같다.<br>
+<p>unit step function을 라플라스 변환했을때의 ROC를 계산해보도록 하겠다. 우선 <span class="math inline">\(u(t)\)</span>를 단방향 라플라스 변환하는 과정은 아래와 같다.<br>
 <span class="math display">\[\mathcal{L}[u(t)] = \int_{0}^{\infty}u(t)e^{-st}dt = \int_{0}^{\infty}e^{-st}dt = \left[-\frac{e^{-st}}{s}\right]^{\infty}_{0}\]</span> 여기서 적분 결과가 수렴하기 위해서는 <span class="math inline">\(e^{-s\infty} \to 0\)</span>이어야 한다. 그러므로 ROC는 <span class="math inline">\(Re[s]&gt;0\)</span>이다.</p>
 </section>
 </section>
 <section id="pole-and-zero" class="level2">
 <h2 class="anchored" data-anchor-id="pole-and-zero">pole and zero</h2>
 <ul>
-<li>pole: H(s)가 발산하도록 하는 s
+<li>pole: <span class="math inline">\(H(s)\)</span>가 무한대가 되도록 하는 <span class="math inline">\(s\)</span>
 <ul>
-<li><span class="math inline">\(\displaystyle H(s) = \frac{e^{s-3}}{s-3}\)</span>일 때의 pole은 <span class="math inline">\(s = 3 \; or \; s= \infty\)</span><br>
+<li><span class="math inline">\(\displaystyle H(s) = \frac{e^{s-3}}{s-3}\)</span>, poles: <span class="math inline">\(s = 0 \; or \; s= \infty\)</span><br>
 </li>
 </ul></li>
-<li>zero: H(s)가 수렴하도록 하는 s
+<li>zero: <span class="math inline">\(H(s)\)</span>가 0이 되도록 하는 <span class="math inline">\(s\)</span>
 <ul>
-<li><span class="math inline">\(\displaystyle H(s) = \frac{e^{s-3}}{s-3}\)</span>일 때의 zero는 pole이 아닌 수</li>
+<li><span class="math inline">\(\displaystyle H(s) = \frac{e^{s-3}}{s-3}\)</span>, zero: <span class="math inline">\(s = -\infty\)</span></li>
 </ul></li>
 </ul>
 
