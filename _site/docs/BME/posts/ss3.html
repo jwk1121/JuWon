@@ -9,7 +9,7 @@
 <meta name="author" content="JuWon">
 <meta name="dcterms.date" content="2023-11-13">
 
-<title>BME JuWon’s summary note - Convolution (continuous-time LTI system)</title>
+<title>BME JuWon’s summary note - Convolution (CT)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Convolution (continuous-time LTI system)</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Convolution (CT)</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Convolution (continuous-time LTI system)</h1>
+      <h1 class="title">Convolution (CT)</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">signal and system</div>
               </div>
@@ -233,14 +233,14 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Time-invariant에 의해 <span class="math inline">\(\delta(t-t_0) \to h(t-t_0)\)</span><br>
 </li>
-<li>Linear에 의해 <span class="math inline">\(\Sigma_{k =0}^{\infty}\Delta\delta(t-k\Delta) \to \Sigma_{k =0}^{\infty}\Delta h(t-k\Delta)\)</span></li>
+<li>Linear에 의해 <span class="math inline">\(\displaystyle\sum_{k =0}^{\infty}\Delta\delta(t-k\Delta) \to \sum_{k =0}^{\infty}\Delta h(t-k\Delta)\)</span></li>
 </ul>
 </section>
 <section id="convolution-integral-증명" class="level3">
 <h3 class="anchored" data-anchor-id="convolution-integral-증명">Convolution Integral 증명</h3>
-<p><span class="math display">\[x(t) = \Sigma_{k = -\infty}^{\infty}v(k\Delta)\delta(t-k\Delta) \Delta \overset{LTI \; system}\to y(t) = \Sigma_{k =0}^{\infty}v(k\Delta) h(t-k\Delta) \Delta\]</span><br>
+<p><span class="math display">\[x(t) = \sum_{k = -\infty}^{\infty}v(k\Delta)\delta(t-k\Delta) \Delta \overset{LTI \; system}\to y(t) = \sum_{k =0}^{\infty}v(k\Delta) h(t-k\Delta) \Delta\]</span><br>
 <span class="math display">\[\overset{\Delta \to 0}\downarrow\]</span><br>
-<span class="math display">\[\lim_{\Delta \to 0}\Sigma_{k = -\infty}^{\infty}v(k\Delta)\delta(t-k\Delta) \Delta \overset{LTI \; system}\to \lim_{\Delta \to 0}\Sigma_{k =0}^{\infty}v(k\Delta) h(t-k\Delta) \Delta\]</span><br>
+<span class="math display">\[\lim_{\Delta \to 0}\sum_{k = -\infty}^{\infty}v(k\Delta)\delta(t-k\Delta) \Delta \overset{LTI \; system}\to \lim_{\Delta \to 0}\sum_{k =0}^{\infty}v(k\Delta) h(t-k\Delta) \Delta\]</span><br>
 <span class="math display">\[\downarrow\]</span><br>
 <span class="math display">\[x(t) = \int_{-\infty}^{\infty}v(\tau)\delta(t-\tau)d\tau = v(t) \overset{LTI \; system}\to y(t) = \int_{-\infty}^{\infty}v(\tau)h(t-\tau)d\tau\]</span><br>
 <span class="math display">\[\downarrow\]</span><br>
