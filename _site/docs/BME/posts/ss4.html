@@ -260,20 +260,23 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="frequency-spectra-주파수-스펙트럼">frequency spectra (주파수 스펙트럼)</h2>
 푸리에 계수에서 주목해야 하는 부분은 주파수 스펙트럼이다. rectangular pulse의 푸리에 계수를 구하는 예시를 통해 주파수 스펙트럼에 대해 소개하도록 하겠다.<br>
 
-<p align="center">
-</p><p><img src="img/sp4_1.png" width="500" height="150"></p>
+<div style="text-align:center">
+<img src="img/sp4_1.png" width="500" height="150">
+</div>
 <p>위의 신호는 rectangular pulse로 Fourier coefficients는 아래와 같다.<br>
 <span class="math display">\[C_k = \frac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}x(t)e^{-jk\omega_0t}dt = \frac{1}{T_0}\int_{-\frac{T}{2}}^{\frac{T}{2}}X_0 e^{-jk\omega_0t}dt = \frac{X_0}{T_0(-jk\omega_0)}e^{-jk\omega_0t}|^{\frac{T}{2}}_{-\frac{T}{2}}\]</span><br>
 <span class="math display">\[ = \frac{2X_0}{kT_0\omega_0}[\frac{e^{jk\omega_0T/2} +e^{-jk\omega_0T/2}}{2j}] = \frac{2X_0}{kT_0\omega_0} sin(k\omega_0T/2) = \frac{TX_0}{T_0} \frac{sin(k\omega_0T/2)}{k\omega_0T/2}\]</span><br>
 <span class="math display">\[= \frac{TX_0}{T_0}sinc(\frac{k\omega_0T}{2})\]</span></p>
 <blockquote class="blockquote">
 여기서 <strong>sinc function</strong>에 대해서 간단히 소개하면 <span class="math inline">\(\displaystyle sinc(x) = \frac{sin(x)}{x}\)</span>와 같이 정의할 수 있고 아래와 같은 그래프 모양을 갖는다.
-<p align="center">
-</p><p><img src="img/sp4_2.png" width="400" height="230/"></p>
+<div style="text-align:center">
+<img src="img/sp4_2.png" width="400" height="230/">
+</div>
 </blockquote>
 <span class="math inline">\(C_k\)</span>를 사용해 주파수 스펙트럼을 그리면 아래와 같다.
-<p align="center">
-</p><p><img src="img/sp4_3.png" width="400" height="230/"></p>
+<div style="text-align:center">
+<img src="img/sp4_3.png" width="400" height="230/">
+</div>
 <p>위 그래프를 간단하게 해석하면 rectangular pulse의 푸리에 계수에는 저주파 성분들의 가중치(<span class="math inline">\(|C_k|\)</span>)가 크고 고주파로 갈수록 해당 성분들의 가중치는 0에 가까운 것을 알 수 있다.</p>
 <p><em>주파수 스펙트럼을 살펴보면 필터와 비슷한 역할을 하고 있음을 알 수 있음</em></p>
 <p><em>위의 예시를 통해 알수 있듯 사각파(rectangular pulse)의 푸리에 계수는 sinc function을 포함하고 있음을 알 수 있음</em></p>
