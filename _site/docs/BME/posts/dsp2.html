@@ -248,18 +248,21 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="이산-신호에-따른-주파수-분석">이산 신호에 따른 주파수 분석</h2>
 이산 시간에서 그림과 같이 주기성을 띄는 신호가 있을 때 해당 신호의 <span class="math inline">\(C_k\)</span>는 아래와 같이 구할 수 있다.<br>
 
-<p align="center">
-</p><p><img src="img/dsp2_1.png" width="400" height="150"></p>
+<div style="text-align:center">
+<p><img src="img/dsp2_1.png" width="400" height="150"></p>
+</div>
 <p><span class="math display">\[for\; k= 0, \;\; C_0 = \frac{1}{N}\sum_{n=&lt;N&gt;}\cdot 1 = \frac{2L+1}{N}\]</span><br>
 <span class="math display">\[for\; k \neq 0, \;\; C_k = \frac{1}{N}\sum_{n=-L}^{L}1\cdot e^{-jk\Omega_0n} \to \frac{1}{N}\frac{e^{jk\Omega_0L}[1-e^{-jk\Omega_0(2L+1)}]}{1-e^{-jk\Omega_0}} = \cdots\]</span><br>
 <span class="math display">\[ = \frac{1}{N}\frac{sin(k\Omega_0\cdot(2L+1)/2)}{sin(k\Omega_0/2)}, k = 1, 2,3, \cdots,N-1\]</span></p>
 이를 사용하여 <span class="math inline">\(N\)</span>과 <span class="math inline">\(L\)</span>에 대한 <span class="math inline">\(C_k\)</span>의 변화를 그래프를 그리면 아래와 같은 스펙트럼이 나온다. 여기서 <span class="math inline">\(N\)</span>은 이산 신호의 주기, <span class="math inline">\(L\)</span>은 이산 신호의 duration을 의미한다.<br>
 
-<p align="center">
-</p><p><img src="img/dsp2_2.png" width="500" height="200"></p>
+<div style="text-align:center">
+<img src="img/dsp2_2.png" width="500" height="200">
+</div>
 <p>만약 duration은 그대로인데 주기가 늘어난다면 위와 같은 결과가 나온다. 주기가 늘어나면 진폭이 작아지고 샘플수가 많아지는 것을 확인할 수 있다.</p>
-<p align="center">
-</p><p><img src="img/dsp2_3.png" width="500" height="200"></p>
+<div style="text-align:center">
+<img src="img/dsp2_3.png" width="500" height="200">
+</div>
 <p>반대로 주기는 그대로이고 duration이 변하게 된다면 스펙트럼의 대역폭이 변하는 것을 위 그래프를 통해 알 수 있다. duration과 대역폭은 반비례관계인것을 확인할 수 있다.</p>
 
 

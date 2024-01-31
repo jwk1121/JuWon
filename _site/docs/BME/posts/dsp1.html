@@ -235,8 +235,9 @@ CT periodic signal를 샘플링 한다면 DT periodic signal 또는 DT Aperiodic
 <section id="convolution-sum-계산" class="level3">
 <h3 class="anchored" data-anchor-id="convolution-sum-계산">convolution sum 계산</h3>
 <p>sequence형태의 <span class="math inline">\(x[n]\)</span>과 <span class="math inline">\(h[n]\)</span>이 <span class="math inline">\(h[n] =\)</span> {<span class="math inline">\(1,2,-1,1\)</span>}, <span class="math inline">\(x[n] =\)</span> {<span class="math inline">\(2, 3, 1\)</span>}일 때, <span class="math inline">\(y[n]\)</span>을 계산하면 아래와 같다. <span class="math display">\[y[n] = \sum_{k=-\infty}^{\infty}x[n-k]h[k]\]</span> k에 따라 값이 어떻게 계산이 되는지를 그래프로 표현하면 다음과 같다.</p>
-<p align="center">
-</p><p><img src="img/dsp1_1.png" width="300" height="320"></p>
+<div style="text-align:center">
+<p><img src="img/dsp1_1.png" width="300" height="320"></p>
+</div>
 <p>이와 같은 계산을 수행하면 <span class="math inline">\(y[n] =\)</span>{<span class="math inline">\(2,7,5,1,2,1\)</span>}이라는 결과가 나온다.</p>
 <ul>
 <li><p>여기서 <span class="math inline">\(y[n]\)</span>이 유한한 범위에서만 값을 갖고 나머지 범위에서는 값을 갖지 않고 있는데 이를 <strong>Finite impulse response(FIR)</strong> system이라고 한다. FIR system은 과거의 출력을 사용하지 않는다.</p></li>
