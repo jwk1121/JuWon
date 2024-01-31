@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="JuWon">
-<meta name="dcterms.date" content="2024-01-28">
+<meta name="dcterms.date" content="2024-02-01">
 
-<title>BME JuWon’s summary note - 이산 시간 신호와 시스템</title>
+<title>BME JuWon’s summary note - Discrete time Fourier transform (이산 시간 푸리에 변환)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">이산 시간 신호와 시스템</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Discrete time Fourier transform (이산 시간 푸리에 변환)</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="true" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">이산 시간 신호와 시스템</h1>
+      <h1 class="title">Discrete time Fourier transform (이산 시간 푸리에 변환)</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">DSP</div>
               </div>
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 28, 2024</p>
+        <p class="date">February 1, 2024</p>
       </div>
     </div>
     
@@ -192,12 +192,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#이산-시간-신호와-시스템" id="toc-이산-시간-신호와-시스템" class="nav-link active" data-scroll-target="#이산-시간-신호와-시스템">이산 시간 신호와 시스템</a>
+  <li><a href="#이산-시간-푸리에-변환" id="toc-이산-시간-푸리에-변환" class="nav-link active" data-scroll-target="#이산-시간-푸리에-변환">이산 시간 푸리에 변환</a>
   <ul class="collapse">
-  <li><a href="#convoution-sum" id="toc-convoution-sum" class="nav-link" data-scroll-target="#convoution-sum">Convoution sum</a>
+  <li><a href="#dtft-idtft-유도" id="toc-dtft-idtft-유도" class="nav-link" data-scroll-target="#dtft-idtft-유도">DTFT &amp; IDTFT 유도</a>
   <ul class="collapse">
-  <li><a href="#convolution-sum-계산" id="toc-convolution-sum-계산" class="nav-link" data-scroll-target="#convolution-sum-계산">convolution sum 계산</a></li>
+  <li><a href="#xomega의-주기성" id="toc-xomega의-주기성" class="nav-link" data-scroll-target="#xomega의-주기성"><span class="math inline">\(X(\Omega)\)</span>의 주기성</a></li>
+  <li><a href="#dtft-예제" id="toc-dtft-예제" class="nav-link" data-scroll-target="#dtft-예제">DTFT 예제</a></li>
   </ul></li>
+  <li><a href="#푸리에-변환-정리" id="toc-푸리에-변환-정리" class="nav-link" data-scroll-target="#푸리에-변환-정리">푸리에 변환 정리</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -212,40 +214,62 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="이산-시간-신호와-시스템" class="level1">
-<h1>이산 시간 신호와 시스템</h1>
-<p>이산 시간 신호를 Discrete Time Signal, 줄여서 DT signal이라 표기하고 연속 시간 신호를 Continuous Time Signal을 줄여서 CT signal이라 표기한다.</p>
-<p>우리가 평소에 사용하는 컴퓨터와 같이 디지털 기기는 DT 신호를 사용한다.</p>
-<p>DT 신호는 기존의 CT 신호를 <span class="math inline">\(T_s\)</span>간격으로 샘플링 하여 얻은 신호로 이 과정을 수식으로 쓰면 <span class="math inline">\(f(t) \to f(nT_s) = f(t)|_{t = n T_s}=f[n]\)</span> 이다. 여기서 주의해야 할 점은 n은 정수라는 것이다.</p>
-<p>DT 신호에서의 신호 변환(signal transformation)은 <a href="https://juwonk-bme.netlify.app/docs/bme/posts/ss1#%EC%8B%A0%ED%98%B8-%EB%B3%80%ED%99%98-transformation-of-signals">CT 신호</a>에서와 거의 비슷하다고 볼 수 있다.</p>
-<p>또한 DT 신호 시스템의 성질 또한 <a href="https://juwonk-bme.netlify.app/docs/bme/posts/ss1#%EC%97%B0%EC%86%8D-%EC%8B%9C%EA%B0%84-%EC%8B%A0%ED%98%B8-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EC%84%B1%EC%A7%88">CT 신호 시스템</a>과 매우 유사하므로 이를 참고하면 된다. ## DT 주기 신호의 특성<br>
-CT periodic signal를 샘플링 한다면 DT periodic signal 또는 DT Aperiodic signal을 얻게 된다.<br>
-그러므로 CT periodic signal을 샘플링하였을 때 DT periodic signal을 얻기 위해서는 <span class="math inline">\(\displaystyle\frac{T_s}{T_0} =\)</span> rational number(유리수, 정수/정수)라는 특정 조건을 지켜줘야 한다. <span class="math inline">\(\displaystyle\frac{T_s}{T_0}\)</span>는 정규화 주파수<span class="math inline">\((f_0)\)</span>로 표기할 수 있다.</p>
-<blockquote class="blockquote">
-<p>수식을 통해 간단히 서술하면 아래와 같다.<br>
-<span class="math inline">\(x[n] = Asin(2\pi f_0n),\; x[n + N] = Asin(2\pi f_0(n+N))\)</span><br>
-여기서 <span class="math inline">\(f_0 N\)</span>이 정수여야 해당 식이 성립하게 된다.<br>
-<span class="math inline">\(\therefore f_0N = m\;(N,m = integer) \to f_0\)</span>는유리수이고 <span class="math inline">\(\displaystyle f_0 = \frac{T_s}{T_0}\)</span>이다.</p>
-</blockquote>
-<section id="convoution-sum" class="level2">
-<h2 class="anchored" data-anchor-id="convoution-sum">Convoution sum</h2>
-<p>CT에서는 Convoultion을 할 때 적분을 사용했지만 DT에서는 적분이 아닌 <span class="math inline">\(\sum\)</span>을 사용하면 된다. 직관적으로 설명하면 이산 시간에서는 면적을 구할 수 없기 때문에 적분을 사용할 수 없다. 그러므로 이산 시간에서의 convolution은 아래와 같이 표기할 수 있다.<br>
-<span class="math display">\[x[n] = x[n]*\delta[n] = \sum_{k=-\infty}^{\infty}x[k]\delta[n-k]\]</span> Impulse response는 아래와 같이 표현할 수 있다.<br>
-<span class="math display">\[y[n] = x[n]*h[n] = \sum_{k=-\infty}^{\infty}x[k]h[n-k]\]</span></p>
-<section id="convolution-sum-계산" class="level3">
-<h3 class="anchored" data-anchor-id="convolution-sum-계산">convolution sum 계산</h3>
-<p>sequence형태의 <span class="math inline">\(x[n]\)</span>과 <span class="math inline">\(h[n]\)</span>이 <span class="math inline">\(h[n] =\)</span> {<span class="math inline">\(1,2,-1,1\)</span>}, <span class="math inline">\(x[n] =\)</span> {<span class="math inline">\(2, 3, 1\)</span>}일 때, <span class="math inline">\(y[n]\)</span>을 계산하면 아래와 같다. <span class="math display">\[y[n] = \sum_{k=-\infty}^{\infty}x[n-k]h[k]\]</span> k에 따라 값이 어떻게 계산이 되는지를 그래프로 표현하면 다음과 같다.</p>
-<div style="text-align:center">
-<img src="img/dsp1_1.png" width="300" height="320">
-</div>
-<p>이와 같은 계산을 수행하면 <span class="math inline">\(y[n] =\)</span>{<span class="math inline">\(2,7,5,1,2,1\)</span>}이라는 결과가 나온다.</p>
-<ul>
-<li><p>여기서 <span class="math inline">\(y[n]\)</span>이 유한한 범위에서만 값을 갖고 나머지 범위에서는 값을 갖지 않고 있는데 이를 <strong>Finite impulse response(FIR)</strong> system이라고 한다. FIR system은 과거의 출력을 사용하지 않는다.</p></li>
-<li><p>반대로 <span class="math inline">\(y[n] = a^n u[n]\)</span>과 같이 무한한 범위에서 값을 갖는 시스템을 <strong>Infinit impulse response(IIR)</strong> system이라고 한다. 추가로 IIR system은 과거의 출력을 사용한다.</p></li>
-</ul>
-
-
+<section id="이산-시간-푸리에-변환" class="level1">
+<h1>이산 시간 푸리에 변환</h1>
+<p>이번 포스트에서는 이산 시간 푸리에 변환(Discrete time fourier transform; DTFT)을 유도 및 예제에 대해 정리할 예정이다.</p>
+<section id="dtft-idtft-유도" class="level2">
+<h2 class="anchored" data-anchor-id="dtft-idtft-유도">DTFT &amp; IDTFT 유도</h2>
+<p><a href="https://juwonk-bme.netlify.app/docs/bme/posts/dsp2">앞 장</a>에서 다뤘듯 <span class="math inline">\(\displaystyle C_k = \frac{1}{N}\sum_{n=&lt;N&gt;}x_N[n]e^{-jk\Omega_0n}\)</span>인것을 확인할 수 있었다. <em>여기서 <span class="math inline">\(x_N[n]\)</span>은 주기가 N인 신호를 의미</em><br>
+여기서 <span class="math inline">\(N \to \infty\)</span>을 취하면 <span class="math inline">\(x_N[n]\)</span>은 비주기 함수인 <span class="math inline">\(x[n]\)</span>이 된다. 이러한 특성을 사용하여 DTFT를 아래와 같은 과정을 통해 유도할 수 있다.<br>
+<span class="math display">\[C_k = \frac{1}{N}\sum_{n=&lt;N&gt;}x_N[n]e^{-jk\Omega_0n}\]</span><br>
+<span class="math display">\[\lim_{N \to \infty}N\cdot C_k = \lim_{N \to \infty}\sum_{n=&lt;N&gt;}x_N[n]e^{-jk\Omega_0n}\]</span> 여기에서 <span class="math inline">\(\displaystyle\lim_{N \to \infty}N\cdot C_k = X(\Omega)\)</span>이고 <span class="math inline">\(\displaystyle\lim_{N \to \infty}k\Omega_0 = \Omega\)</span> 이다. 여기에서 <span class="math inline">\(k\)</span>는 <span class="math inline">\(0\)</span> ~ <span class="math inline">\(N-1\)</span>의 정수이므로 <span class="math inline">\(\displaystyle\lim_{N \to \infty}k\frac{2\pi}{N}=\Omega\)</span>는 0 ~ 2<span class="math inline">\(\pi\)</span>의 값을 갖게 된다. <span class="math display">\[\therefore X(\Omega)= \sum_{n=-\infty}^{\infty}x[n]e^{-j\Omega n}\]</span></p>
+<hr>
+<p>IDTFT도 DTFT와 마찬가지로 DTFS를 통해 유도가 가능하다.<br>
+<span class="math display">\[\lim_{N \to \infty}x_N[n] =x[n] = \lim_{N \to \infty}\frac{1}{2\pi}\sum_{k=&lt;N&gt;}NC_ke^{-jk\cdot2\pi/N\cdot n}\frac{2\pi}{N}\]</span><br>
+여기에서 <span class="math inline">\(\displaystyle\lim_{N\to\infty}\frac{2\pi}{N}=d\Omega\)</span>이므로 <span class="math inline">\(\displaystyle\lim_{N \to \infty}\sum_{k=&lt;N&gt;}\frac{2\pi}{N} \to \int_{-\infty}^{\infty}\cdots d\Omega\)</span>로 표현할 수 있다. <span class="math display">\[\therefore \; x[n] = \frac{1}{2\pi}\int_{&lt;2\pi&gt;}X(\Omega)e^{j\Omega n} d\Omega\]</span></p>
+<section id="xomega의-주기성" class="level3">
+<h3 class="anchored" data-anchor-id="xomega의-주기성"><span class="math inline">\(X(\Omega)\)</span>의 주기성</h3>
+<p><span class="math inline">\(X(\Omega)\)</span>는 <span class="math inline">\(2\pi\)</span>가 주기인 주기함수이다. 이는 아래의 수식을 통해 증명 가능하다.<br>
+<span class="math display">\[X(\Omega + 2\pi) = \sum_{-\infty}^{\infty}x[n]e^{-j\Omega n}e^{-j2\pi n}=\sum_{-\infty}^{\infty}x[n]e^{-j\Omega n} = X(\Omega)\]</span></p>
 </section>
+<section id="dtft-예제" class="level3">
+<h3 class="anchored" data-anchor-id="dtft-예제">DTFT 예제</h3>
+<section id="rectangular-pulse" class="level4">
+<h4 class="anchored" data-anchor-id="rectangular-pulse">1. Rectangular Pulse</h4>
+<div style="text-align:center">
+<img src="img/dsp3_1.png" width="300" height="200">
+</div>
+<p><strong>DT Aperiodic Rectangular Pulse</strong>를 DTFT하면 아래와 같은 결과가 나온다.<br>
+<span class="math inline">\(\displaystyle X(\Omega) = \sum_{n=-L}^{L}e^{-j\Omega n}\)</span>, <span class="math inline">\(\;\;X(\Omega)\)</span>가 다음과 같을 때 <span class="math inline">\(\Omega\)</span>가 0일 때와 아닐때를 구분하여 정리하면 다음과 같다.<br>
+- <span class="math inline">\(\Omega = 0\)</span>일때는 <span class="math inline">\(X(0) = 2L + 1\)</span><br>
+- <span class="math inline">\(\Omega \neq 0\)</span>인 경우 <span class="math inline">\(\displaystyle X(\Omega) = \sum_{n=-L}^{L}e^{-j\Omega n}\)</span>으로 이를 등비급수를 사용하여 정리하면 초항<span class="math inline">\((a)\)</span>은 <span class="math inline">\(e^{j\Omega n}\)</span>이고, 공비<span class="math inline">\((r)\)</span>는 <span class="math inline">\(e^{-j\Omega}\)</span>이다. <span class="math inline">\(\;\;\therefore \; \displaystyle X(\Omega) =\frac{sin(\Omega\cdot(2L+1)/2)}{sin(\Omega/2)}\)</span></p>
+<p>DTFS의 <span class="math inline">\(C_k\)</span> 달리 DTFT의 결과<span class="math inline">\(X(\Omega)\)</span>는 연속 신호인 것을 확인할 수 있다.</p>
+</section>
+<section id="sinusoidal-pulse" class="level4">
+<h4 class="anchored" data-anchor-id="sinusoidal-pulse">2. Sinusoidal Pulse</h4>
+<p>sin, cos과 같은 신호를 DTFT 공식에 대입하여 주파수 스펙트럼을 얻는 것은 쉽지 않다. 이럴 때에는 DTFT의 특성을 사용하면 비교적 쉽게 풀 수 있다. DTFT의 특성은 <a href="https://juwonk-bme.netlify.app/docs/bme/posts/ss5#frequency-shifting">CTFT의 특성</a>과 매우 유사므로 이를 참고하여 푸리에 변환을 진행하면 된다.</p>
+<p>만약 <span class="math inline">\(x[n] = \text{cos}[\frac{\pi}{3}n]\)</span>일 때 <span class="math inline">\(F(\Omega)\)</span>는 주파수 이동 성질을 사용하면 비교적 쉽게 풀 수 있다.<br>
+<span class="math display">\[x[n] = \text{cos}[\frac{\pi}{3}n]= \frac{1}{2}(e^{j\frac{\pi}{3}n} + e^{-j\frac{\pi}{3}n})\]</span><br>
+여기서 <span class="math inline">\(x_1[n] = 1/2\cdot e^{j\frac{\pi}{3}n}, \; x_2[n] = 1/2 \cdot e^{-j\frac{\pi}{3}n}\)</span>로 생각하고 DTFT를 진행하면 이는 주파수 이동 성질을 사용할 수 있는 꼴이 된다.<br>
+<span class="math display">\[X_1(\Omega) = \sum_{m=-\infty}^{\infty}\pi\delta(\Omega-\frac{\pi}{3}-2\pi m)\]</span><br>
+<span class="math display">\[X_2(\Omega) = \sum_{m=-\infty}^{\infty}\pi\delta(\Omega+\frac{\pi}{3}-2\pi m)\]</span></p>
+<blockquote class="blockquote">
+<p>주파수 도메인에서의 상수를 IDFTF했을 때의 결과를 정리하면 다음과 같다.<br>
+<span class="math display">\[ X(\Omega) = \sum_{m=-\infty}^{\infty}\delta(\Omega-2\pi m)\to x[n] = \frac{1}{2\pi}\int_{2\pi}X(\Omega)e^{j\Omega n} d\Omega\]</span><br>
+<span class="math display">\[x[n] = \frac{1}{2\pi}\int_{-\pi}^{\pi}\left(\sum_{m=-\infty}^{\infty}\delta(\Omega-2\pi m)\right)e^{j\Omega n} d\Omega\]</span><br>
+<span class="math display">\[x[n]= \frac{1}{2\pi}\int_{-\pi}^{\pi}\delta(\Omega)e^{j\Omega n} d\Omega = \frac{1}{2\pi}e^{j0n} = \frac{1}{2\pi}\]</span> <span class="math display">\[1 \;\xleftrightarrow{\quad\mathcal{DTFT}\quad}\;\sum_{m=-\infty}^{\infty}2\pi\delta(\Omega-2\pi m)\]</span></p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="푸리에-변환-정리" class="level2">
+<h2 class="anchored" data-anchor-id="푸리에-변환-정리">푸리에 변환 정리</h2>
+<p>이산 시간과 연속 시간 푸리에 변환에 대해 간단히 정리하면 <code>CADP</code>이다. CADP를 사용하면 신호를 푸리에 변환하였을 때 주파수 도메인 또는 시간 도메인에서 어떠한 형태인지 쉽게 알 수 있다.<br>
+&gt; <span class="math inline">\(C\)</span>(continuous) <span class="math inline">\(\;\xleftrightarrow{\quad\mathcal{F}\quad}\; A\)</span>(Aperiodic)<br>
+&gt; <span class="math inline">\(D\)</span>(discrete)<span class="math inline">\(\;\xleftrightarrow{\quad\mathcal{F}\quad}\;\)</span> P(Periodic)</p>
+<p>만약 시간 도메인에서 이산 비주기 신호(DA)를 푸리에 변환하게 되면 주파수 도메인에서 연속 주기 신호(CP)임을 쉽게 알 수 있다.</p>
+
+
 </section>
 </section>
 
