@@ -254,19 +254,25 @@ ul.task-list li input[type="checkbox"] {
 <span class="math display">\[X_1(\Omega) = \sum_{m=-\infty}^{\infty}\pi\delta(\Omega-\frac{\pi}{3}-2\pi m)\]</span><br>
 <span class="math display">\[X_2(\Omega) = \sum_{m=-\infty}^{\infty}\pi\delta(\Omega+\frac{\pi}{3}-2\pi m)\]</span></p>
 <blockquote class="blockquote">
-<p>주파수 도메인에서의 상수를 IDFTF했을 때의 결과를 정리하면 다음과 같다.<br>
+주파수 도메인에서의 상수를 IDFTF했을 때의 결과를 정리하면 다음과 같다.<br>
 <span class="math display">\[ X(\Omega) = \sum_{m=-\infty}^{\infty}\delta(\Omega-2\pi m)\to x[n] = \frac{1}{2\pi}\int_{2\pi}X(\Omega)e^{j\Omega n} d\Omega\]</span><br>
 <span class="math display">\[x[n] = \frac{1}{2\pi}\int_{-\pi}^{\pi}\left(\sum_{m=-\infty}^{\infty}\delta(\Omega-2\pi m)\right)e^{j\Omega n} d\Omega\]</span><br>
-<span class="math display">\[x[n]= \frac{1}{2\pi}\int_{-\pi}^{\pi}\delta(\Omega)e^{j\Omega n} d\Omega = \frac{1}{2\pi}e^{j0n} = \frac{1}{2\pi}\]</span> <span class="math display">\[1 \;\xleftrightarrow{\quad\mathcal{DTFT}\quad}\;\sum_{m=-\infty}^{\infty}2\pi\delta(\Omega-2\pi m)\]</span></p>
+<span class="math display">\[x[n]= \frac{1}{2\pi}\int_{-\pi}^{\pi}\delta(\Omega)e^{j\Omega n} d\Omega = \frac{1}{2\pi}e^{j0n} = \frac{1}{2\pi}\]</span> <span class="math display">\[1 \;\xleftrightarrow{\quad\mathcal{DTFT}\quad}\;\sum_{m=-\infty}^{\infty}2\pi\delta(\Omega-2\pi m)\]</span><br>
+
+<div style="text-align:center">
+<img src="img/dsp3_2.png" width="500" height="300">
+</div>
 </blockquote>
 </section>
 </section>
 </section>
 <section id="푸리에-변환-정리" class="level2">
 <h2 class="anchored" data-anchor-id="푸리에-변환-정리">푸리에 변환 정리</h2>
-<p>이산 시간과 연속 시간 푸리에 변환에 대해 간단히 정리하면 <code>CADP</code>이다. CADP를 사용하면 신호를 푸리에 변환하였을 때 주파수 도메인 또는 시간 도메인에서 어떠한 형태인지 쉽게 알 수 있다.<br>
-&gt; <span class="math inline">\(C\)</span>(continuous) <span class="math inline">\(\;\xleftrightarrow{\quad\mathcal{F}\quad}\; A\)</span>(Aperiodic)<br>
-&gt; <span class="math inline">\(D\)</span>(discrete)<span class="math inline">\(\;\xleftrightarrow{\quad\mathcal{F}\quad}\;\)</span> P(Periodic)</p>
+<p>이산 시간과 연속 시간 푸리에 변환에 대해 간단히 정리하면 <code>CADP</code>이다. CADP를 사용하면 신호를 푸리에 변환하였을 때 주파수 도메인 또는 시간 도메인에서 어떠한 형태인지 쉽게 알 수 있다.</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(C\)</span>(continuous) <span class="math inline">\(\;\xleftrightarrow{\quad\mathcal{F}\quad}\; A\)</span>(Aperiodic)<br>
+<span class="math inline">\(D\)</span>(discrete)<span class="math inline">\(\;\xleftrightarrow{\quad\mathcal{F}\quad}\;\)</span> P(Periodic)</p>
+</blockquote>
 <p>만약 시간 도메인에서 이산 비주기 신호(DA)를 푸리에 변환하게 되면 주파수 도메인에서 연속 주기 신호(CP)임을 쉽게 알 수 있다.</p>
 
 

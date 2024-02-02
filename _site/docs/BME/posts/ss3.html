@@ -196,8 +196,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#convolution-integral" id="toc-convolution-integral" class="nav-link" data-scroll-target="#convolution-integral">Convolution Integral</a>
   <ul class="collapse">
-  <li><a href="#imperse-representaion" id="toc-imperse-representaion" class="nav-link" data-scroll-target="#imperse-representaion">Imperse representaion</a></li>
-  <li><a href="#unit-impuse-response" id="toc-unit-impuse-response" class="nav-link" data-scroll-target="#unit-impuse-response">unit impuse response</a></li>
+  <li><a href="#impulse-representaion" id="toc-impulse-representaion" class="nav-link" data-scroll-target="#impulse-representaion">Impulse representaion</a></li>
+  <li><a href="#unit-impulse-response" id="toc-unit-impulse-response" class="nav-link" data-scroll-target="#unit-impulse-response">unit impulse response</a></li>
   <li><a href="#convolution-integral-증명" id="toc-convolution-integral-증명" class="nav-link" data-scroll-target="#convolution-integral-증명">Convolution Integral 증명</a></li>
   <li><a href="#properties-of-convolution-integral" id="toc-properties-of-convolution-integral" class="nav-link" data-scroll-target="#properties-of-convolution-integral">properties of convolution integral</a></li>
   <li><a href="#unit-step-response" id="toc-unit-step-response" class="nav-link" data-scroll-target="#unit-step-response">unit step response</a></li>
@@ -221,13 +221,13 @@ ul.task-list li input[type="checkbox"] {
 <p>이번 포스트에서는 연속 시간 LTI system에서의 Convolution에 대해 설명할 것이다.</p>
 <section id="convolution-integral" class="level2">
 <h2 class="anchored" data-anchor-id="convolution-integral">Convolution Integral</h2>
-<section id="imperse-representaion" class="level3">
-<h3 class="anchored" data-anchor-id="imperse-representaion">Imperse representaion</h3>
+<section id="impulse-representaion" class="level3">
+<h3 class="anchored" data-anchor-id="impulse-representaion">Impulse representaion</h3>
 <p><span class="math display">\[\int_{-\infty}^{\infty}x(\tau)\delta(t-\tau) d\tau \overset{sifting}\to \int_{-\infty}^{\infty}x(t)\delta(t-\tau) d\tau\]</span><br>
 <span class="math display">\[\to x(t)\int_{-\infty}^{\infty}\delta(t-\tau) d\tau = x(t)\]</span></p>
 </section>
-<section id="unit-impuse-response" class="level3">
-<h3 class="anchored" data-anchor-id="unit-impuse-response">unit impuse response</h3>
+<section id="unit-impulse-response" class="level3">
+<h3 class="anchored" data-anchor-id="unit-impulse-response">unit impulse response</h3>
 <p><span class="math display">\[x(t) = \delta(t) \to [LTI \; system]\to y(t) = h(t)\]</span> <span class="math display">\[\delta(t) \to h(t)\]</span></p>
 <p>여기서 <span class="math inline">\(\delta(t)\)</span>는 임펄스 함수(impulse function), <span class="math inline">\(h(t)\)</span>는 <strong>임펄스 응답(impulse response)</strong> 을 의미한다.</p>
 <ul>
